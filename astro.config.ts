@@ -8,7 +8,7 @@ import { defineConfig, envField } from 'astro/config';
 export default defineConfig({
 	integrations: [tailwind({ applyBaseStyles: false }), icon(), solidJs()],
 	// Update to your storefront URL
-	site: 'https://maquiavelowines.com',
+	site: 'https://maquiavelowines.netlify.app',
 	output: 'server',
 	adapter: netlify({ imageCDN: true }),
 	vite: {
@@ -20,11 +20,7 @@ export default defineConfig({
 	},
 	image: {
 		// Update to your own image domains
-		domains: [
-			'localhost',
-			'maquiavelowines.com',
-			'maquiavelowines.vercel.app',
-		],
+		domains: ['localhost', 'maquiavelowines.com', 'maquiavelowines.vercel.app'],
 	},
 	experimental: {
 		env: {
