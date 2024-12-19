@@ -23,6 +23,9 @@ importers:
       '@hey-api/client-fetch':
         specifier: ^0.2.4
         version: 0.2.4
+      '@iconify-json/mdi':
+        specifier: ^1.2.2
+        version: 1.2.2
       '@kobalte/core':
         specifier: 0.13.4
         version: 0.13.4(solid-js@1.8.22)
@@ -624,6 +627,9 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: ^5.x
+
+  '@iconify-json/mdi@1.2.2':
+    resolution: {integrity: sha512-84aznJXzfGdbOXGe8xB7E5uNAb7Yo5IABwTgq2X3kczb819qZeS9eL31bTVn7wJdCLK5ieaoUc2GTS3QYIkJ6g==}
 
   '@iconify/tools@4.0.6':
     resolution: {integrity: sha512-riEQggXVuZNXjRdo+aKT0rkzn2XHslIqat8mdW/oVu5mLmP/95Hi+iaq4keT7WwMD97jsYPXMQ6QMCw0EWpRNw==}
@@ -4828,6 +4834,10 @@ snapshots:
       typescript: 5.3.3
     transitivePeerDependencies:
       - magicast
+
+  '@iconify-json/mdi@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/tools@4.0.6':
     dependencies:
