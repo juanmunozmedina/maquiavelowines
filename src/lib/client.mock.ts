@@ -150,7 +150,7 @@ const collections: Record<string, Collection> = {
 		name: 'Maquiavelo',
 		description: 'Identidad propia del vino.',
 		slug: 'maquiavelo',
-		imageUrl: '/assets/maquiavelo.png',
+		//imageUrl: '/assets/maquiavelo.png',
 		...collectionDefaults,
 	},
 	ancestral: {
@@ -158,15 +158,15 @@ const collections: Record<string, Collection> = {
 		name: 'Ancestral',
 		description: 'Gusto por la tradición y orígenes.',
 		slug: 'ancestral',
-		imageUrl: '/assets/ancestral.png',
+		//imageUrl: '/assets/ancestral.png',
 		...collectionDefaults,
 	},
 	centhaurus: {
 		id: 'centhaurus',
 		name: 'Centhaurus',
-		description: "La mejor selección de espumosos.",
+		description: 'La mejor selección de espumosos.',
 		slug: 'centhaurus',
-		imageUrl: '/assets/centhaurus.png',
+		//imageUrl: '/assets/centhaurus.png',
 		...collectionDefaults,
 	},
 };
@@ -178,14 +178,16 @@ const defaultVariant = {
 	options: {},
 };
 
-const apparelVariants = ['Pack 3 botellas', 'Pack 6 botellas', 'Pack 12 botellas'].map((size, index) => ({
-	id: size,
-	name: size,
-	stock: index * 10,
-	options: {
-		Size: size,
-	},
-}));
+const apparelVariants = ['Pack 3 botellas', 'Pack 6 botellas', 'Pack 12 botellas'].map(
+	(size, index) => ({
+		id: size,
+		name: size,
+		stock: index * 10,
+		options: {
+			Size: size,
+		},
+	}),
+);
 
 const productDefaults = {
 	description: '',
@@ -204,9 +206,10 @@ const products: Record<string, Product> = {
 		name: 'ADN Sauvignon Blanc',
 		slug: 'adn-sauvignon-blanc',
 		tagline: 'Identidad propia del vino blanco.',
-		description: '<div><p><b>Botella</b>: 75 cl.</p><p><b>Tipo de uva</b>: Sauvignon Blanc</p><p><b>Graduación</b>: 12% Alc. Vol.</p><p><b>Año</b>: 2021</p><p><b>Denominación de origen</b>: Jumilla (Protegida)</p></div><div><p><b>Descripción</b></p><p>Maquiavelo ADN Sauvignon Blanc es un vino blanco joven de la cosecha 2021 elaborado en su totalidad con selecta uva sauvignon blanc. Su sabor destaca por ser suave en paladar y con un toque semi seco en boca. Ideal para acompañar con cualquier tipo de pescados, mariscos, verduras, pastas con salsas suaves o incluso para degustar solo plácidamente. Un vino joven para los paladares que no te dejará indiferente.</p><p><b>Recomendaciones</b></p><p>Servir entre 7 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p><div></div></div>',
+		description:
+			'<div><p><b>Botella</b>: 75 cl.</p><p><b>Tipo de uva</b>: Sauvignon Blanc</p><p><b>Graduación</b>: 12% Alc. Vol.</p><p><b>Año</b>: 2021</p><p><b>Denominación de origen</b>: Jumilla (Protegida)</p></div><div><p><b>Descripción</b></p><p>Maquiavelo ADN Sauvignon Blanc es un vino blanco joven de la cosecha 2021 elaborado en su totalidad con selecta uva sauvignon blanc. Su sabor destaca por ser suave en paladar y con un toque semi seco en boca. Ideal para acompañar con cualquier tipo de pescados, mariscos, verduras, pastas con salsas suaves o incluso para degustar solo plácidamente. Un vino joven para los paladares que no te dejará indiferente.</p><p><b>Recomendaciones</b></p><p>Servir entre 7 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p><div></div></div>',
 		price: 1070,
-		imageUrl: '/assets/blanco.webp',
+		imageUrl: '/assets/blanco.png',
 		collectionIds: ['maquiavelo'],
 		variants: apparelVariants,
 	},
@@ -218,23 +221,23 @@ const products: Record<string, Product> = {
 		tagline: '100% Verdejo.',
 		description: '',
 		price: 1070,
-		imageUrl: '/assets/verdejo.webp',
+		imageUrl: '/assets/verdejo.png',
 		collectionIds: ['maquiavelo'],
 		variants: apparelVariants,
 	},
-	'crianza': {
+	crianza: {
 		...productDefaults,
 		id: 'crianza',
 		name: 'Crianza',
 		slug: 'crianza',
-		tagline: "Una experiencia enológica diferente.",
+		tagline: 'Una experiencia enológica diferente.',
 		description: '',
 		price: 1180,
-		imageUrl: '/assets/crianza.webp',
+		imageUrl: '/assets/crianza.png',
 		collectionIds: ['maquiavelo'],
 		variants: apparelVariants,
 	},
-	'premium': {
+	premium: {
 		...productDefaults,
 		id: 'premium',
 		name: 'Premium',
@@ -242,11 +245,11 @@ const products: Record<string, Product> = {
 		tagline: 'El vino secreto de Maquiavelo.',
 		description: '',
 		price: 1580,
-		imageUrl: '/assets/premium.webp',
+		imageUrl: '/assets/premium.png',
 		collectionIds: ['maquiavelo'],
 		variants: apparelVariants,
 	},
-	'vermut': {
+	vermut: {
 		...productDefaults,
 		id: 'vermut',
 		name: 'Vermut',
@@ -254,7 +257,7 @@ const products: Record<string, Product> = {
 		tagline: 'Maquiavelo y Pedro Ximénez.',
 		description: '',
 		price: 1190,
-		imageUrl: '/assets/vermut.webp',
+		imageUrl: '/assets/vermut.png',
 		collectionIds: ['maquiavelo'],
 		variants: apparelVariants,
 	},
@@ -263,10 +266,10 @@ const products: Record<string, Product> = {
 		id: 'vermut-citrus',
 		name: 'Vermut Citrus',
 		slug: 'vermut-citrus',
-		tagline: "Maquiavelo y limones de Murcia.",
+		tagline: 'Maquiavelo y limones de Murcia.',
 		description: '',
 		price: 1190,
-		imageUrl: '/assets/citrus.webp',
+		imageUrl: '/assets/citrus.png',
 		collectionIds: ['maquiavelo'],
 		variants: apparelVariants,
 	},
@@ -275,7 +278,7 @@ const products: Record<string, Product> = {
 		id: 'vinas-selectas',
 		name: 'Viñas Selectas',
 		slug: 'vinas-selectas',
-		tagline: "El vino selecto de Maquiavelo.",
+		tagline: 'El vino selecto de Maquiavelo.',
 		description: '',
 		price: 775,
 		imageUrl: '/assets/vinas.png',
