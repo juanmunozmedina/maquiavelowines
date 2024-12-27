@@ -40,8 +40,8 @@ The primary project directories are outlined below:
 `pages/` contains file-based routes for your storefront.
 
 - `pages/api/` manages customer checkout using Stripe.
-- `pages/pedidos/` displays the customer's receipt on successful checkout.
-- `pages/colecciones/` displays product collections with dynamic filtering.
+- `pages/orders/` displays the customer's receipt on successful checkout.
+- `pages/collections/` displays product collections with dynamic filtering.
 - `pages/*` displays all other base-level routes.
 
 ## Services

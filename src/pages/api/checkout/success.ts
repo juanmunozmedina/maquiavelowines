@@ -40,7 +40,7 @@ export const GET: APIRoute = async (context) => {
 				console.error('No se pudo enviar el correo electrónico de pago exitoso:', error);
 			});
 		}
-		return context.redirect(`/pedidos/${order.id}`);
+		return context.redirect(`/orders/${order.id}`);
 	} catch (e) {
 		console.error(e);
 		return context.redirect('/500', 307);
@@ -97,7 +97,7 @@ async function createOrderFromStripe(
 			shippingPrice:
 				typeof session.shipping_cost === 'number'
 					? session.shipping_cost
-					: session.shipping_cost?.amount_total ?? 0,
+					: (session.shipping_cost?.amount_total ?? 0),
 			lineItems: lineItems.map((item) => {
 				const metadata = stripeProductMetadataSchema.parse(
 					// verbose checks for a clearer error message
