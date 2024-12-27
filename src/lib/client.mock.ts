@@ -184,7 +184,7 @@ const apparelVariants = ['Pack 3 botellas', 'Pack 6 botellas', 'Pack 12 botellas
 		name: size,
 		stock: index * 10,
 		options: {
-			Size: size,
+			Tamaño: size,
 		},
 	}),
 );

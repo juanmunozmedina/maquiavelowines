@@ -16,7 +16,7 @@ export function CartDrawer() {
 
 	return (
 		<Drawer
-			title="Cart"
+			title="Carrito"
 			open={CartStore.drawerOpen}
 			onOpenChange={CartStore.setDrawerOpen}
 			trigger={<CartButton as="div" />}

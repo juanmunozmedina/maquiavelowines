@@ -139,13 +139,13 @@ export function AddToCartForm(props: { product: Product }) {
 					}
 				>
 					<Match when={Object.keys(selectedOptions()).length < productOptionValues().size}>
-						<p class="h-12">Elige un estilo.</p>
+						<p class="h-12">Elige un pack.</p>
 					</Match>
 					<Match when={selectedVariant() == null}>
-						<p class="h-12">Este estilo no está disponible.</p>
+						<p class="h-12">Este pack no está disponible.</p>
 					</Match>
 					<Match when={selectedVariant()?.stock === 0}>
-						<p class="h-12">Este estilo está agotado.</p>
+						<p class="h-12">Este pack está agotado.</p>
 					</Match>
 					<Match when={quantity() > getVariantStock(selectedVariant())}>
 						<p class="h-12">Sólo {getVariantStock(selectedVariant())} queda en stock.</p>
