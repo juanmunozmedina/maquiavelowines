@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import { button } from '~/styles.ts';
 import Card from '~/components/ui/Card.tsx';
+import { button } from '~/styles.ts';
 
 export interface Props {
 	name: string;
@@ -12,7 +12,7 @@ export interface Props {
 ---
 
 <Card>
-	<a href={`/colecciones/${Astro.props.slug}`} class="w-full">
+	<a href={`/collections/${Astro.props.slug}`} class="w-full">
 		<article class="flex flex-col items-start gap-3 p-6">
 			{
 				Astro.props.imageUrl && (
