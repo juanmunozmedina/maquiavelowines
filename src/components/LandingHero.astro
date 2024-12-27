@@ -1,16 +1,18 @@
 ---
-import sm from '~/assets/hero-banner-sm.webp';
+/* import sm from '~/assets/hero-banner-sm.webp';
 import md from '~/assets/hero-banner-md.webp';
 import lg from '~/assets/hero-banner-lg.webp';
 import xl from '~/assets/hero-banner-xl.webp';
-import twoXl from '~/assets/hero-banner-2xl.webp';
+import twoXl from '~/assets/hero-banner-2xl.webp'; */
 import { button } from '~/styles.ts';
 ---
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <header
 	class="breakout focus-ring-light relative h-[384px] max-h-dvh content-end justify-items-start gap-y-4 bg-black py-8 text-white md:h-[512px] md:gap-y-8 md:bg-bottom"
 >
-	<picture>
+	<!-- <picture>
 		<source srcset={sm.src} media="(max-width: 640px)" />
 		<source srcset={md.src} media="(max-width: 768px)" />
 		<source srcset={lg.src} media="(max-width: 1024px)" />
@@ -21,7 +23,8 @@ import { button } from '~/styles.ts';
 			alt=""
 			class="breakout absolute inset-0 size-full object-cover object-right-bottom"
 		/>
-	</picture>
+	</picture> -->
+	<lite-youtube class="breakout absolute inset-0 size-full object-cover object-right-bottom" posterquality="maxresdefault" videoid="Lu-asv7RZaM" params="controls=0&enablejsapi=1&autoplay=1&playsinline=1&loop=1&showinfo=0&modestbranding=1"></lite-youtube>
 	<div
 		class="content relative text-4xl font-extrabold drop-shadow-md md:text-5xl md:leading-[50px]"
 	>

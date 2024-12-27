@@ -20,7 +20,7 @@ export default defineConfig({
 	},
 	image: {
 		// Update to your own image domains
-		domains: ['localhost', 'maquiavelowines.com', 'maquiavelowines.vercel.app'],
+		domains: ['localhost', 'maquiavelowines.com', 'maquiavelowines.vercel.app', 'maquiavelowines.netlify.app'],
 	},
 	experimental: {
 		env: {
