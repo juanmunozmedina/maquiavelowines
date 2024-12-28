@@ -7,6 +7,7 @@ import SiteFooter from '~/components/layout/SiteFooter.astro';
 import SiteHeader from '~/components/layout/SiteHeader.astro';
 import SiteRibbon from '~/components/layout/SiteRibbon.astro';
 import '../styles.css';
+import { ViewTransitions } from 'astro:transitions';
 
 const defaults = {
 	name: 'Bodegas Maquiavelo',
@@ -41,6 +42,7 @@ const { title } = Astro.props;
 				/>
 			)
 		}
+		<ViewTransitions />
 	</head>
 	<body class="content-grid min-h-screen">
 		<SiteRibbon />

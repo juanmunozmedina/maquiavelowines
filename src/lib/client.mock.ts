@@ -174,7 +174,7 @@ const collections: Record<string, Collection> = {
 const defaultVariant = {
 	id: 'default',
 	name: 'Default',
-	stock: 20,
+	stock: 200,
 	options: {},
 };
 
@@ -188,6 +188,12 @@ const apparelVariants = ['Pack 3 botellas', 'Pack 6 botellas', 'Pack 12 botellas
 		},
 	}),
 );
+
+const firstVariant = apparelVariants[0];
+const secondVariant = apparelVariants[1];
+const thirdVariant = apparelVariants[2];
+
+const prices = [1099, 1999, 2999]; // Assign different prices here
 
 const productDefaults = {
 	description: '',
