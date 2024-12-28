@@ -34,6 +34,10 @@ const { title } = Astro.props;
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"
 		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+			rel="stylesheet"
+		/>
 		<SEO {...defaults} {title} />
 
 		{
@@ -50,6 +54,7 @@ const { title } = Astro.props;
 	</head>
 	<body class="content-grid min-h-screen">
 		<script type="module" src="cookieconsent-config.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 		<SiteRibbon />
 		<div class={`breakout border-b w-full border-theme-base-300`}></div>
 		<SiteHeader />
@@ -59,49 +64,5 @@ const { title } = Astro.props;
 			<SiteFooter />
 		</div>
 		{import.meta.env.DEV && <SolidQueryDevtools client:idle />}
-		<div
-			id="popup-modal"
-			tabindex="-1"
-			class="fixed left-0 right-0 top-0 z-50 flex h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0"
-			aria-modal="true"
-			role="dialog"
-		>
-			<div class="relative m-auto max-h-full w-full max-w-md p-2">
-				<div class="relative rounded-lg bg-gray-700 shadow">
-					<div class="p-4 text-center md:p-5">
-						<svg
-							class="mx-auto mb-4 h-12 w-12 text-gray-400"
-							aria-hidden="true"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 20 20"
-						>
-							<path
-								stroke="currentColor"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-						</svg>
-						<h3 class="mb-5 text-lg font-normal text-gray-300">
-							Por un consumo responsable.<br />¿Tienes la mayoría de edad legal para consumir vino?
-						</h3>
-						<button
-							data-modal-hide="popup-modal"
-							type="button"
-							class="inline-flex items-center rounded-lg bg-green-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
-						>
-							Sí, tengo más de 18 años.
-						</button>
-						<a
-							href="https://www.google.com/?hl=es"
-							type="button"
-							class="ms-3 rounded-lg bg-red-600 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-red-800 focus:z-10 focus:outline-none focus:ring-4 focus:ring-red-300"
-							>No</a
-						>
-					</div>
-				</div>
-			</div>
-		</div>
 	</body>
 </html>
