@@ -242,7 +242,8 @@ const products: Record<string, Product> = {
 		name: 'ADN Verdejo',
 		slug: 'adn-verdejo',
 		tagline: '100% Verdejo.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Verdejo</p> <p><b>Graduación</b>: 12% Alc. Vol.</p> <p><b>Año</b>: 2023</p> </div> <div> <p><b>Descripción</b></p> <p>ADN 100% Verdejo. Ideal para acompañar con quesos azules, entrantes, pescados blancos, paella y arroces.</p> <p><b>Vista</b>: Limpio y fresco en que las notas herbáceas se unen a los aromas frutales, como sus matices a hinojo propios de la uva verdejo.<br> <b>Nariz</b>: Potente en nariz y con un largo retrogusto, es un vino ideal para acompañar platos de mar y también para degustar solo.<br> <b>Boca</b>: Vino extremadamente fresco con una vivacidad y prolongada persistencia floral.<br></p> <p><b>Recomendaciones</b></p> <p>Servir entre 7 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p> <div></div></div>',
 		price: 1070,
 		imageUrl: '/assets/verdejo.png',
 		collectionIds: ['maquiavelo'],
@@ -276,7 +277,8 @@ const products: Record<string, Product> = {
 		name: 'Crianza',
 		slug: 'crianza',
 		tagline: 'Una experiencia enológica diferente.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell</p> <p><b>Graduación</b>: 14% Alc. Vol.</p> <p><b>Año</b>: 2020</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Maquiavelo Crianza es un tinto de la cosecha 2020 elaborado en su totalidad con selecta uva monastrell. Su sabor destaca por ser muy suave y afrutado en boca. Conservado 12 meses en barrica de roble francés. Ideal para acompañar con cualquier tipo de carnes, pastas, verduras, quesos o incluso para degustar solo plácidamente. Una apuesta segura, un crianza apto para todos los paladares.</p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p> <div> </div></div>',
 		price: 1180,
 		imageUrl: '/assets/crianza.png',
 		collectionIds: ['maquiavelo'],
@@ -310,7 +312,8 @@ const products: Record<string, Product> = {
 		name: 'Premium',
 		slug: 'premium',
 		tagline: 'El vino secreto de Maquiavelo.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell / Cabernet Sauvignon</p> <p><b>Graduación</b>: 14% Alc. Vol.</p> <p><b>Año</b>: 2017</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Maquiavelo Premium es un vino tinto de la cosecha 2017 elaborado con selecta uva monastrell (85%) y una pequeña parte de uva cabernet sauvignon (15%). Su sabor destaca por ser suave en boca, con retrogusto floral y toques de madera. Acabado con un recubrimiento lacrado en bronce y conservado 18 meses en barrica de roble francés. Ideal para acompañar con cualquier tipo de carnes, especialmente carnes rojas, pastas, verduras o quesos curados. Sin duda, un auténtico placer para los paladares más exigentes.</p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p> </div>',
 		price: 1580,
 		imageUrl: '/assets/premium.png',
 		collectionIds: ['maquiavelo'],
@@ -344,7 +347,8 @@ const products: Record<string, Product> = {
 		name: 'Vermut',
 		slug: 'vermut',
 		tagline: 'Maquiavelo y Pedro Ximénez.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Moscatel y Pedro Ximénez</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Contenido de azúcares</b>: 130g/l de azúcares reductores.</p> </div> <div> <p><b>Descripción</b></p> <p>Vermut Maquiavelo tiene como base el vino Pedro Ximénez, referente en su categoría, dulce y suave mezclado con Moscatel, aromatizado con la mejor selección de notas herbales que dan como resultado este exclusivo Vermut.</p> <p><b>Notas de sabor</b>: De color ámbar brillante, su aroma es una mezcla de olores extraídos de la maceración del vino con los frutos y plantas que dan como resultado un todo homogéneo y constante. Muy agradable al paladar, su sabor es poco ácido, dulce y ligeramente amargo.</p> <p><b>Recomendaciones</b></p> <p>Consumir frío, solo o con hielo, mezclado con zumos de frutas, como arte principal de numerosas recetas de cócteles etc. Excelente aperitivo.</p> <div></div></div>',
 		price: 1190,
 		imageUrl: '/assets/vermut.png',
 		collectionIds: ['maquiavelo'],
@@ -378,7 +382,8 @@ const products: Record<string, Product> = {
 		name: 'Vermut Citrus',
 		slug: 'vermut-citrus',
 		tagline: 'Maquiavelo y limones de Murcia.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Moscatel uva blanca</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Ingredientes</b>: Jengibre, canela, salvia seca, clavo, zumo de limón, piel de naranja y de limón, vainas de cardamomo.</p> </div> <div> <p><b>Descripción</b></p> <p>Moscatel uva blanca (vino base procedente de uva moscatel, debido al potencial aromático que aporta esta variedad), puro, añejo, sin más adición que la de infusiones, extractos y aromas de plantas. Estos vinos son típicamente europeos, con un aroma característico que les da una elegancia particular ideal para el aperitivo. Es una bebida tónica, versátil y aromática, se puede consumir de muchas maneras, aunque la mejor sola, con hielo y con un trozo de piel de naranja o de limón. Es uno de los ingredientes más importantes en la coctelería clásica.</p> <p><b>Notas de sabor</b>: Profundo aroma especiado con limón donde destacan notas de clavo y canela que se funden en un elegante amargor final.<br>Con tonos dulces avainillados, balsámicos y tostados; ligero toque de regaliz.<br>Además de su elegante color cobrizo, en boca se pueden sentir también matices de ajenjo, naranja, nuez moscada y quina. Sin duda, toda una experiencia para el paladar.</p> <p><b>Recomendaciones</b></p> <p>Consumir frío, solo o con hielo, mezclado con zumos de frutas, como arte principal de numerosas recetas de cócteles etc. Excelente aperitivo.</p> <div></div></div>',
 		price: 1190,
 		imageUrl: '/assets/citrus.png',
 		collectionIds: ['maquiavelo'],
@@ -412,7 +417,8 @@ const products: Record<string, Product> = {
 		name: 'Viñas Selectas',
 		slug: 'vinas-selectas',
 		tagline: 'El vino selecto de Maquiavelo.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell (Viñas Selectas)</p> <p><b>Graduación</b>: 14% Alc. Vol.</p> <p><b>Año</b>: 2019</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Maquiavelo Viñas Selectas es un vino tinto joven de la cosecha 2019 elaborado con uva monastrell de viñas selectas. Un espectáculo de sabores que te dejará con la boca abierta. Cada uva ha sido seleccionada entre las mejores de cada viña y conservado 4 meses en barrica de roble francés. Ideal para acompañar con carnes, especialmente carnes rojas, pastas, verduras, quesos de cualquier tipo o degustar solo. Su mezcla de sabores te hará rememorar viejos recuerdos.</p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p> <div></div></div>',
 		price: 775,
 		imageUrl: '/assets/vinas.png',
 		collectionIds: ['maquiavelo'],
@@ -446,7 +452,8 @@ const products: Record<string, Product> = {
 		name: 'Ancestral Monastrell Pie Franco',
 		slug: 'ancestral-monastrell-pie-franco',
 		tagline: 'Ancestral edición especial monastrell pie franco.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell Pie Franco</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Año</b>: 2019</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Vino seleccionado y escogido para ser embotellado a mano de una edición especial y limitada. Su tipo de elaboración, etiquetado y lacrado manual, hacen que en tus manos sostengas una pieza única procedente de viñedos centenarios.</p> <p><b>Vista</b>: Color picota oscuro con borde granate.<br> <b>Nariz</b>: Muy expresivo y con buena complejidad. Aromas de fruta roja y negra muy madura, casi mermelada, chocolate, especiados, café, recuerdos balsámicos y minerales.<br> <b>Boca</b>: Potencia controlada, sabroso, con la fruta madura predominando sobre las notas tostadas. Combinación de frescos balsámicos con agradables especiados. Taninos pulidos, final largo y gran persistencia.<br></p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p> <div> </div></div>',
 		price: 3400,
 		imageUrl: '/assets/ancestral_especial.png',
 		collectionIds: ['ancestral'],
@@ -548,7 +555,8 @@ const products: Record<string, Product> = {
 		name: 'Espumoso Brut',
 		slug: 'espumoso-brut',
 		tagline: 'Maquiavelo edición especial de vino espumoso brut.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Macabeo</p> <p><b>Graduación</b>: 11% Alc. Vol.</p> <p><b>Año</b>: 2023</p> </div> <div> <p><b>Nota de cata</b></p> <p>Vino intenso donde predominan los aromas varietales con un fondo de cítricos y frutas tropicales.</p> <p>Un vino de gran frescura que se muestra agradable y expresivo en boca.</p> <p><b>Recomendaciones</b></p> <p>Degustar entre 8 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p> <div></div></div>',
 		price: 1570,
 		imageUrl: '/assets/brut.png',
 		collectionIds: ['centhaurus'],
@@ -582,7 +590,8 @@ const products: Record<string, Product> = {
 		name: 'Espumoso Dulce Blanco',
 		slug: 'espumoso-dulce-blanco',
 		tagline: 'Maquiavelo edición especial de vino espumoso dulce blanco.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Macabeo</p> <p><b>Graduación</b>: 8% Alc. Vol.</p> <p><b>Año</b>: 2023</p> </div> <div> <p><b>Nota de cata</b></p> <p>Bebida aromatizada a base de vino.</p> <p>Fresco, afrutado con un bajo contenido en alcohol, ideal para todo tipo de comidas y eventos.</p> <p><b>Recomendaciones</b></p> <p>Degustar entre 8 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p> <div></div></div>',
 		price: 1190,
 		imageUrl: '/assets/sweetgreen.png',
 		collectionIds: ['centhaurus'],
@@ -616,7 +625,8 @@ const products: Record<string, Product> = {
 		name: 'Espumoso Dulce Rosado',
 		slug: 'espumoso-dulce-rosado',
 		tagline: 'Maquiavelo edición especial de vino espumoso dulce rosado.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Bobal</p> <p><b>Graduación</b>: 8% Alc. Vol.</p> <p><b>Año</b>: 2023</p> </div> <div> <p><b>Nota de cata</b></p> <p>Bebida aromatizada a base de vino.</p> <p>Fresco, afrutado con un bajo contenido en alcohol, ideal para todo tipo de comidas y eventos.</p> <p><b>Recomendaciones</b></p> <p>Degustar entre 8 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p> <div></div></div>',
 		price: 1190,
 		imageUrl: '/assets/sweetred.png',
 		collectionIds: ['centhaurus'],
@@ -650,7 +660,8 @@ const products: Record<string, Product> = {
 		name: 'Espumoso Semiseco',
 		slug: 'espumoso-semiseco',
 		tagline: 'Maquiavelo edición especial de vino espumoso semiseco.',
-		description: '',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Macabeo</p> <p><b>Graduación</b>: 11% Alc. Vol.</p> <p><b>Año</b>: 2023</p> </div> <div> <p><b>Nota de cata</b></p> <p>Vino intenso donde predominan los aromas varietales con un fondo de cítricos y frutas tropicales.</p> <p>Un vino de gran frescura que se muestra agradable y expresivo en boca.</p> <p><b>Recomendaciones</b></p> <p>Degustar entre 8 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p> <div></div></div>',
 		price: 1570,
 		imageUrl: '/assets/semidry.png',
 		collectionIds: ['centhaurus'],
