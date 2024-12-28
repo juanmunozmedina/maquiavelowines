@@ -88,7 +88,9 @@ export function CartItem(props: { item: LineItem; class?: string }) {
 					{/* this translation is for visual vertical centering */}
 					<p class="-translate-y-0.5 py-2 font-medium leading-none text-slate-600">
 						<ProductPrice
-							price={props.item.productVariant.product.price}
+							price={
+								props.item.productVariant.product.price + props.item.productVariant.priceVariant
+							}
 							discount={props.item.productVariant.product.discount}
 						/>
 					</p>

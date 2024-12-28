@@ -1,13 +1,13 @@
+import {
+	ES_SHIPPING_RATE_ID,
+	INTERNATIONAL_SHIPPING_RATE_ID,
+	STRIPE_SECRET_KEY,
+} from 'astro:env/server';
 import type { APIRoute } from 'astro';
 import Stripe from 'stripe';
 import { z } from 'zod';
 import { loadCartFromCookies } from '~/features/cart/cart.server.ts';
 import type { stripeProductMetadataSchema } from '~/lib/products.ts';
-import {
-	INTERNATIONAL_SHIPPING_RATE_ID,
-	STRIPE_SECRET_KEY,
-	ES_SHIPPING_RATE_ID,
-} from 'astro:env/server';
 
 export const POST: APIRoute = async (context) => {
 	const cart = await loadCartFromCookies(context.cookies);
@@ -43,7 +43,10 @@ export const POST: APIRoute = async (context) => {
 						images: [new URL(item.productVariant.product.imageUrl, context.url).href],
 						metadata,
 					},
-					unit_amount: item.productVariant.product.price - item.productVariant.product.discount,
+					unit_amount:
+						item.productVariant.product.price +
+						item.productVariant.priceVariant -
+						item.productVariant.product.discount,
 				},
 				quantity: item.quantity,
 			};

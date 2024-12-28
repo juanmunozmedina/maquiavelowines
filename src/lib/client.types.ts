@@ -29,6 +29,8 @@ export type Product = {
 			[key: string]: string;
 		};
 		stock: number;
+		/** The price of the variant in cents. */
+		priceVariant: number;
 	}>;
 };
 
@@ -71,6 +73,7 @@ export type LineItem = Merge<
 			options: {
 				[key: string]: string;
 			};
+			priceVariant: number;
 		};
 	}
 >;

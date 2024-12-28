@@ -186,14 +186,9 @@ const apparelVariants = ['Pack 3 botellas', 'Pack 6 botellas', 'Pack 12 botellas
 		options: {
 			Tamaño: size,
 		},
+		priceVariant: 0,
 	}),
 );
-
-const firstVariant = apparelVariants[0];
-const secondVariant = apparelVariants[1];
-const thirdVariant = apparelVariants[2];
-
-const prices = [1099, 1999, 2999]; // Assign different prices here
 
 const productDefaults = {
 	description: '',
@@ -217,7 +212,29 @@ const products: Record<string, Product> = {
 		price: 1070,
 		imageUrl: '/assets/blanco.png',
 		collectionIds: ['maquiavelo'],
-		variants: apparelVariants,
+		variants: [
+			{
+				id: 'adn-sauvignon-blanc-3',
+				name: 'ADN Sauvignon Blanc',
+				stock: 1000,
+				options: { Tamaño: 'Pack 3 botellas' },
+				priceVariant: 2140,
+			},
+			{
+				id: 'adn-sauvignon-blanc-6',
+				name: 'ADN Sauvignon Blanc',
+				stock: 1000,
+				options: { Tamaño: 'Pack 6 botellas' },
+				priceVariant: 5350,
+			},
+			{
+				id: 'adn-sauvignon-blanc-12',
+				name: 'ADN Sauvignon Blanc',
+				stock: 1000,
+				options: { Tamaño: 'Pack 12 botellas' },
+				priceVariant: 11770,
+			},
+		],
 	},
 	'adn-verdejo': {
 		...productDefaults,

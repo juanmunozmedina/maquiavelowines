@@ -4,9 +4,16 @@ import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import { defineConfig, envField } from 'astro/config';
 
+import jopSoftwarecookieconsent from '@jop-software/astro-cookieconsent';
+
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind({ applyBaseStyles: false }), icon(), solidJs()],
+	integrations: [
+		tailwind({ applyBaseStyles: false }),
+		icon(),
+		solidJs(),
+		jopSoftwarecookieconsent(),
+	],
 	// Update to your storefront URL
 	site: 'https://maquiavelowines.netlify.app',
 	output: 'server',
@@ -20,7 +27,12 @@ export default defineConfig({
 	},
 	image: {
 		// Update to your own image domains
-		domains: ['localhost', 'maquiavelowines.com', 'maquiavelowines.vercel.app', 'maquiavelowines.netlify.app'],
+		domains: [
+			'localhost',
+			'maquiavelowines.com',
+			'maquiavelowines.vercel.app',
+			'maquiavelowines.netlify.app',
+		],
 	},
 	experimental: {
 		env: {

@@ -46,6 +46,7 @@
 		"@fontsource-variable/inter": "5.0.18",
 		"@hey-api/client-fetch": "^0.2.4",
 		"@iconify-json/mdi": "^1.2.2",
+		"@jop-software/astro-cookieconsent": "^3.0.1",
 		"@kobalte/core": "0.13.4",
 		"@kobalte/tailwindcss": "0.9.0",
 		"@playwright/test": "^1.47.0",
@@ -63,6 +64,7 @@
 		"tailwindcss": "^3.4.11",
 		"tailwindcss-animate": "^1.0.7",
 		"type-fest": "^4.26.1",
+		"vanilla-cookieconsent": "^3.0.1",
 		"zod": "3.23.8"
 	}
 }

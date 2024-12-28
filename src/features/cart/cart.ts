@@ -88,7 +88,9 @@ export function getCartSubtotal(cart: Cart) {
 	return cart.items.reduce(
 		(total, item) =>
 			total +
-			(item.productVariant.product.price - (item.productVariant.product.discount ?? 0)) *
+			(item.productVariant.product.price +
+				item.productVariant.priceVariant -
+				(item.productVariant.product.discount ?? 0)) *
 				item.quantity,
 		0,
 	);

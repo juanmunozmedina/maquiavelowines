@@ -86,12 +86,13 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 						{product.name}
 					</h1>
 					{product.tagline && <p class="text-slate-700">{product.tagline}</p>}
-					<p class="text-xl text-slate-700 md:text-2xl">
+					<p class="flex gap-1 text-xl text-slate-700 md:text-2xl">
 						<ProductPrice
 							class="gap-3 font-semibold"
 							price={product.price}
 							discount={product.discount}
 						/>
+						<span> / botella</span>
 					</p>
 				</header>
 
