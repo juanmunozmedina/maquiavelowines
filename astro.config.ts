@@ -4,16 +4,9 @@ import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import { defineConfig, envField } from 'astro/config';
 
-import jopSoftwarecookieconsent from '@jop-software/astro-cookieconsent';
-
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		tailwind({ applyBaseStyles: false }),
-		icon(),
-		solidJs(),
-		jopSoftwarecookieconsent(),
-	],
+	integrations: [tailwind({ applyBaseStyles: false }), icon(), solidJs()],
 	// Update to your storefront URL
 	site: 'https://maquiavelowines.netlify.app',
 	output: 'server',
