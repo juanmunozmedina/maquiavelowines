@@ -19,7 +19,7 @@ export default function ProductCarouselSection(
 		if (!list) return;
 
 		const item = document.getElementById(MEASURED_ITEM_ID);
-		const itemWidth = (item?.getBoundingClientRect().width ?? 300) + GAP;
+		const itemWidth = (item?.getBoundingClientRect().width ?? 275) + GAP;
 		const containerWidth = list.getBoundingClientRect().width;
 		const numCardsToScrollBy = Math.max(Math.floor(containerWidth / itemWidth), 1);
 
