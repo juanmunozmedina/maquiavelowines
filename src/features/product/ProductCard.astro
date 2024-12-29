@@ -27,8 +27,8 @@ const { class: className, elementId, imageLoading, ...product } = Astro.props;
 			<Image
 				src={new URL(product.imageUrl, Astro.url).href}
 				alt={product.name}
-				width={260}
-				height={390}
+				width={290}
+				height={435}
 				loading={imageLoading ?? 'lazy'}
 				densities={[1, 1.5, 2]}
 				draggable="false"
