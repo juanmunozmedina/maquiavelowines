@@ -4,9 +4,9 @@ import { z } from 'zod';
 import { loadCartFromCookies } from '~/features/cart/cart.server.ts';
 import type { stripeProductMetadataSchema } from '~/lib/products.ts';
 import {
+	ES_SHIPPING_RATE_ID,
 	INTERNATIONAL_SHIPPING_RATE_ID,
 	STRIPE_SECRET_KEY,
-	US_SHIPPING_RATE_ID,
 } from 'astro:env/server';
 
 export const POST: APIRoute = async (context) => {
@@ -59,7 +59,7 @@ export const POST: APIRoute = async (context) => {
 				countrySpecs.supported_transfer_countries as Stripe.Checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry[],
 		},
 		shipping_options: [
-			{ shipping_rate: US_SHIPPING_RATE_ID },
+			{ shipping_rate: ES_SHIPPING_RATE_ID },
 			{ shipping_rate: INTERNATIONAL_SHIPPING_RATE_ID },
 		],
 		phone_number_collection: {
