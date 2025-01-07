@@ -14,6 +14,17 @@ export function CartDrawer() {
 		() => queryClient,
 	);
 
+	const subtotal = () =>
+	query.data.items.reduce(
+		(total, item) =>
+			total +
+			(item.productVariant.product.price +
+				item.productVariant.priceVariant -
+				(item.productVariant.product.discount ?? 0)) *
+				item.quantity,
+		0,
+	);
+
 	return (
 		<Drawer
 			title="Carrito"
