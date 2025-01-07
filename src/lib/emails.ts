@@ -1,12 +1,12 @@
+import Stripe from 'stripe';
+import { formatProductPrice } from '~/lib/currency.ts';
+import { stripeProductMetadataSchema } from '~/lib/products';
 import {
 	LOOPS_API_KEY,
 	LOOPS_FULFILLMENT_EMAIL,
 	LOOPS_FULFILLMENT_TRANSACTIONAL_ID,
 	LOOPS_SHOP_TRANSACTIONAL_ID,
 } from 'astro:env/server';
-import Stripe from 'stripe';
-import { formatProductPrice } from '~/lib/currency.ts';
-import { stripeProductMetadataSchema } from '~/lib/products';
 
 export async function sendCheckoutSuccessEmail(
 	email: string,
@@ -48,7 +48,7 @@ export async function sendCheckoutSuccessEmail(
 		: 'No se proporcionó ninguna dirección.';
 
 	const dataVariables = {
-		customerName: session.customer_details?.name ?? 'Astronaut',
+		customerName: session.customer_details?.name ?? 'Bodegas Maquiavelo',
 		orderRefNumber: orderId,
 		orderDate: new Date(session.created * 1000).toLocaleDateString(),
 		subTotal: formatProductPrice(session.amount_subtotal ?? 0),
@@ -63,7 +63,7 @@ export async function sendCheckoutSuccessEmail(
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
-			Authorization: `Bearer ${LOOPS_API_KEY}`,
+			Authorization: `Portador ${LOOPS_API_KEY}`,
 		},
 	};
 

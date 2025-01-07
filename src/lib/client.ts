@@ -13,7 +13,7 @@ if (!SHOP_API_KEY || !SHOP_API_URL) {
 client.setConfig({
 	baseUrl: SHOP_API_URL,
 	headers: {
-		Authorization: `Bearer ${SHOP_API_KEY}`,
+		Authorization: `Portador ${SHOP_API_KEY}`,
 	},
 });
 

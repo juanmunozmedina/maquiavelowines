@@ -51,7 +51,10 @@ async function getGeoLocation(address: Exclude<Address, null>) {
 		return results[0].geometry.location;
 	} catch (error) {
 		if (geo) {
-			console.error(`No se pudo obtener la ubicación geográfica de la dirección de envío [${geo.status}]`, error);
+			console.error(
+				`No se pudo obtener la ubicación geográfica de la dirección de envío [${geo.status}]`,
+				error,
+			);
 			console.error('Respuesta completa: ', await geo.text());
 			return undefined;
 		}
@@ -61,7 +64,9 @@ async function getGeoLocation(address: Exclude<Address, null>) {
 
 const geoLocation = order.shippingAddress && (await getGeoLocation(order.shippingAddress));
 if (!order.shippingAddress) {
-	console.error('Stripe inesperadamente no proporcionó una dirección de envío en los detalles de la sesión.');
+	console.error(
+		'Stripe inesperadamente no proporcionó una dirección de envío en los detalles de la sesión.',
+	);
 	// Display the information we can with a status code for error tracking.
 	Astro.response.status = 500;
 } else {
@@ -75,7 +80,7 @@ if (!order.shippingAddress) {
 }
 ---
 
-<PrimaryLayout title="Thanks for your order">
+<PrimaryLayout title="Gracias por tu pedido">
 	<div class="mx-auto flex w-full max-w-prose flex-col gap-y-2 text-slate-900">
 		<header class="flex flex-col gap-4 py-8">
 			<img
@@ -121,17 +126,26 @@ if (!order.shippingAddress) {
 							{productVariant.product.discount > 0 ? (
 								<p class="">
 									<span class="text-slate-500 line-through">
-										{formatProductPrice(productVariant.product.price * quantity)}
+										{formatProductPrice(
+											(productVariant.product.price + productVariant.priceVariant) * quantity,
+										)}
 									</span>
 									<br />
 									<span class="text-slate-700">
 										{formatProductPrice(
-											(productVariant.product.price - productVariant.product.discount) * quantity,
+											(productVariant.product.price +
+												productVariant.priceVariant -
+												productVariant.product.discount) *
+												quantity,
 										)}
 									</span>
 								</p>
 							) : (
-								<p class="">{formatProductPrice(productVariant.product.price * quantity)}</p>
+								<p class="">
+									{formatProductPrice(
+										(productVariant.product.price + productVariant.priceVariant) * quantity,
+									)}
+								</p>
 							)}
 						</a>
 					</li>
