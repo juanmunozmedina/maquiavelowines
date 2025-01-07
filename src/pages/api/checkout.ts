@@ -3,11 +3,12 @@ import Stripe from 'stripe';
 import { z } from 'zod';
 import { loadCartFromCookies } from '~/features/cart/cart.server.ts';
 import type { stripeProductMetadataSchema } from '~/lib/products.ts';
-import {
+/*import {
 	ES_SHIPPING_RATE_ID,
 	INTERNATIONAL_SHIPPING_RATE_ID,
 	STRIPE_SECRET_KEY,
-} from 'astro:env/server';
+} from 'astro:env/server';*/
+import { STRIPE_SECRET_KEY } from 'astro:env/server';
 
 export const POST: APIRoute = async (context) => {
 	const cart = await loadCartFromCookies(context.cookies);
@@ -18,7 +19,7 @@ export const POST: APIRoute = async (context) => {
 
 	const stripe = new Stripe(STRIPE_SECRET_KEY);
 
-	const countrySpecs = await stripe.countrySpecs.retrieve('ES');
+	//const countrySpecs = await stripe.countrySpecs.retrieve('ES');
 
 	const session = await stripe.checkout.sessions.create({
 		mode: 'payment',
@@ -55,13 +56,13 @@ export const POST: APIRoute = async (context) => {
 			.href,
 		cancel_url: new URL('/', context.url).href,
 		shipping_address_collection: {
-			allowed_countries:
-				countrySpecs.supported_transfer_countries as Stripe.Checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry[],
+			allowed_countries: ['ES'],
+				//countrySpecs.supported_transfer_countries as Stripe.Checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry[],
 		},
-		shipping_options: [
+		/*shipping_options: [
 			{ shipping_rate: ES_SHIPPING_RATE_ID },
 			{ shipping_rate: INTERNATIONAL_SHIPPING_RATE_ID },
-		],
+		],*/
 		phone_number_collection: {
 			enabled: true,
 		},
