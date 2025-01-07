@@ -23,14 +23,16 @@ export function CartDrawer() {
 		>
 			<div class="flex h-full flex-col py-4">
 				<CartSummary />
-				<Show when={query.data.items.length > 0}>
+				<Show when={subtotal() / 100 >= 60}>
 					<form method="post" action="/api/checkout" class="contents" data-astro-reload>
 						<Button type="submit">Verificar</Button>
 					</form>
 				</Show>
-				<aside class="mt-3 text-balance text-center text-sm font-medium text-theme-base-500">
-					El descuento y el envío se calcularán en la página de pago.
-				</aside>
+				<Show when={subtotal() / 100 < 60}>
+					<Button disabled type="submit">
+						El pedido mínimo para el envío es de 60€
+					</Button>
+				</Show>
 			</div>
 		</Drawer>
 	);
