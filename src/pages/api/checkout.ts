@@ -38,9 +38,8 @@ export const POST: APIRoute = async (context) => {
 					product_data: {
 						name: item.productVariant.product.name,
 						description:
-							item.productVariant.product.description ||
-							item.productVariant.product.tagline ||
-							undefined,
+							//item.productVariant.product.description ||
+							item.productVariant.product.tagline || undefined,
 						images: [new URL(item.productVariant.product.imageUrl, context.url).href],
 						metadata,
 					},
@@ -57,7 +56,7 @@ export const POST: APIRoute = async (context) => {
 		cancel_url: new URL('/', context.url).href,
 		shipping_address_collection: {
 			allowed_countries: ['ES'],
-				//countrySpecs.supported_transfer_countries as Stripe.Checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry[],
+			//countrySpecs.supported_transfer_countries as Stripe.Checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry[],
 		},
 		/*shipping_options: [
 			{ shipping_rate: ES_SHIPPING_RATE_ID },
