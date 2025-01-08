@@ -2,7 +2,6 @@ import { createQuery } from '@tanstack/solid-query';
 import { Index, Show } from 'solid-js';
 import { formatProductPrice } from '~/lib/currency.ts';
 import { queryClient } from '~/lib/query.ts';
-import { button } from '~/styles.ts';
 import { CartItem } from './CartItem.tsx';
 import { cartQueryOptions } from './cart.queries.ts';
 
@@ -62,9 +61,6 @@ function CartEmptyState() {
 
 			<div data-testid="cart-empty" class="flex flex-col items-center gap-4">
 				<h2 class="text-lg font-medium text-gray-700">Tu carrito está vacío</h2>
-				<a href="/" class={button({ className: 'mt-2' })}>
-					Empezar a comprar
-				</a>
 			</div>
 		</div>
 	);
