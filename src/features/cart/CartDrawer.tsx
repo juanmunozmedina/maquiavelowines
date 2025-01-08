@@ -15,15 +15,15 @@ export function CartDrawer() {
 	);
 
 	const subtotal = () =>
-	query.data.items.reduce(
-		(total, item) =>
-			total +
-			(item.productVariant.product.price +
-				item.productVariant.priceVariant -
-				(item.productVariant.product.discount ?? 0)) *
-				item.quantity,
-		0,
-	);
+		query.data.items.reduce(
+			(total, item) =>
+				total +
+				(item.productVariant.product.price +
+					item.productVariant.priceVariant -
+					(item.productVariant.product.discount ?? 0)) *
+					item.quantity,
+			0,
+		);
 
 	return (
 		<Drawer
@@ -36,7 +36,7 @@ export function CartDrawer() {
 				<CartSummary />
 				<Show when={subtotal() / 100 >= 60}>
 					<form method="post" action="/api/checkout" class="contents" data-astro-reload>
-						<Button type="submit">Verificar</Button>
+						<Button type="submit">Ir al proceso de pago</Button>
 					</form>
 				</Show>
 				<Show when={subtotal() / 100 < 60}>
