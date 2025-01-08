@@ -35,7 +35,7 @@ export default defineConfig({
 					access: 'secret',
 					// This is a random test key
 					default:
-						'sk_test_51Qb8hPPvnRfkgpYjVMDVG542p3ItBYVJxhZyY7ePL8Wb49OupwTWElNKyjsAhgqjduoyjnunfGBd1gIT2yyOYFR500sBojQA2Z',
+						'sk_test_51Hj8KiL8wfmXrUXX6shBm5Bjf3gOYxz9AbJLDExdXA2RawbENeLRcvbvRytjOBKVycqgCa2TrN4zxu0WQcf6uvOw00S6A2bYX4',
 					//'sk_test_CGGvfNiIPwLXiDwaOfZ3oX6Y',
 				}),
 				FATHOM_SITE_ID: envField.string({
