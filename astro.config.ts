@@ -34,7 +34,7 @@ export default defineConfig({
 					context: 'server',
 					access: 'secret',
 					// This is a random test key
-					default: 'sk_test_CGGvfNiIPwLXiDwaOfZ3oX6Y',
+					//default: 'sk_test_CGGvfNiIPwLXiDwaOfZ3oX6Y',
 				}),
 				FATHOM_SITE_ID: envField.string({
 					context: 'client',
