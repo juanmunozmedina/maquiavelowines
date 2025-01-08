@@ -178,7 +178,7 @@ const defaultVariant = {
 	options: {},
 };
 
-const apparelVariants = ['Pack 3 botellas', 'Pack 6 botellas', 'Pack 12 botellas'].map(
+/*const apparelVariants = ['Pack 3 botellas', 'Pack 6 botellas', 'Pack 12 botellas'].map(
 	(size, index) => ({
 		id: size,
 		name: size,
@@ -188,7 +188,7 @@ const apparelVariants = ['Pack 3 botellas', 'Pack 6 botellas', 'Pack 12 botellas
 		},
 		priceVariant: 0,
 	}),
-);
+);*/
 
 const productDefaults = {
 	description: '',
