@@ -10,7 +10,7 @@ Astro has spent years building the right foundation for content-driven websites,
 - [`astro:assets`](https://docs.astro.build/en/guides/images/#image--astroassets) for on-demand image optimization. Backed by Netlify CDN, Sharp, or your favorite image provider.
 - [`astro:env`](https://docs.astro.build/en/reference/configuration-reference/#experimentalenv) for environment variable management and type-safety.
 
-Astro Storefront powers [shop.astro.build](https://shop.astro.build) today, and our opinionated choice of services and libraries reflects that. We expect this repository to be the start of a new platform to meet your storefront's needs.
+Astro Storefront powers [maquiavelowines.com](https://maquiavelowines.com) today, and our opinionated choice of services and libraries reflects that. We expect this repository to be the start of a new platform to meet your storefront's needs.
 
 ## Project structure
 
