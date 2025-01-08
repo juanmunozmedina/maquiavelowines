@@ -9,6 +9,8 @@
 			"storefront:client": ["./src/lib/client.mock.ts"]
 		},
 		"jsx": "preserve",
-		"jsxImportSource": "solid-js"
+		"jsxImportSource": "solid-js",
+		"allowImportingTsExtensions": true,
+		"moduleResolution": "bundler"
 	}
 }
