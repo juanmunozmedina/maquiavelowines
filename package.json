@@ -41,6 +41,7 @@
 	},
 	"dependencies": {
 		"@astrojs/netlify": "^5.5.0",
+		"@astrojs/sitemap": "^3.2.1",
 		"@astrojs/solid-js": "^4.4.0",
 		"@astrojs/tailwind": "5.1.0",
 		"@fontsource-variable/inter": "5.0.18",
