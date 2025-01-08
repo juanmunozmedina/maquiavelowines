@@ -22,7 +22,7 @@ const products = filterProducts(productsResponse.data?.items ?? []).filter(
 		{
 			products.map((product, idx) => (
 				<li id={idx === 0 ? MEASURED_ITEM_ID : undefined} class="shrink-0 snap-start">
-					<ProductCard {...product} class="w-72" imageLoading={idx === 0 ? 'eager' : 'lazy'} />
+					<ProductCard {...product} class="w-56" imageLoading={idx === 0 ? 'eager' : 'lazy'} />
 				</li>
 			))
 		}
