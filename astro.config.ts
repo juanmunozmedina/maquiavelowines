@@ -29,6 +29,20 @@ export default defineConfig({
 			'maquiavelowines.netlify.app',
 		],
 	},
+	redirects: {
+		'/vinos/adn-sauvignon-blanc': '/products/adn-sauvignon-blanc',
+		'/vinos/adn-verdejo': '/products/adn-verdejo',
+		'/especial/ancestral': '/products/ancestral-monastrell-pie-franco',
+		'/vinos/crianza': '/products/crianza',
+		'/vinos/premium': '/products/premium',
+		'/vinos/vermut': '/products/vermut',
+		'/vinos/vermut-citrus': '/products/vermut-citrus',
+		'/vinos/vinas-selectas': '/products/vinas-selectas',
+		'/espumosos/espumoso-brut': '/products/espumoso-brut',
+		'/espumosos/espumoso-dulce-blanco': '/products/espumoso-dulce-blanco',
+		'/espumosos/espumoso-dulce-rosado': '/products/espumoso-dulce-rosado',
+		'/espumosos/espumoso-semiseco': '/products/espumoso-semiseco',
+	},
 	experimental: {
 		env: {
 			schema: {
