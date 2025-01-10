@@ -10,7 +10,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	integrations: [tailwind({ applyBaseStyles: false }), icon(), solidJs(), sitemap()],
 	// Update to your storefront URL
-	site: 'https://maquiavelowines.netlify.app',
+	site: 'https://maquiavelowines.com',
 	output: 'server',
 	adapter: netlify({ imageCDN: true }),
 	vite: {
