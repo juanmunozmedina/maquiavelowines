@@ -1,14 +1,40 @@
 import netlify from '@astrojs/netlify';
+import sitemap from '@astrojs/sitemap';
 import solidJs from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import { defineConfig, envField } from 'astro/config';
 
-import sitemap from '@astrojs/sitemap';
-
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind({ applyBaseStyles: false }), icon(), solidJs(), sitemap()],
+	integrations: [
+		tailwind({ applyBaseStyles: false }),
+		icon(),
+		solidJs(),
+		sitemap({
+			customPages: [
+				'https://maquiavelowines.com/products/adn-sauvignon-blanc',
+				'https://maquiavelowines.com/products/adn-verdejo',
+				'https://maquiavelowines.com/products/ancestral-monastrell-pie-franco',
+				'https://maquiavelowines.com/products/crianza',
+				'https://maquiavelowines.com/products/premium',
+				'https://maquiavelowines.com/products/vermut',
+				'https://maquiavelowines.com/products/vermut-citrus',
+				'https://maquiavelowines.com/products/vinas-selectas',
+				'https://maquiavelowines.com/products/brut-rose-excelence-espumoso',
+				'https://maquiavelowines.com/products/brut-excelence-espumoso',
+				'https://maquiavelowines.com/products/ancestral-monastrell-crianza',
+				'https://maquiavelowines.com/products/ancestral-alicante-bouschet',
+				'https://maquiavelowines.com/products/espumoso-brut',
+				'https://maquiavelowines.com/products/espumoso-dulce-blanco',
+				'https://maquiavelowines.com/products/espumoso-dulce-rosado',
+				'https://maquiavelowines.com/products/espumoso-semiseco',
+				'https://maquiavelowines.com/collections/maquiavelo',
+				'https://maquiavelowines.com/collections/ancestral',
+				'https://maquiavelowines.com/collections/centhaurus',
+			],
+		}),
+	],
 	// Update to your storefront URL
 	site: 'https://maquiavelowines.com',
 	output: 'server',
