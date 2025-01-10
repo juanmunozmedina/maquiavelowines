@@ -45,6 +45,10 @@ export default defineConfig({
 		'/vinos': '/collections/maquiavelo',
 		'/espumosos': '/collections/centhaurus',
 		'/ancestral-edicion-especial': '/collections/ancestral',
+		'/politica-de-cookies': '/cookies',
+		'/aviso-legal': '/legal',
+		'/condiciones-de-privacidad': '/privacidad',
+		'/condiciones-de-venta': '/venta',
 	},
 	experimental: {
 		env: {
