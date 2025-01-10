@@ -42,6 +42,9 @@ export default defineConfig({
 		'/espumosos/espumoso-dulce-blanco': '/products/espumoso-dulce-blanco',
 		'/espumosos/espumoso-dulce-rosado': '/products/espumoso-dulce-rosado',
 		'/espumosos/espumoso-semiseco': '/products/espumoso-semiseco',
+		'/vinos': '/collections/maquiavelo',
+		'/espumosos': '/collections/centhaurus',
+		'/ancestral-edicion-especial': '/collections/ancestral',
 	},
 	experimental: {
 		env: {
