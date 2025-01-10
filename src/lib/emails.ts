@@ -63,7 +63,7 @@ export async function sendCheckoutSuccessEmail(
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
-			Authorization: `Portador ${LOOPS_API_KEY}`,
+			Authorization: `Bearer ${LOOPS_API_KEY}`,
 		},
 	};
 
