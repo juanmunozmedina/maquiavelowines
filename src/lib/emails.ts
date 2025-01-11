@@ -3,7 +3,6 @@ import { formatProductPrice } from '~/lib/currency.ts';
 import { stripeProductMetadataSchema } from '~/lib/products';
 import {
 	LOOPS_API_KEY,
-	LOOPS_FULFILLMENT_EMAIL,
 	LOOPS_FULFILLMENT_TRANSACTIONAL_ID,
 	LOOPS_SHOP_TRANSACTIONAL_ID,
 } from 'astro:env/server';
@@ -14,12 +13,7 @@ export async function sendCheckoutSuccessEmail(
 	lineItems: Stripe.LineItem[],
 	session: Stripe.Checkout.Session,
 ) {
-	if (
-		!LOOPS_API_KEY ||
-		!LOOPS_SHOP_TRANSACTIONAL_ID ||
-		!LOOPS_FULFILLMENT_TRANSACTIONAL_ID ||
-		!LOOPS_FULFILLMENT_EMAIL
-	) {
+	if (!LOOPS_API_KEY || !LOOPS_SHOP_TRANSACTIONAL_ID || !LOOPS_FULFILLMENT_TRANSACTIONAL_ID) {
 		console.error('Faltan credenciales de Loops. Saltarse el envío de correo electrónico.');
 		return;
 	}
@@ -88,7 +82,7 @@ export async function sendCheckoutSuccessEmail(
 			body: JSON.stringify({
 				// Send copy to your store owner for fulfillment
 				transactionalId: LOOPS_FULFILLMENT_TRANSACTIONAL_ID,
-				email: LOOPS_FULFILLMENT_EMAIL,
+				email: 'pedidos@maquiavelowines.com',
 				dataVariables,
 			}),
 		}),

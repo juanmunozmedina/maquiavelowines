@@ -115,11 +115,11 @@ export default defineConfig({
 					access: 'public',
 					optional: true,
 				}),
-				LOOPS_FULFILLMENT_EMAIL: envField.string({
+				/*LOOPS_FULFILLMENT_EMAIL: envField.string({
 					context: 'server',
 					access: 'public',
 					optional: true,
-				}),
+				}),*/
 				// Used by the Astro team for our internal backend
 				SHOP_API_URL: envField.string({
 					context: 'server',
