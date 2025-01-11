@@ -50,7 +50,12 @@ export async function sendCheckoutSuccessEmail(
 	const dataVariables = {
 		customerName: session.customer_details?.name ?? 'estimado cliente',
 		orderRefNumber: orderId,
-		orderDate: new Date(session.created * 1000).toLocaleDateString(),
+		orderDate: new Date(session.created * 1000).toLocaleDateString('es-ES', {
+			weekday: 'long',
+			day: 'numeric',
+			month: 'long',
+			year: 'numeric',
+		}),
 		subTotal: formatProductPrice(session.amount_subtotal ?? 0),
 		discount: formatProductPrice(session.total_details?.amount_discount ?? 0),
 		shippingFee: formatProductPrice(session.total_details?.amount_shipping ?? 0),
