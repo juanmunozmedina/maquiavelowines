@@ -1,14 +1,14 @@
 ---
-/*import LandingHero from '~/components/LandingHero.astro';
+import LandingHero from '~/components/LandingHero.astro';
 import { applyDefaultCacheHeaders } from '~/config.ts';
 import CollectionSection from '~/features/collection/CollectionSection.astro';
 import ProductCarouselSection from '~/features/product/ProductCarouselSection.astro';
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 
-applyDefaultCacheHeaders(Astro.response.headers);*/
+applyDefaultCacheHeaders(Astro.response.headers);
 ---
 
-<!--<PrimaryLayout title="Bodegas Maquiavelo">
+<PrimaryLayout title="Bodegas Maquiavelo">
 	<LandingHero />
 	<main class="breakout mt-16 flex flex-col gap-y-16">
 		<div class="content">
@@ -16,47 +16,4 @@ applyDefaultCacheHeaders(Astro.response.headers);*/
 		</div>
 		<CollectionSection />
 	</main>
-</PrimaryLayout>--><!doctype html>
-<title>Sitio en mantenimiento | Bodegas Maquiavelo</title>
-<style>
-	body {
-		text-align: center;
-		padding: 150px;
-	}
-	h1 {
-		font-size: 50px;
-	}
-	body {
-		font:
-			20px Helvetica,
-			sans-serif;
-		color: #333;
-	}
-	article {
-		display: block;
-		text-align: left;
-		width: 650px;
-		margin: 0 auto;
-	}
-	a {
-		color: #777;
-		text-decoration: none;
-	}
-	a:hover {
-		color: #333;
-		text-decoration: none;
-	}
-</style>
-
-<article>
-	<h1>Volveremos pronto!</h1>
-	<div>
-		<p>
-			Disculpe las molestias, pero estamos realizando algunas tareas de mantenimiento en este
-			momento. Si lo necesita, siempre puede <a href="mailto:info@maquiavelowines.com"
-				>contactarnos</a
-			>; de lo contrario, volveremos a estar listos para que degustes nuestros vinos en breve.
-		</p>
-		<p>&mdash; El equipo de Bodegas Maquiavelo</p>
-	</div>
-</article>
+</PrimaryLayout>
