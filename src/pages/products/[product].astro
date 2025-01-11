@@ -12,6 +12,7 @@ import { ProductImageSwitcher } from '~/features/product/ProductImageSwitcher.ts
 import { ProductPrice } from '~/features/product/ProductPrice.tsx';
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 import { unwrap } from '~/lib/util.ts';
+import { Icon } from 'astro-icon/components';
 
 applyDefaultCacheHeaders(Astro.response.headers);
 
@@ -108,6 +109,36 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 					)
 				}
 			</div>
+		</div>
+		<div class="mx-0 mb-12 mt-8 flex flex-wrap gap-8 lg:gap-32">
+			<div class="box-border min-w-60 flex-1 border border-theme-base-200 p-4">
+				<i>
+					<Icon class="mx-auto my-2" name="mdi:credit-card-check" size={36} aria-hidden="true" />
+					<div class="sr-only">Stripe</div>
+				</i>
+				<p class="mb-2 block text-center text-slate-700">
+					Mediante Stripe nos aseguramos de que los pagos sean 100% seguros y rápidos de usar.
+					Tendrás todas las facilidades para pagar con tu entidad financiera en sencillos pasos.
+				</p>
+			</div>
+			<div class="box-border min-w-60 flex-1 border border-theme-base-200 p-4">
+				<i>
+					<Icon class="mx-auto my-2" name="mdi:truck" size={36} aria-hidden="true" />
+					<div class="sr-only">Envío</div>
+				</i>
+				<p class="mb-2 block text-center text-slate-700">
+					Envío gratuito para pedidos superiores a 60€ solo dentro del territorio peninsular. Tiempo
+					estimado de entrega: 3 a 5 días una vez realizado el pago.
+				</p>
+			</div>
+		</div>
+
+		<div class="mx-auto box-border max-w-lg bg-theme-base-100 p-4">
+			<p class="text-center text-sm text-theme-base-400">
+				Prohibida la venta de bebidas alcohólicas a menores de 18 años con aplicación a la Ley
+				5/2018, de 3 de mayo, de prevención del consumo de bebidas alcohólicas en la infancia y la
+				adolescencia.
+			</p>
 		</div>
 
 		<ProductCarouselSection

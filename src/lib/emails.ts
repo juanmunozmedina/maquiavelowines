@@ -35,7 +35,7 @@ export async function sendCheckoutSuccessEmail(
 			// without making DB calls 🫠
 			const variantNameText = meta.variantName === 'Default' ? '' : ` (${meta.variantName})`;
 
-			return `${item.description}${variantNameText} x ${item.quantity} for ${formatProductPrice(
+			return `${item.description}${variantNameText} x ${item.quantity} = ${formatProductPrice(
 				item.amount_total,
 			)}`;
 		})
@@ -48,7 +48,7 @@ export async function sendCheckoutSuccessEmail(
 		: 'No se proporcionó ninguna dirección.';
 
 	const dataVariables = {
-		customerName: session.customer_details?.name ?? 'Bodegas Maquiavelo',
+		customerName: session.customer_details?.name ?? 'estimado cliente',
 		orderRefNumber: orderId,
 		orderDate: new Date(session.created * 1000).toLocaleDateString(),
 		subTotal: formatProductPrice(session.amount_subtotal ?? 0),
