@@ -109,7 +109,7 @@ export const createOrder = <ThrowOnError extends boolean = false>(
 	if (!options?.body) throw new Error('No se proporcionó ningún cuerpo');
 	const order: Order = {
 		...options.body,
-		id: 'MQ01W',
+		id: 'BMQ01W',
 		number: 1001,
 		lineItems: options.body.lineItems.map((lineItem) => ({
 			...lineItem,
