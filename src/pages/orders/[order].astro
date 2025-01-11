@@ -11,7 +11,7 @@ import { formatProductPrice } from '~/lib/currency.ts';
 import { unwrap } from '~/lib/util.ts';
 import { productPath } from '~/paths.ts';
 
-const orderId = unwrap(Astro.params.order, 'order param not found');
+const orderId = unwrap(Astro.params.order, 'parámetro de orden no encontrado');
 
 const orderResponse = await getOrderById({ path: { id: orderId } });
 if (!orderResponse.data) {

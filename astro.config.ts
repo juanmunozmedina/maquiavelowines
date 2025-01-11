@@ -25,6 +25,8 @@ export default defineConfig({
 				'https://maquiavelowines.com/products/brut-excelence-espumoso',
 				'https://maquiavelowines.com/products/ancestral-monastrell-crianza',
 				'https://maquiavelowines.com/products/ancestral-alicante-bouschet',
+				'https://maquiavelowines.com/products/ancestral-petit-verdot',
+				'https://maquiavelowines.com/products/ancestral-cabernet',
 				'https://maquiavelowines.com/products/espumoso-brut',
 				'https://maquiavelowines.com/products/espumoso-dulce-blanco',
 				'https://maquiavelowines.com/products/espumoso-dulce-rosado',
@@ -75,6 +77,7 @@ export default defineConfig({
 		'/es/aviso-legal': '/legal',
 		'/es/condiciones-de-privacidad': '/privacidad',
 		'/es/condiciones-de-venta': '/venta',
+		'/es/maquiavelo': '/',
 	},
 	experimental: {
 		env: {
