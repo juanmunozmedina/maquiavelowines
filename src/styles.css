@@ -96,3 +96,21 @@
 		}
 	}
 }
+
+.c-breadcrumbs__crumbs {
+	gap: 0.5rem 0;
+}
+
+.c-breadcrumbs__link[aria-disabled='true'] {
+	pointer-events: none;
+	cursor: default;
+}
+
+.c-breadcrumbs__link {
+	text-transform: uppercase;
+	font-size: 0.875rem !important;
+}
+
+.c-breadcrumbs__link.is-current {
+	color: rgb(148 163 184);
+}
