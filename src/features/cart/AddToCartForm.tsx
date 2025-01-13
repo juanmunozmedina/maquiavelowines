@@ -139,7 +139,7 @@ export function AddToCartForm(props: { product: Product }) {
 					}
 				>
 					<Match when={Object.keys(selectedOptions()).length < productOptionValues().size}>
-						<p>Elige un pack.</p>
+						<p class="text-red-800">¡Elige un pack!</p>
 					</Match>
 					<Match when={selectedVariant() == null}>
 						<p>Este pack no está disponible.</p>
