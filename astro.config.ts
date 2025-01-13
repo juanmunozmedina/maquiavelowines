@@ -73,7 +73,6 @@ export default defineConfig({
 		'/es/condiciones-de-privacidad': '/privacidad',
 		'/es/condiciones-de-venta': '/venta',
 		'/es/maquiavelo': '/',
-		'https://maquiavelowines.netlify.app': 'https://maquiavelowines.com',
 	},
 	experimental: {
 		env: {
