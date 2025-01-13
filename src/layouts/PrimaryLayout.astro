@@ -8,10 +8,12 @@ import SiteHeader from '~/components/layout/SiteHeader.astro';
 import SiteRibbon from '~/components/layout/SiteRibbon.astro';
 import '../styles.css';
 import { ViewTransitions } from 'astro:transitions';
+import CookieConsent from '../components/CookieConsent.astro';
 
 const defaults = {
 	name: 'Bodegas Maquiavelo',
-	description: 'Una experiencia enológica diferente, un vino elaborado con el corazón.',
+	description:
+		'En Bodegas Maquiavelo, creemos que cada botella cuenta una historia. Ofrecemos vinos de pequeñas producciones que invitan a explorar y disfrutar de lo auténtico, perfectos para quienes buscan dejar atrás lo convencional y sorprender en cada encuentro.',
 	image: {
 		src: new URL('/social-v2.jpg?v=1', Astro.site).href,
 		alt: 'Bodegas Maquiavelo',
@@ -30,14 +32,6 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"
-		/>
-		<link
-			href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
-			rel="stylesheet"
-		/>
 		<SEO {...defaults} {title} />
 
 		{
@@ -53,8 +47,6 @@ const { title } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="content-grid min-h-screen">
-		<script type="module" src="cookieconsent-config.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 		<SiteRibbon />
 		<div class={`breakout border-b w-full border-theme-base-300`}></div>
 		<SiteHeader />
@@ -64,5 +56,8 @@ const { title } = Astro.props;
 			<SiteFooter />
 		</div>
 		{import.meta.env.DEV && <SolidQueryDevtools client:idle />}
+		<CookieConsent />
+		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
+		></script>
 	</body>
 </html>

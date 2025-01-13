@@ -7,7 +7,10 @@ import { fontFamily } from 'tailwindcss/defaultTheme.js';
 import plugin from 'tailwindcss/plugin.js';
 
 export default {
-	content: ['./src/**/*.{astro,js,jsx,ts,tsx}'],
+	content: [
+		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+		'./node_modules/flowbite/**/*.js',
+	],
 	theme: {
 		extend: {
 			fontFamily: {
@@ -21,6 +24,7 @@ export default {
 		},
 	},
 	plugins: [
+		require('flowbite/plugin'),
 		animate,
 		kobalte,
 		typography,

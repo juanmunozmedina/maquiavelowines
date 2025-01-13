@@ -1,6 +1,6 @@
-import 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js';
+import type { CookieConsentConfig } from 'vanilla-cookieconsent';
 
-CookieConsent.run({
+export const config: CookieConsentConfig = {
 	guiOptions: {
 		consentModal: {
 			layout: 'box',
@@ -79,11 +79,11 @@ CookieConsent.run({
 						{
 							title: 'Más información',
 							description:
-								'Para cualquier consulta en relación con mi política de cookies y sus opciones, por favor <a class="cc__link" href="mailto:info@maquiavelowines.com">contáctanos</a>.',
+								'Para cualquier consulta en relación con la política de cookies y sus opciones, por favor <a class="cc__link" href="mailto:info@maquiavelowines.com">contáctanos</a>.',
 						},
 					],
 				},
 			},
 		},
 	},
-});
+};
