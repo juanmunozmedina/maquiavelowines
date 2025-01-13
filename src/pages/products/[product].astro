@@ -56,7 +56,11 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 					text: product.collectionIds,
 					href: '/collections/' + product.collectionIds,
 				},
-				{ index: 2, 'aria-disabled': true },
+				{
+					index: 2,
+					'aria-disabled': true,
+					text: product.name,
+				},
 			]}
 		>
 			<svg

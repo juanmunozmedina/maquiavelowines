@@ -50,12 +50,7 @@ export default defineConfig({
 	},
 	image: {
 		// Update to your own image domains
-		domains: [
-			'localhost',
-			'maquiavelowines.com',
-			'maquiavelowines.vercel.app',
-			'maquiavelowines.netlify.app',
-		],
+		domains: ['localhost', 'maquiavelowines.com', 'maquiavelowines.netlify.app'],
 	},
 	redirects: {
 		'/es/vinos/adn-sauvignon-blanc': '/products/adn-sauvignon-blanc',
@@ -78,6 +73,7 @@ export default defineConfig({
 		'/es/condiciones-de-privacidad': '/privacidad',
 		'/es/condiciones-de-venta': '/venta',
 		'/es/maquiavelo': '/',
+		'https://maquiavelowines.netlify.app': 'https://maquiavelowines.com',
 	},
 	experimental: {
 		env: {
