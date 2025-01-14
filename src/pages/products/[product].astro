@@ -149,25 +149,25 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 								<ul class="inline-flex gap-2">
 									{product.medal[0] ? (
 										<li>
-											<a
-												href={product.medal[0]}
-												data-pswp-width="500"
-												data-pswp-height="500"
-												target="_blank"
-											>
-												<img width="64" height="64" src={product.medal[0]} />
+											<a href={product.medal[0]} target="_blank">
+												<img
+													alt="Medalla VinEspaña"
+													width="64"
+													height="64"
+													src={product.medal[0]}
+												/>
 											</a>
 										</li>
 									) : null}
 									{product.medal[1] ? (
 										<li>
-											<a
-												href={product.medal[1]}
-												data-pswp-width="500"
-												data-pswp-height="500"
-												target="_blank"
-											>
-												<img width="64" height="64" src={product.medal[1]} />
+											<a href={product.medal[1]} target="_blank">
+												<img
+													alt="Medalla VinEspaña"
+													width="64"
+													height="64"
+													src={product.medal[1]}
+												/>
 											</a>
 										</li>
 									) : null}
@@ -214,7 +214,7 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 		</div>
 
 		<div class="mx-auto box-border max-w-lg bg-theme-base-100 p-4">
-			<p class="text-center text-sm text-theme-base-400">
+			<p class="text-center text-sm text-slate-700">
 				Prohibida la venta de bebidas alcohólicas a menores de 18 años con aplicación a la Ley
 				5/2018, de 3 de mayo, de prevención del consumo de bebidas alcohólicas en la infancia y la
 				adolescencia.
