@@ -377,11 +377,11 @@ const products: Record<string, Product> = {
 		name: 'Vermut',
 		slug: 'vermut',
 		tagline: 'Maquiavelo y Pedro Ximénez.',
-		medal: ['/assets/gran-oro-2024.png'],
+		medal: ['/assets/gran-oro-2024.webp'],
 		description:
 			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Moscatel y Pedro Ximénez</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Contenido de azúcares</b>: 130g/l de azúcares reductores.</p> </div> <div> <p><b>Descripción</b></p> <p>Vermut Maquiavelo tiene como base el vino Pedro Ximénez, referente en su categoría, dulce y suave mezclado con Moscatel, aromatizado con la mejor selección de notas herbales que dan como resultado este exclusivo Vermut.</p> <p><b>Notas de sabor</b>: De color ámbar brillante, su aroma es una mezcla de olores extraídos de la maceración del vino con los frutos y plantas que dan como resultado un todo homogéneo y constante. Muy agradable al paladar, su sabor es poco ácido, dulce y ligeramente amargo.</p> <p><b>Recomendaciones</b></p> <p>Consumir frío, solo o con hielo, mezclado con zumos de frutas, como arte principal de numerosas recetas de cócteles etc. Excelente aperitivo.</p></div>',
 		price: 1190,
-		imageUrl: '/assets/vermut.webp',
+		imageUrl: '/assets/vermut.png',
 		collectionIds: ['maquiavelo'],
 		variants: [
 			{
