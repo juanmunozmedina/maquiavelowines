@@ -1,20 +1,20 @@
 # Tienda online (Bodegas Maquiavelo)
 
-Your storefront deserves best-in-class performance without the learning curve.
+Su escaparate merece el mejor rendimiento de su clase sin la curva de aprendizaje.
 
-Astro has spent years building the right foundation for content-driven websites, and ecommerce is naturally the next frontier. This repository showcases the top features that our community uses to ship with confidence:
+Astro ha pasado años construyendo las bases adecuadas para sitios web basados ​​en contenido y, naturalmente, el comercio electrónico es la próxima frontera. Este repositorio muestra las funciones principales que nuestra comunidad utiliza para realizar envíos con confianza:
 
-- [Islands architecture](https://docs.astro.build/en/concepts/islands/) with [SolidJS](https://docs.astro.build/en/guides/integrations-guide/solid-js/) for the smallest possible runtime cost.
-- [On-demand rendering](https://docs.astro.build/en/guides/server-side-rendering/) with CDN caching to deliver pages at the speed of HTML.
-- [`astro:actions`](https://docs.astro.build/en/guides/actions/) to build simple, type-safe endpoints for managing the user's session.
-- [`astro:assets`](https://docs.astro.build/en/guides/images/#image--astroassets) for on-demand image optimization. Backed by Netlify CDN, Sharp, or your favorite image provider.
-- [`astro:env`](https://docs.astro.build/en/reference/configuration-reference/#experimentalenv) for environment variable management and type-safety.
+- [Arquitectura de islas](https://docs.astro.build/en/concepts/islands/) con [SolidJS](https://docs.astro.build/en/guides/integrations-guide/solid-js/) para obtener el menor coste de tiempo de ejecución posible.
+- [Renderizado bajo demanda](https://docs.astro.build/en/guides/server-side-rendering/) con almacenamiento en caché CDN para entregar páginas a la velocidad de HTML.
+- [`astro:actions`](https://docs.astro.build/en/guides/actions/) para crear puntos finales simples y con seguridad de tipos para administrar la sesión del usuario.
+- [`astro:assets`](https://docs.astro.build/en/guides/images/#image--astroassets) para optimización de imágenes bajo demanda. Respaldado por Netlify CDN, Sharp o su proveedor de imágenes favorito.
+- [`astro:env`](https://docs.astro.build/en/reference/configuration-reference/#experimentalenv) para gestión de variables de entorno y seguridad de tipos.
 
-Astro Storefront powers [maquiavelowines.com](https://maquiavelowines.com) today, and our opinionated choice of services and libraries reflects that. We expect this repository to be the start of a new platform to meet your storefront's needs.
+Astro Storefront impulsa [maquiavelowines.com](https://maquiavelowines.com) hoy, y nuestra elección de servicios y bibliotecas testarudas lo refleja. Esperamos que este repositorio sea el comienzo de una nueva plataforma para satisfacer las necesidades de su tienda.
 
-## Project structure
+## Estructura del proyecto
 
-The primary project directories are outlined below:
+Los directorios principales del proyecto se describen a continuación:
 
 ```sh
 ├── public/
@@ -27,36 +27,36 @@ The primary project directories are outlined below:
 └── package.json
 ```
 
-`actions/` contains backend functions called from the client to manage a customer's cart. These are called client-side and backed by optimistic updates.
+`actions/` contiene funciones de backend llamadas desde el cliente para administrar el carrito de un cliente. Estos se denominan del lado del cliente y están respaldados por actualizaciones optimistas.
 
-`components/ui/` contains reusable components for common UI elements, including Buttons, Drawers, and Inputs. These are tested to meet modern accessibility guidelines.
+`components/ui/` contiene componentes reutilizables para elementos comunes de la interfaz de usuario, incluidos botones, cajones y entradas. Estos se prueban para cumplir con las pautas de accesibilidad modernas.
 
-`features/` contains domain-specific components and state management, organized by common ecommerce concepts:
+`features/` contiene componentes específicos del dominio y administración del estado, organizados por conceptos comunes de comercio electrónico:
 
-- `product/` - Used on the product landing page (PDP) and recommendation carousels.
-- `collection/` - Used to display product collections with sorting logic.
-- `cart/` - Used to manage the cart flyout and related client-side state.
+- `product/`: se utiliza en la página de destino del producto (PDP) y en los carruseles de recomendaciones.
+- `collection/`: se utiliza para mostrar colecciones de productos con lógica de clasificación.
+- `cart/`: se utiliza para administrar el menú desplegable del carrito y el estado relacionado del lado del cliente.
 
-`pages/` contains file-based routes for your storefront.
+`pages/` contiene rutas basadas en archivos para su escaparate.
 
-- `pages/api/` manages customer checkout using Stripe.
-- `pages/orders/` displays the customer's receipt on successful checkout.
-- `pages/collections/` displays product collections with dynamic filtering.
-- `pages/*` displays all other base-level routes.
+- `pages/api/` gestiona el pago del cliente mediante Stripe.
+- `pages/orders/` muestra el recibo del cliente en caso de pago exitoso.
+- `pages/collections/` muestra colecciones de productos con filtrado dinámico.
+- `pages/*` muestra todas las demás rutas de nivel base.
 
-## Services
+## Servicios
 
-This repository connects to related services to power payments, emails, and map embeds. Visit the [`astro.config.ts`](https://github.com/withastro/storefront/blob/main/astro.config.ts) file for an overview of all environment variables and access permissions required for each.
+Este repositorio se conecta a servicios relacionados para impulsar pagos, correos electrónicos e incrustaciones de mapas. Visite el archivo [`astro.config.ts`](https://github.com/withastro/storefront/blob/main/astro.config.ts) para obtener una descripción general de todas las variables de entorno y los permisos de acceso necesarios para cada una.
 
-You are welcome to change or entirely remove any of these services to meet your needs.
+Le invitamos a cambiar o eliminar por completo cualquiera de estos servicios para satisfacer sus necesidades.
 
-### Storefront API
+### API de escaparate
 
-[shop.astro.build](https://shop.astro.build) uses a custom API to manage products and fulfill orders.
+[shop.astro.build](https://shop.astro.build) utiliza una API personalizada para gestionar productos y gestionar pedidos.
 
-This client isn't available for public use today, though we've provided a "mock" version of all API functions under `src/lib/client.mock.ts`. We recommend using this file as a way to standardize requests for your ecommerce provider of choice.
+Este cliente no está disponible para uso público hoy, aunque proporcionamos una versión "simulada" de todas las funciones API en `src/lib/client.mock.ts`. Recomendamos utilizar este archivo como una forma de estandarizar las solicitudes para el proveedor de comercio electrónico de su elección.
 
-To use the mock API, update the [`tsconfig.json`](https://github.com/withastro/storefront/blob/main/tsconfig.json) entry for the `storefront:client` module:
+Para usar la API simulada, actualice la entrada [`tsconfig.json`](https://github.com/withastro/storefront/blob/main/tsconfig.json) para el módulo `storefront:client`:
 
 ```diff
 {
@@ -72,40 +72,40 @@ To use the mock API, update the [`tsconfig.json`](https://github.com/withastro/s
 
 ### Stripe
 
-[The Stripe API](https://docs.stripe.com/api) is used to accept payment and manage the checkout flow.
+[La API de Stripe](https://docs.stripe.com/api) se utiliza para aceptar pagos y gestionar el flujo de pago.
 
-#### Environment variables
+#### Variables de entorno
 
-- `STRIPE_SECRET_KEY` - A Stripe API key [used to authenticate requests](https://docs.stripe.com/keys).
+- `STRIPE_SECRET_KEY`: una clave API de Stripe [utilizada para autenticar solicitudes] (https://docs.stripe.com/keys).
 
-### Loops
+### Bucles
 
-[Loops.so](https://loops.so/) is an email sending service used to send a confirmation email to the customer after checking out successfully.
+[Loops.so](https://loops.so/) es un servicio de envío de correo electrónico que se utiliza para enviar un correo electrónico de confirmación al cliente después de realizar el pago correctamente.
 
-#### Environment variables
+#### Variables de entorno
 
-- `LOOPS_API_KEY` - A Loops API key [generated through their admin console](https://loops.so/docs/api-reference/intro).
-- `LOOPS_SHOP_TRANSACTIONAL_ID` - The ID of a [Loops transaction email](https://loops.so/docs/transactional/guide) to send to a customer when an order is placed. See `src/lib/emails.ts` for related email template data.
-- `LOOPS_FULFILLMENT_TRANSACTIONAL_ID` - The ID of a [Loops transaction email](https://loops.so/docs/transactional/guide) to send to _you_ (the seller) for order fulfillment. See `src/lib/emails.ts` for related email template data.
-- `LOOPS_FULFILLMENT_EMAIL` - The seller's email address to receive a receipt for fulfillment.
+- `LOOPS_API_KEY`: una clave API de Loops [generada a través de su consola de administración] (https://loops.so/docs/api-reference/intro).
+- `LOOPS_SHOP_TRANSACTIONAL_ID`: el ID de un [correo electrónico de transacción de Loops](https://loops.so/docs/transactional/guide) para enviar a un cliente cuando se realiza un pedido. Consulte `src/lib/emails.ts` para obtener datos de plantillas de correo electrónico relacionados.
+- `LOOPS_FULFILLMENT_TRANSACTIONAL_ID`: el ID de un [correo electrónico de transacción de Loops](https://loops.so/docs/transactional/guide) que se enviará a _usted_ (el vendedor) para el cumplimiento del pedido. Consulte `src/lib/emails.ts` para obtener datos de plantillas de correo electrónico relacionados.
+- `LOOPS_FULFILLMENT_EMAIL`: la dirección de correo electrónico del vendedor para recibir un recibo de cumplimiento.
 
 ### Google Maps
 
-[The Google Maps Platform](https://developers.google.com/maps) is used to embed a map with the customer's shipping address on the order details page.
+[La plataforma Google Maps](https://developers.google.com/maps) se utiliza para insertar un mapa con la dirección de envío del cliente en la página de detalles del pedido.
 
-#### Environment variables
+#### Variables de entorno
 
-- `GOOGLE_GEOLOCATION_SERVER_KEY` - A Google API key with permissions to use the Geolocation API. This key is only used server-side and can be [created with an IP address app restriction](https://developers.google.com/maps/api-security-best-practices#restricting-api-keys).
-- `GOOGLE_MAPS_BROWSER_KEY` - A Google API key with permissions to use the "Maps JavaScript API." This key is **publicly available on the client** and must be [created with a Website app restriction](https://developers.google.com/maps/api-security-best-practices#restricting-api-keys) to only allow access from your project's deployment URL.
+- `GOOGLE_GEOLOCATION_SERVER_KEY`: una clave API de Google con permisos para utilizar la API de geolocalización. Esta clave solo se usa en el lado del servidor y se puede [crear con una restricción de aplicación de dirección IP](https://developers.google.com/maps/api-security-best-practices#restricting-api-keys).
+- `GOOGLE_MAPS_BROWSER_KEY`: una clave API de Google con permisos para utilizar la "API de JavaScript de Maps". Esta clave está **disponible públicamente en el cliente** y debe [crearse con una restricción de aplicación del sitio web](https://developers.google.com/maps/api-security-best-practices#restricting-api-keys) para permitir solo el acceso desde la URL de implementación de su proyecto.
 
-## Commands
+## Comandos
 
-This project uses [pnpm](https://pnpm.io/) to manage dependencies. Be sure to install this tool, then run startup commands from your terminal:
+Este proyecto utiliza [pnpm](https://pnpm.io/) para gestionar las dependencias. Asegúrese de instalar esta herramienta y luego ejecute los comandos de inicio desde su terminal:
 
-| Command             | Action                                           |
-| :------------------ | :----------------------------------------------- |
-| `pnpm install`      | Installs dependencies                            |
-| `pnpm dev`          | Starts local dev server                          |
-| `pnpm build`        | Build your production site to `./dist/`          |
-| `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro --help` | Get help using the Astro CLI                     |
+| Command             | Action                                               |
+| :------------------ | :--------------------------------------------------- |
+| `pnpm install`      | Instala dependencias                                 |
+| `pnpm dev`          | Inicia el servidor de desarrollo local               |
+| `pnpm build`        | Construya su sitio de producción para `./dist/`      |
+| `pnpm astro ...`    | Ejecute comandos CLI como `astro add`, `astro check` |
+| `pnpm astro --help` | Obtenga ayuda para usar Astro CLI                    |

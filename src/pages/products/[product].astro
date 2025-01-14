@@ -144,17 +144,31 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 					</p>
 					{
 						product.medal ? (
-							<fieldset>
+							<fieldset id="medals">
 								<label class="mb-2 mt-4 block text-slate-700">Medallas</label>
-								<ul class="inline-flex gap-4">
+								<ul class="inline-flex gap-2">
 									{product.medal[0] ? (
 										<li>
-											<img width="64" height="64" src={product.medal[0]} />
+											<a
+												href={product.medal[0]}
+												data-pswp-width="500"
+												data-pswp-height="500"
+												target="_blank"
+											>
+												<img width="64" height="64" src={product.medal[0]} />
+											</a>
 										</li>
 									) : null}
 									{product.medal[1] ? (
 										<li>
-											<img width="64" height="64" src={product.medal[1]} />
+											<a
+												href={product.medal[1]}
+												data-pswp-width="500"
+												data-pswp-height="500"
+												target="_blank"
+											>
+												<img width="64" height="64" src={product.medal[1]} />
+											</a>
 										</li>
 									) : null}
 								</ul>
@@ -215,3 +229,24 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 		<CollectionSection />
 	</main>
 </PrimaryLayout>
+
+<script>
+	import PhotoSwipeLightbox from 'photoswipe/lightbox';
+	import 'photoswipe/style.css';
+
+	let lightbox: PhotoSwipeLightbox;
+
+	document.addEventListener('astro:page-load', () => {
+		lightbox = new PhotoSwipeLightbox({
+			gallery: '#medals',
+			children: 'a',
+			pswpModule: () => import('photoswipe'),
+		});
+
+		lightbox.init();
+	});
+
+	document.addEventListener('astro:before-swap', () => {
+		lightbox.destroy();
+	});
+</script>
