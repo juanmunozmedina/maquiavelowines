@@ -130,7 +130,7 @@ export function AddToCartForm(props: { product: Product }) {
 				</label>
 				<NumberInput id="quantity" min={1} value={quantity()} setValue={setQuantity} />
 			</div>
-			<div class="sticky bottom-0 grid h-12 items-center gap-2 bg-white">
+			<div class="mb-8 sticky bottom-0 grid h-12 items-center gap-2 bg-white">
 				<Switch
 					fallback={
 						<Button type="submit" pending={mutation.isPending}>
