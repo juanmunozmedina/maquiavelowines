@@ -77,7 +77,11 @@ const products = productsResponse.data.items.filter((product) => {
 					<Breadcrumbs
 						linkTextFormat="capitalized"
 						customizeLinks={[
-							{ index: 1, 'aria-disabled': true, text: 'Categoría' },
+							{
+								index: 1,
+								text: 'Categoría',
+								href: 'https://maquiavelowines.com/#collection-section-heading',
+							},
 							{ index: 2, 'aria-disabled': true },
 						]}
 					>
