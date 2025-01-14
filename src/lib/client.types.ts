@@ -7,6 +7,7 @@ export type Product = {
 	name: string;
 	slug: string;
 	tagline: string | null;
+	medal?: Array<string>;
 	/** A longer description of the product. */
 	description: string | null;
 	/** The price of the product in cents. */

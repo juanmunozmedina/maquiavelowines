@@ -142,6 +142,25 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 						/>
 						<span> / botella</span>
 					</p>
+					{
+						product.medal ? (
+							<fieldset>
+								<label class="mb-2 mt-4 block text-slate-700">Medallas</label>
+								<ul class="inline-flex gap-4">
+									{product.medal[0] ? (
+										<li>
+											<img width="64" height="64" src={product.medal[0]} />
+										</li>
+									) : null}
+									{product.medal[1] ? (
+										<li>
+											<img width="64" height="64" src={product.medal[1]} />
+										</li>
+									) : null}
+								</ul>
+							</fieldset>
+						) : null
+					}
 				</header>
 
 				<AddToCartForm client:idle product={product} />

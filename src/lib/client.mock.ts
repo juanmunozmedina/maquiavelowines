@@ -249,6 +249,7 @@ const products: Record<string, Product> = {
 		name: 'ADN Verdejo',
 		slug: 'adn-verdejo',
 		tagline: '100% Verdejo.',
+		medal: ['/assets/oro-2024.png'],
 		description:
 			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Verdejo</p> <p><b>Graduación</b>: 12% Alc. Vol.</p> <p><b>Año</b>: 2023</p> </div> <div> <p><b>Descripción</b></p> <p>ADN 100% Verdejo. Ideal para acompañar con quesos azules, entrantes, pescados blancos, paella y arroces.</p> <p><b>Vista</b>: Limpio y fresco en que las notas herbáceas se unen a los aromas frutales, como sus matices a hinojo propios de la uva verdejo.<br> <b>Nariz</b>: Potente en nariz y con un largo retrogusto, es un vino ideal para acompañar platos de mar y también para degustar solo.<br> <b>Boca</b>: Vino extremadamente fresco con una vivacidad y prolongada persistencia floral.<br></p> <p><b>Recomendaciones</b></p> <p>Servir entre 7 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>',
 		price: 1070,
@@ -333,6 +334,7 @@ const products: Record<string, Product> = {
 		name: 'Premium',
 		slug: 'premium',
 		tagline: 'El vino secreto de Maquiavelo.',
+		medal: ['/assets/gran-oro-2023.png', '/assets/oro-2024.png'],
 		description:
 			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell / Cabernet Sauvignon</p> <p><b>Graduación</b>: 14% Alc. Vol.</p> <p><b>Año</b>: 2017</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Maquiavelo Premium es un vino tinto de la cosecha 2017 elaborado con selecta uva monastrell (85%) y una pequeña parte de uva cabernet sauvignon (15%). Su sabor destaca por ser suave en boca, con retrogusto floral y toques de madera. Acabado con un recubrimiento lacrado en bronce y conservado 18 meses en barrica de roble francés. Ideal para acompañar con cualquier tipo de carnes, especialmente carnes rojas, pastas, verduras o quesos curados. Sin duda, un auténtico placer para los paladares más exigentes.</p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>',
 		price: 1580,
@@ -375,6 +377,7 @@ const products: Record<string, Product> = {
 		name: 'Vermut',
 		slug: 'vermut',
 		tagline: 'Maquiavelo y Pedro Ximénez.',
+		medal: ['/assets/gran-oro-2024.png'],
 		description:
 			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Moscatel y Pedro Ximénez</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Contenido de azúcares</b>: 130g/l de azúcares reductores.</p> </div> <div> <p><b>Descripción</b></p> <p>Vermut Maquiavelo tiene como base el vino Pedro Ximénez, referente en su categoría, dulce y suave mezclado con Moscatel, aromatizado con la mejor selección de notas herbales que dan como resultado este exclusivo Vermut.</p> <p><b>Notas de sabor</b>: De color ámbar brillante, su aroma es una mezcla de olores extraídos de la maceración del vino con los frutos y plantas que dan como resultado un todo homogéneo y constante. Muy agradable al paladar, su sabor es poco ácido, dulce y ligeramente amargo.</p> <p><b>Recomendaciones</b></p> <p>Consumir frío, solo o con hielo, mezclado con zumos de frutas, como arte principal de numerosas recetas de cócteles etc. Excelente aperitivo.</p></div>',
 		price: 1190,
@@ -500,6 +503,7 @@ const products: Record<string, Product> = {
 		id: 'ancestral-monastrell-pie-franco',
 		name: 'Ancestral Monastrell Pie Franco',
 		slug: 'ancestral-monastrell-pie-franco',
+		medal: ['/assets/oro-2023.png', '/assets/plata-2024.png'],
 		tagline: 'Ancestral edición especial monastrell pie franco.',
 		description:
 			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell Pie Franco</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Año</b>: 2019</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Vino seleccionado y escogido para ser embotellado a mano de una edición especial y limitada. Su tipo de elaboración, etiquetado y lacrado manual, hacen que en tus manos sostengas una pieza única procedente de viñedos centenarios.</p> <p><b>Vista</b>: Color picota oscuro con borde granate.<br> <b>Nariz</b>: Muy expresivo y con buena complejidad. Aromas de fruta roja y negra muy madura, casi mermelada, chocolate, especiados, café, recuerdos balsámicos y minerales.<br> <b>Boca</b>: Potencia controlada, sabroso, con la fruta madura predominando sobre las notas tostadas. Combinación de frescos balsámicos con agradables especiados. Taninos pulidos, final largo y gran persistencia.<br></p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>',
