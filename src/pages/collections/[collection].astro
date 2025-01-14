@@ -43,44 +43,6 @@ const products = productsResponse.data.items.filter((product) => {
 ---
 
 <PrimaryLayout title={`Bodegas Maquiavelo | ${collection.name}`}>
-	<div class="mt-8">
-		<Breadcrumbs
-			linkTextFormat="capitalized"
-			customizeLinks={[
-				{ index: 1, 'aria-disabled': true, text: 'Categoría' },
-				{ index: 2, 'aria-disabled': true },
-			]}
-		>
-			<svg
-				slot="index"
-				aria-label="Home Page"
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"> </path><polyline
-					points="9 22 9 12 15 12 15 22"></polyline>
-			</svg>
-			<svg
-				slot="separator"
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				><polyline points="9 18 15 12 9 6"></polyline>
-			</svg>
-		</Breadcrumbs>
-	</div>
 	<div class="pt-4">
 		<SideColumnLayout class="flex flex-wrap gap-4">
 			<div slot="aside" class="flex flex-col gap-4 py-4">
@@ -107,10 +69,48 @@ const products = productsResponse.data.items.filter((product) => {
 
 			<section
 				slot="main"
-				class="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-4"
+				class="grid gap-4 max-[592px]:grid-cols-[repeat(auto-fill,minmax(10rem,1fr))] min-[592px]:grid-cols-[repeat(auto-fill,minmax(16rem,1fr))]"
 				aria-labelledby="products-heading"
 				aria-label="Products"
 			>
+				<div class="col-span-full pb-2 pt-6">
+					<Breadcrumbs
+						linkTextFormat="capitalized"
+						customizeLinks={[
+							{ index: 1, 'aria-disabled': true, text: 'Categoría' },
+							{ index: 2, 'aria-disabled': true },
+						]}
+					>
+						<svg
+							slot="index"
+							aria-label="Home Page"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"> </path><polyline
+								points="9 22 9 12 15 12 15 22"></polyline>
+						</svg>
+						<svg
+							slot="separator"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							><polyline points="9 18 15 12 9 6"></polyline>
+						</svg>
+					</Breadcrumbs>
+				</div>
 				{products.map((product) => <ProductCard {...product} />)}
 			</section>
 		</SideColumnLayout>
