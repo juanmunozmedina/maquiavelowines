@@ -52,7 +52,7 @@ Le invitamos a cambiar o eliminar por completo cualquiera de estos servicios par
 
 ### API de escaparate
 
-[shop.astro.build](https://shop.astro.build) utiliza una API personalizada para gestionar productos y gestionar pedidos.
+[maquiavelowines.com](https://maquiavelowines.com) utiliza una API personalizada para gestionar productos y gestionar pedidos.
 
 Este cliente no está disponible para uso público hoy, aunque proporcionamos una versión "simulada" de todas las funciones API en `src/lib/client.mock.ts`. Recomendamos utilizar este archivo como una forma de estandarizar las solicitudes para el proveedor de comercio electrónico de su elección.
 
