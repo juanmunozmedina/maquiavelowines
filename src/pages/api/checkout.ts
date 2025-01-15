@@ -39,7 +39,8 @@ export const POST: APIRoute = async (context) => {
 						name: item.productVariant.product.name,
 						description:
 							//item.productVariant.product.description ||
-							item.productVariant.product.tagline || undefined,
+							//item.productVariant.product.tagline || undefined,
+							item.productVariant.name,
 						images: [new URL(item.productVariant.product.imageUrl, context.url).href],
 						metadata,
 					},
