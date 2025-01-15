@@ -1,12 +1,53 @@
 ---
 import CollectionSection from '~/features/collection/CollectionSection.astro';
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
+import { Breadcrumbs } from 'astro-breadcrumbs';
+
+import 'astro-breadcrumbs/breadcrumbs.css';
 
 export const prerender = true;
 ---
 
 <PrimaryLayout title="Bodegas Maquiavelo">
-	<main class="breakout mt-16 flex flex-col gap-y-16">
+	<main class="breakout mt-8 flex flex-col gap-y-8">
+		<Breadcrumbs
+			linkTextFormat="capitalized"
+			customizeLinks={[
+				{
+					index: 1,
+					'aria-disabled': true,
+				},
+			]}
+		>
+			<svg
+				slot="index"
+				aria-label="Home Page"
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"> </path><polyline
+					points="9 22 9 12 15 12 15 22"></polyline>
+			</svg>
+			<svg
+				slot="separator"
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				><polyline points="9 18 15 12 9 6"></polyline>
+			</svg>
+		</Breadcrumbs>
 		<div class="content">
 			<p>
 				El acceso a este Sitio Web puede implicar la utilización de cookies. Las cookies son
@@ -43,10 +84,11 @@ export const prerender = true;
 				<h3 class="text-1xl my-6 font-semibold">Cookies propias</h3>
 				<p>
 					Son aquellas cookies que son enviadas al ordenador o dispositivo del Usuario y gestionadas
-					exclusivamente por <span>Bodegas Maquiavelo</span> para el mejor funcionamiento del Sitio Web.
-					La información que se recaba se emplea para mejorar la calidad del Sitio Web y su Contenido
-					y su experiencia como Usuario. Estas cookies permiten reconocer al Usuario como visitante recurrente
-					del Sitio Web y adaptar el contenido para ofrecerle contenidos que se ajusten a sus preferencias.
+					exclusivamente por <span>Bodegas Maquiavelo</span> para el mejor funcionamiento del Sitio
+					Web. La información que se recaba se emplea para mejorar la calidad del Sitio Web y su
+					Contenido y su experiencia como Usuario. Estas cookies permiten reconocer al Usuario como
+					visitante recurrente del Sitio Web y adaptar el contenido para ofrecerle contenidos que se
+					ajusten a sus preferencias.
 				</p>
 			</div>
 			<div>
@@ -54,10 +96,10 @@ export const prerender = true;
 				<p>
 					Son cookies utilizadas y gestionadas por entidades externas que proporcionan a <span
 						>Bodegas Maquiavelo</span
-					> servicios solicitados por este mismo para mejorar el Sitio Web y la experiencia del usuario
-					al navegar en el Sitio Web. Los principales objetivos para los que se utilizan cookies de terceros
-					son la obtención de estadísticas de accesos y analizar la información de la navegación, es
-					decir, cómo interactúa el Usuario con el Sitio Web.
+					> servicios solicitados por este mismo para mejorar el Sitio Web y la experiencia del
+					usuario al navegar en el Sitio Web. Los principales objetivos para los que se utilizan
+					cookies de terceros son la obtención de estadísticas de accesos y analizar la información
+					de la navegación, es decir, cómo interactúa el Usuario con el Sitio Web.
 				</p>
 				<p>
 					La información que se obtiene se refiere, por ejemplo, al número de páginas visitadas, el
@@ -86,14 +128,15 @@ export const prerender = true;
 			<div>
 				<h3 class="text-1xl my-6 font-semibold">Cookies de redes sociales</h3>
 				<p>
-					<span>Bodegas Maquiavelo</span> incorpora plugins de redes sociales, que permiten acceder a
-					las mismas a partir del Sitio Web. Por esta razón, las cookies de redes sociales pueden almacenarse
-					en el navegador del Usuario. Los titulares de dichas redes sociales disponen de sus propias
-					políticas de protección de datos y de cookies, siendo ellos mismos, en cada caso, responsables
-					de sus propios ficheros y de sus propias prácticas de privacidad. El Usuario debe referirse
-					a las mismas para informarse acerca de dichas cookies y, en su caso, del tratamiento de sus
-					datos personales. Únicamente a título informativo se indican a continuación los enlaces en
-					los que se pueden consultar dichas políticas de privacidad y/o de cookies:
+					<span>Bodegas Maquiavelo</span> incorpora plugins de redes sociales, que permiten acceder
+					a las mismas a partir del Sitio Web. Por esta razón, las cookies de redes sociales pueden
+					almacenarse en el navegador del Usuario. Los titulares de dichas redes sociales disponen
+					de sus propias políticas de protección de datos y de cookies, siendo ellos mismos, en cada
+					caso, responsables de sus propios ficheros y de sus propias prácticas de privacidad. El
+					Usuario debe referirse a las mismas para informarse acerca de dichas cookies y, en su
+					caso, del tratamiento de sus datos personales. Únicamente a título informativo se indican
+					a continuación los enlaces en los que se pueden consultar dichas políticas de privacidad
+					y/o de cookies:
 				</p>
 				<ul class="my-3 list-disc space-y-2">
 					<li>

@@ -70,26 +70,23 @@ export interface Props {
 		<p>
 			{'© 2025 | Bodegas Maquiavelo ®'}
 			<p class="flex flex-wrap gap-x-4">
-				<ExternalLink href="/cookies/" target="_blank" rel="noopener noreferrer">
-					Cookies
-				</ExternalLink>
-				<ExternalLink href="/legal/" target="_blank" rel="noopener noreferrer">
-					Aviso legal
-				</ExternalLink>
-				<ExternalLink href="/privacidad/" target="_blank" rel="noopener noreferrer">
-					Privacidad
-				</ExternalLink>
-				<ExternalLink href="/venta/" target="_blank" rel="noopener noreferrer">Venta</ExternalLink>
+				<a href="/cookies/" rel="nofollow" class="underline">Cookies</a>
+				<a href="/legal/" rel="nofollow" class="underline">Aviso legal</a>
+				<a href="/privacidad/" rel="nofollow" class="underline">Privacidad</a>
+				<a href="/venta/" rel="nofollow" class="underline">Venta</a>
 			</p>
 		</p>
 	</section>
 	<section class="py-2 text-sm text-theme-base-600">
 		<p>
-			Desarrollado por <a
+			Desarrollado por <ExternalLink
 				href="https://juanmunozmedina.vercel.app/"
 				class="underline"
 				target="_blank"
-				rel="external">Juan Muñoz Medina</a>
+				rel="noopener noreferrer"
+			>
+				Juan Muñoz Medina
+			</ExternalLink>
 		</p>
 	</section>
 </footer>
