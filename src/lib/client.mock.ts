@@ -1009,6 +1009,8 @@ const products: Record<string, Product> = {
 		name: 'Vermut Naranja',
 		slug: 'vermut-naranja',
 		tagline: 'Maquiavelo vermut artesanal con naranjas.',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Moscatel uva blanca</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Ingredientes</b>: Jengibre, canela, salvia seca, clavo, zumo de naranja, piel de naranja y vainas de cardamomo.</p> </div> <div> <p><b>Descripción</b></p> <p>Auténtico Vermut Naranja. Elaborado artesanalmente a partir de vino blanco tratado mediante maceración pausada, durante 9 meses, con una compleja mezcla de hierbas donde destaca la "genciana".</p> <p><b>Notas de sabor</b>: Profundo aroma especiado con naranja donde destacan notas de clavo y canela que se funden en un elegante amargor final.<br>Con tonos dulces avainillados, balsámicos y tostados; ligero toque de regaliz.<br>Además de su elegante color cobrizo, en boca se pueden sentir también matices de ajenjo, naranja, nuez moscada y quina. Sin duda, toda una experiencia para el paladar.</p> <p><b>Recomendaciones</b></p> <p>Consumir frío, solo o con hielo, mezclado con zumos de frutas, como arte principal de numerosas recetas de cócteles etc. Excelente aperitivo.</p></div>',
 		price: 1190,
 		imageUrl: '/assets/vermut_naranja.png',
 		collectionIds: ['maquiavelo'],
@@ -1049,6 +1051,8 @@ const products: Record<string, Product> = {
 		name: 'Vermut Blanco',
 		slug: 'vermut-blanco',
 		tagline: 'Maquiavelo vermut artesanal con moscatel de Alejandría.',
+		description:
+			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Moscatel uva blanca</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Ingredientes</b>: Jengibre, canela, salvia seca, clavo, zumo de naranja, piel de naranja y vainas de cardamomo.</p> </div> <div> <p><b>Descripción</b></p> <p>De color ámbar brillante, su aroma es una mezcla de olores extraídos de la maceración del vino con los frutos y plantas que dan como resultado un todo homogéneo y constante. Muy agradable al paladar, su sabor es poco ácido, dulce y ligeramente amargo.</p> <p><b>Vista</b>: Color ámbar brillante.</p> <p><b>Nariz</b>: Mezcla de olores extraídos de la maceración del vino con los frutos y plantas que dan como resultado un todo homogéneo y constante.</p> <p><b>Boca</b>: Muy agradable al paladar, su sabor es poco ácido, dulce y ligeramente amargo.</p> <p><b>Temperatura de servicio</b></p> <p>8°-12° C.</p> <p><b>Recomendaciones</b></p> <p>Consumir frío, solo o con hielo, mezclado con zumos de frutas, como arte principal de numerosas recetas de cócteles etc. Excelente aperitivo.</p></div>',
 		price: 1190,
 		imageUrl: '/assets/vermut_blanco.png',
 		collectionIds: ['maquiavelo'],
