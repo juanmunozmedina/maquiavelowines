@@ -1,4 +1,5 @@
 import netlify from '@astrojs/netlify';
+import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
 import solidJs from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
@@ -35,6 +36,11 @@ export default defineConfig({
 				'https://maquiavelowines.com/collections/ancestral',
 				'https://maquiavelowines.com/collections/centhaurus',
 			],
+		}),
+		partytown({
+			config: {
+				forward: ['dataLayer.push'],
+			},
 		}),
 	],
 	// Update to your storefront URL

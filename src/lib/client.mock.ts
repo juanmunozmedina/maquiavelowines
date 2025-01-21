@@ -586,7 +586,7 @@ const products: Record<string, Product> = {
 	'ancestral-alicante-bouschet': {
 		...productDefaults,
 		id: 'ancestral-alicante-bouschet',
-		name: 'Ancestral Alicante bouschet',
+		name: 'Ancestral Alicante Bouschet',
 		slug: 'ancestral-alicante-bouschet',
 		tagline: 'Ancestral edición especial Alicante bouschet.',
 		description:
@@ -597,28 +597,28 @@ const products: Record<string, Product> = {
 		variants: [
 			{
 				id: 'ancestral-alicante-bouschet-3',
-				name: 'Ancestral Alicante bouschet Pack 3 botellas',
+				name: 'Ancestral Alicante Bouschet Pack 3 botellas',
 				stock: 1000,
 				options: { Tamaño: 'Pack 3' },
 				priceVariant: 3180,
 			},
 			{
 				id: 'ancestral-alicante-bouschet-6',
-				name: 'Ancestral Alicante bouschet Pack 6 botellas',
+				name: 'Ancestral Alicante Bouschet Pack 6 botellas',
 				stock: 1000,
 				options: { Tamaño: 'Pack 6' },
 				priceVariant: 7950,
 			},
 			{
 				id: 'ancestral-alicante-bouschet-12',
-				name: 'Ancestral Alicante bouschet Pack 12 botellas',
+				name: 'Ancestral Alicante Bouschet Pack 12 botellas',
 				stock: 1000,
 				options: { Tamaño: 'Pack 12' },
 				priceVariant: 17490,
 			},
 			{
 				id: 'ancestral-alicante-bouschet-24',
-				name: 'Ancestral Alicante bouschet Pack 24 botellas',
+				name: 'Ancestral Alicante Bouschet Pack 24 botellas',
 				stock: 1000,
 				options: { Tamaño: 'Pack 24' },
 				priceVariant: 36570,
