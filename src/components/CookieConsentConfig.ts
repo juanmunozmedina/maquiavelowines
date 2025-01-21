@@ -1,16 +1,6 @@
 import type { CookieConsentConfig } from 'vanilla-cookieconsent';
 
-// Extend the Window interface to include the dataLayer object
-declare global {
-	interface Window {
-		dataLayer: Record<string, any>[];
-		gtag: (...args: any[]) => void;
-	}
-}
-
 export const config: CookieConsentConfig = {
-	// Indicate the consent to live in the #cc-container element
-	root: '#cc-container',
 	guiOptions: {
 		consentModal: {
 			layout: 'box',
@@ -30,29 +20,7 @@ export const config: CookieConsentConfig = {
 			readOnly: true,
 		},
 		functionality: {},
-		analytics: {
-			enabled: true,
-			services: {
-				ga: {
-					label: 'Google Analytics',
-					onAccept: () => {
-						// Grant consent to the Google Analytics service
-						console.log('ga4 granted');
-
-						window.gtag('consent', 'update', {
-							ad_storage: 'granted',
-							ad_user_data: 'granted',
-							ad_personalization: 'granted',
-							analytics_storage: 'granted',
-						});
-					},
-					onReject: () => {
-						// Don't enable Google Analytics
-						console.log('ga4 rejected');
-					},
-				},
-			},
-		},
+		analytics: {},
 		marketing: {},
 	},
 	language: {
