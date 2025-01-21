@@ -36,7 +36,7 @@ export function CartDrawer() {
 				<CartSummary />
 				<Show when={subtotal() / 100 >= 60}>
 					<form method="post" action="/api/checkout" class="contents" data-astro-reload>
-						<Button type="submit">Ir al proceso de pago</Button>
+						<Button type="submit">Proceso de pago</Button>
 					</form>
 				</Show>
 				<Show when={subtotal() / 100 < 60}>
