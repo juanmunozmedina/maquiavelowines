@@ -38,12 +38,14 @@ export const config: CookieConsentConfig = {
 					onAccept: () => {
 						// Grant consent to the Google Analytics service
 						console.log('ga4 granted');
-						window.gtag('consent', 'update', {
-							ad_storage: 'granted',
-							ad_user_data: 'granted',
-							ad_personalization: 'granted',
-							analytics_storage: 'granted',
-						});
+						if (typeof window !== 'undefined') {
+							window.gtag('consent', 'update', {
+								ad_storage: 'granted',
+								ad_user_data: 'granted',
+								ad_personalization: 'granted',
+								analytics_storage: 'granted',
+							});
+						}
 					},
 					onReject: () => {
 						// Don't enable Google Analytics

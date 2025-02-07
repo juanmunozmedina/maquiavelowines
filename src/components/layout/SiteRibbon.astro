@@ -32,6 +32,7 @@
 						Al navegar por nuestra tienda eres responsable de cumplir con la mayoría de edad legal.
 					</h3>
 					<button
+						id="button-popup-modal"
 						data-modal-hide="popup-modal"
 						type="button"
 						class="inline-flex items-center rounded-lg bg-green-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
@@ -77,6 +78,9 @@
 
 	if (!window.localStorage.getItem('popupShown')) {
 		modal.show();
-		window.localStorage.setItem('popupShown', 'true');
+		const element = document.getElementById('button-popup-modal');
+		element.addEventListener('click', (): void => {
+			window.localStorage.setItem('popupShown', 'true');
+		});
 	}
 </script>

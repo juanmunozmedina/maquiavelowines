@@ -130,7 +130,7 @@ export function AddToCartForm(props: { product: Product }) {
 				</label>
 				<NumberInput id="quantity" min={1} value={quantity()} setValue={setQuantity} />
 			</div>
-			<div class="mb-8 sticky bottom-0 grid h-12 items-center gap-2 bg-white">
+			<div class="sticky bottom-0 mb-8 grid h-12 items-center gap-2 bg-white">
 				<Switch
 					fallback={
 						<Button type="submit" pending={mutation.isPending}>
@@ -142,13 +142,13 @@ export function AddToCartForm(props: { product: Product }) {
 						<p class="text-red-800">¡Elige un pack!</p>
 					</Match>
 					<Match when={selectedVariant() == null}>
-						<p>Este pack no está disponible.</p>
+						<p class="text-red-800">Este pack no está disponible.</p>
 					</Match>
 					<Match when={selectedVariant()?.stock === 0}>
-						<p>Este pack está agotado.</p>
+						<p class="text-red-800">Este pack está agotado.</p>
 					</Match>
 					<Match when={quantity() > getVariantStock(selectedVariant())}>
-						<p>Sólo {getVariantStock(selectedVariant())} queda en stock.</p>
+						<p class="text-red-800">Sólo {getVariantStock(selectedVariant())} queda en stock.</p>
 					</Match>
 				</Switch>
 			</div>
