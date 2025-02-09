@@ -38,7 +38,7 @@ if (!productsResponse.data) {
 
 const collection = collectionResponse.data;
 const products = productsResponse.data.items.filter((product) => {
-	return getProductStock(product) > 0;
+	return getProductStock(product);
 });
 ---
 

@@ -147,6 +147,9 @@ export function AddToCartForm(props: { product: Product }) {
 					<Match when={selectedVariant()?.stock === 0}>
 						<p class="text-red-800">Este pack está agotado.</p>
 					</Match>
+					<Match when={selectedVariant()?.stock === -1}>
+						<p class="text-red-800">Próximamente.</p>
+					</Match>
 					<Match when={quantity() > getVariantStock(selectedVariant())}>
 						<p class="text-red-800">Sólo {getVariantStock(selectedVariant())} queda en stock.</p>
 					</Match>

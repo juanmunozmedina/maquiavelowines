@@ -12,5 +12,5 @@ export const stripeProductMetadataSchema = z
 	.strict();
 
 export function getProductStock(product: Product) {
-	return product.variants.reduce((total, variant) => total + variant.stock, 0);
+	return product.variants.reduce((total, variant) => total + variant.stock, 1);
 }

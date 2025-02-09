@@ -12,8 +12,8 @@ type Props = {
 const { heading, filterProducts = (products) => products } = Astro.props;
 
 const productsResponse = await getProducts();
-const products = filterProducts(productsResponse.data?.items ?? []).filter(
-	(product) => getProductStock(product) > 0,
+const products = filterProducts(productsResponse.data?.items ?? []).filter((product) =>
+	getProductStock(product),
 );
 ---
 

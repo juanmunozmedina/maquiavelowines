@@ -114,3 +114,5 @@
 .c-breadcrumbs__link.is-current {
 	color: rgb(148 163 184);
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
