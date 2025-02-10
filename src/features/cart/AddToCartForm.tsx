@@ -89,7 +89,9 @@ export function AddToCartForm(props: { product: Product }) {
 				<For each={[...productOptionValues().entries()]}>
 					{([option, values]) => (
 						<fieldset>
-							<legend class="mb-1 text-slate-700">{option ?? 'Variants'}</legend>
+							<legend class="mb-1 text-slate-700 dark:text-theme-base-100">
+								{option ?? 'Variants'}
+							</legend>
 							<Show when={unpickedVariantVisible() && !selectedVariant()}>
 								<p role="alert" class="mb-2 text-sm text-red-400">
 									Por favor haga una selección.
@@ -98,7 +100,7 @@ export function AddToCartForm(props: { product: Product }) {
 							<div class="flex flex-wrap gap-2">
 								<For each={[...values]}>
 									{(value) => (
-										<label class="flex h-11 min-w-11 items-center justify-center gap-1.5 border border-slate-300 bg-slate-100 px-3 text-center text-sm text-slate-600 transition hover:border-slate-500 has-[:checked]:border-slate-900 has-[:checked]:text-slate-900">
+										<label class="flex h-11 min-w-11 items-center justify-center gap-1.5 border border-slate-300 bg-slate-100 px-3 text-center text-sm text-slate-600 transition hover:border-slate-500 has-[:checked]:border-slate-900 has-[:checked]:text-slate-900 dark:border-slate-600 dark:bg-slate-700 dark:text-theme-base-100 dark:hover:border-slate-600">
 											<input
 												type="radio"
 												value={value}
@@ -125,12 +127,12 @@ export function AddToCartForm(props: { product: Product }) {
 			</Show>
 
 			<div class="mb-2">
-				<label for="quantity" class="mb-2 block text-slate-700">
+				<label for="quantity" class="mb-2 block text-slate-700 dark:text-theme-base-100">
 					Cantidad
 				</label>
 				<NumberInput id="quantity" min={1} value={quantity()} setValue={setQuantity} />
 			</div>
-			<div class="sticky bottom-0 mb-8 grid h-12 items-center gap-2 bg-white">
+			<div class="dark:bg-maquiavelo-dark sticky bottom-0 mb-8 grid h-12 items-center gap-2 bg-white">
 				<Switch
 					fallback={
 						<Button type="submit" pending={mutation.isPending}>
@@ -139,19 +141,21 @@ export function AddToCartForm(props: { product: Product }) {
 					}
 				>
 					<Match when={Object.keys(selectedOptions()).length < productOptionValues().size}>
-						<p class="text-red-800">¡Elige un pack!</p>
+						<p class="text-red-800 dark:text-blue-300">¡Elige un pack!</p>
 					</Match>
 					<Match when={selectedVariant() == null}>
-						<p class="text-red-800">Este pack no está disponible.</p>
+						<p class="text-red-800 dark:text-blue-300">Este pack no está disponible.</p>
 					</Match>
 					<Match when={selectedVariant()?.stock === 0}>
-						<p class="text-red-800">Este pack está agotado.</p>
+						<p class="text-red-800 dark:text-blue-300">Este pack está agotado.</p>
 					</Match>
 					<Match when={selectedVariant()?.stock === -1}>
-						<p class="text-red-800">Próximamente.</p>
+						<p class="text-red-800 dark:text-blue-300">Próximamente.</p>
 					</Match>
 					<Match when={quantity() > getVariantStock(selectedVariant())}>
-						<p class="text-red-800">Sólo {getVariantStock(selectedVariant())} queda en stock.</p>
+						<p class="text-red-800 dark:text-blue-300">
+							Sólo {getVariantStock(selectedVariant())} queda en stock.
+						</p>
 					</Match>
 				</Switch>
 			</div>

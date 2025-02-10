@@ -1,6 +1,8 @@
 ---
 import { getImage } from 'astro:assets';
 import { getProductById } from 'storefront:client';
+import { Breadcrumbs } from 'astro-breadcrumbs';
+import { Icon } from 'astro-icon/components';
 import Card from '~/components/ui/Card.tsx';
 import { applyDefaultCacheHeaders } from '~/config.ts';
 import { AddToCartForm } from '~/features/cart/AddToCartForm.tsx';
@@ -12,8 +14,6 @@ import { ProductImageSwitcher } from '~/features/product/ProductImageSwitcher.ts
 import { ProductPrice } from '~/features/product/ProductPrice.tsx';
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 import { unwrap } from '~/lib/util.ts';
-import { Icon } from 'astro-icon/components';
-import { Breadcrumbs } from 'astro-breadcrumbs';
 
 import 'astro-breadcrumbs/breadcrumbs.css';
 
@@ -133,8 +133,12 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 					<h1 class="text-pretty text-3xl font-bold md:text-4xl">
 						{product.name}
 					</h1>
-					{product.tagline && <p class="text-slate-700">{product.tagline}</p>}
-					<p class="flex gap-1 text-xl text-slate-700 md:text-2xl">
+					{
+						product.tagline && (
+							<p class="text-slate-700 dark:text-theme-base-100">{product.tagline}</p>
+						)
+					}
+					<p class="flex gap-1 text-xl text-slate-700 dark:text-theme-base-100 md:text-2xl">
 						<ProductPrice
 							class="gap-3 font-semibold"
 							price={product.price}
@@ -145,7 +149,9 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 					{
 						product.medal ? (
 							<fieldset id="medals">
-								<label class="mb-2 mt-4 block text-slate-700">Medallas</label>
+								<label class="mb-2 mt-4 block text-slate-700 dark:text-theme-base-100">
+									Medallas
+								</label>
 								<ul class="inline-flex gap-2">
 									{product.medal[0] ? (
 										<li>
@@ -192,7 +198,7 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 					product.description && (
 						<ProductDetailDescriptionDialog title="Descripción" client:idle>
 							<div
-								class="prose whitespace-pre-line py-6 prose-li:my-0"
+								class="prose whitespace-pre-line py-6 prose-li:my-0 dark:text-theme-base-100"
 								set:html={product.description}
 							/>
 						</ProductDetailDescriptionDialog>
@@ -201,30 +207,34 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 			</div>
 		</div>
 		<div class="mx-0 mb-12 mt-8 flex flex-wrap gap-8 lg:gap-32">
-			<div class="box-border min-w-60 flex-1 border border-theme-base-200 p-4">
+			<div
+				class="box-border min-w-60 flex-1 border border-theme-base-200 p-4 dark:border-theme-base-600"
+			>
 				<i>
 					<Icon class="mx-auto my-2" name="mdi:credit-card-check" size={36} aria-hidden="true" />
 					<div class="sr-only">Stripe</div>
 				</i>
-				<p class="mb-2 block text-center text-slate-700">
+				<p class="mb-2 block text-center text-slate-700 dark:text-theme-base-100">
 					Mediante Stripe nos aseguramos de que los pagos sean 100% seguros y rápidos de usar.
 					Tendrás todas las facilidades para pagar con tu entidad financiera en sencillos pasos.
 				</p>
 			</div>
-			<div class="box-border min-w-60 flex-1 border border-theme-base-200 p-4">
+			<div
+				class="box-border min-w-60 flex-1 border border-theme-base-200 p-4 dark:border-theme-base-600"
+			>
 				<i>
 					<Icon class="mx-auto my-2" name="mdi:truck" size={36} aria-hidden="true" />
 					<div class="sr-only">Envío</div>
 				</i>
-				<p class="mb-2 block text-center text-slate-700">
+				<p class="mb-2 block text-center text-slate-700 dark:text-theme-base-100">
 					Envío gratuito para pedidos superiores a 60€ solo dentro del territorio peninsular. Tiempo
 					estimado de entrega: 3 a 5 días una vez realizado el pago.
 				</p>
 			</div>
 		</div>
 
-		<div class="mx-auto box-border max-w-lg bg-theme-base-100 p-4">
-			<p class="text-center text-sm text-slate-700">
+		<div class="mx-auto box-border max-w-lg bg-theme-base-100 p-4 dark:bg-slate-700">
+			<p class="text-center text-sm text-slate-700 dark:text-theme-base-100">
 				Prohibida la venta de bebidas alcohólicas a menores de 18 años con aplicación a la Ley
 				5/2018, de 3 de mayo, de prevención del consumo de bebidas alcohólicas en la infancia y la
 				adolescencia.

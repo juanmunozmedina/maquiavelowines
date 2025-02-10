@@ -20,15 +20,15 @@ export function Drawer(props: {
 			<Dialog.Trigger>{props.trigger}</Dialog.Trigger>
 			<Dialog.Portal>
 				<Dialog.Overlay class="fixed inset-0 bg-black/25 ui-expanded:animate-in ui-expanded:fade-in ui-closed:animate-out ui-closed:fade-out" />
-				<Dialog.Content class="fixed inset-y-0 right-0 flex w-[min(560px,100vw)] flex-col bg-white ease-out ui-expanded:animate-in ui-expanded:fade-in ui-expanded:slide-in-from-right-4 ui-closed:animate-out ui-closed:fade-out ui-closed:slide-out-to-right-4">
+				<Dialog.Content class="dark:bg-maquiavelo-dark fixed inset-y-0 right-0 flex w-[min(560px,100vw)] flex-col bg-white ease-out ui-expanded:animate-in ui-expanded:fade-in ui-expanded:slide-in-from-right-4 ui-closed:animate-out ui-closed:fade-out ui-closed:slide-out-to-right-4">
 					<header class="flex h-14 flex-row items-center justify-between px-4">
 						<Dialog.Title class="text-2xl font-bold">{props.title}</Dialog.Title>
-						<Dialog.CloseButton class="size-9 border border-slate-300 bg-slate-100 text-slate-600 transition grid-center hover:border-slate-500">
+						<Dialog.CloseButton class="size-9 border border-slate-300 bg-slate-100 text-slate-600 transition grid-center hover:border-slate-500 dark:border-slate-600 dark:bg-slate-700 dark:text-theme-base-100 dark:hover:border-slate-900">
 							<RiSystemCloseLine />
 							<span class="sr-only">Despedir</span>
 						</Dialog.CloseButton>
 					</header>
-					<div class="border-b border-gray-300" />
+					<div class="border-b border-gray-300 dark:border-gray-600" />
 					<main class="flex-1 overflow-y-auto px-6">{props.children}</main>
 				</Dialog.Content>
 			</Dialog.Portal>

@@ -1,7 +1,7 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import { CartDrawer } from '~/features/cart/CartDrawer.tsx';
 import AstroLogo from './AstroLogo.astro';
-import type { HTMLAttributes } from 'astro/types';
 
 export interface Props extends HTMLAttributes<'nav'> {}
 
@@ -10,7 +10,10 @@ const { class: className, ...props } = Astro.props;
 
 <nav
 	aria-label="Site navigation"
-	class:list={['!flex min-h-20 flex-row items-center bg-white py-2 md:justify-between', className]}
+	class:list={[
+		'dark:bg-maquiavelo-dark !flex min-h-20 flex-row items-center bg-white py-2 md:justify-between',
+		className,
+	]}
 	{...props}
 >
 	<div class="flex-1">

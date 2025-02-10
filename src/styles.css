@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
 	:focus {
 		outline: none;
@@ -115,4 +117,11 @@
 	color: rgb(148 163 184);
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
+.dark svg[data-icon='apple-pay'] {
+	color: black;
+}
+
+.dark svg[data-icon='mdi:credit-card-check'],
+.dark svg[data-icon='mdi:truck'] {
+	color: rgb(71 85 105);
+}

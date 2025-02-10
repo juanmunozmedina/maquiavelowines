@@ -43,7 +43,7 @@ export function SquareIconButton(props: SquareIconButtonProps) {
 			onClick={props.onClick}
 			disabled={props.disabled}
 			classList={{
-				'bg-theme-base-100 border-theme-base-200 text-theme-base-900 hover:enabled:border-theme-base-400 hover:enabled:bg-theme-base-300 disabled:text-theme-base-400':
+				'bg-theme-base-100 border-theme-base-200 text-theme-base-900 hover:enabled:border-theme-base-400 hover:enabled:bg-theme-base-300 disabled:text-theme-base-400 dark:bg-slate-700 dark:border-theme-base-600 dark:text-theme-base-100':
 					theme() === 'light',
 				'bg-theme-base-800 border-theme-base-700 text-theme-base-100 hover:enabled:border-theme-base-700 hover:enabled:bg-theme-base-800':
 					theme() === 'dark',

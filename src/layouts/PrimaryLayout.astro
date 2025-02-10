@@ -64,7 +64,7 @@ const { title } = Astro.props;
 				window.gtag('config', 'G-L8WH2945BQ');
 			});
 		</script>
-		<script>
+		<script is:inline>
 			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
 			if (
 				localStorage.getItem('color-theme') === 'dark' ||
@@ -75,6 +75,14 @@ const { title } = Astro.props;
 			} else {
 				document.documentElement.classList.remove('dark');
 			}
+
+			document.addEventListener('astro:after-swap', () => {
+				if (localStorage.getItem('color-theme') === 'dark')
+					document.documentElement.classList.toggle('dark', true);
+
+				if (!document.getElementById('theme-toggle').hasAttribute('onclick'))
+					document.getElementById('theme-toggle').addEventListener('click', handleToggleClick);
+			});
 		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -82,11 +90,11 @@ const { title } = Astro.props;
 		<SEO {...defaults} {title} />
 		<ViewTransitions />
 	</head>
-	<body class="content-grid min-h-screen">
+	<body class="content-grid dark:bg-maquiavelo-dark min-h-screen dark:text-theme-base-100">
 		<SiteRibbon />
-		<div class={`breakout border-b w-full border-theme-base-300`}></div>
+		<div class={`breakout border-b w-full border-theme-base-300 dark:border-theme-base-600`}></div>
 		<SiteHeader />
-		<div class={`breakout border-b w-full border-theme-base-300`}></div>
+		<div class={`breakout border-b w-full border-theme-base-300 dark:border-theme-base-600`}></div>
 		<slot />
 		<div class="pt-24">
 			<SiteFooter />

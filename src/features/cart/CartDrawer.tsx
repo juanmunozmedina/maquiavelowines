@@ -40,7 +40,7 @@ export function CartDrawer() {
 					</form>
 				</Show>
 				<Show when={subtotal() / 100 < 60}>
-					<aside class="mt-3 text-balance text-center text-sm font-medium text-theme-base-500">
+					<aside class="mt-3 text-balance text-center text-sm font-medium text-theme-base-500 dark:text-theme-base-300">
 						El pedido mínimo para el envío es de 60€.
 					</aside>
 				</Show>
