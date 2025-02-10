@@ -69,16 +69,19 @@ const { title } = Astro.props;
 			if (
 				localStorage.getItem('color-theme') === 'dark' ||
 				(!('color-theme' in localStorage) &&
-					window.matchMedia('(prefers-color-scheme: dark)').matches)
+					window.matchMedia('(prefers-color-scheme: light)').matches)
 			) {
 				document.documentElement.classList.add('dark');
+				document.documentElement.classList.add('cc--darkmode');
 			} else {
 				document.documentElement.classList.remove('dark');
+				document.documentElement.classList.remove('cc--darkmode');
 			}
 
 			document.addEventListener('astro:after-swap', () => {
 				if (localStorage.getItem('color-theme') === 'dark')
 					document.documentElement.classList.toggle('dark', true);
+				document.documentElement.classList.toggle('cc--darkmode');
 
 				if (!document.getElementById('theme-toggle').hasAttribute('onclick'))
 					document.getElementById('theme-toggle').addEventListener('click', handleToggleClick);

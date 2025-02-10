@@ -5,15 +5,15 @@
 	<div
 		id="popup-modal"
 		tabindex="-1"
-		class="popup-modal fixed left-0 right-0 top-0 z-50 flex hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0"
+		class="popup-modal fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden md:inset-0"
 		aria-modal="true"
 		role="dialog"
 	>
-		<div class="relative m-auto max-h-full w-full max-w-md p-2">
-			<div class="relative rounded-lg bg-gray-700 shadow">
+		<div class="relative max-h-full w-full max-w-md p-2">
+			<div class="relative rounded-lg bg-gray-100 shadow dark:bg-gray-700">
 				<div class="p-4 text-center md:p-5">
 					<svg
-						class="mx-auto mb-4 h-12 w-12 text-gray-100"
+						class="mx-auto mb-4 h-12 w-12 text-gray-700 dark:text-gray-100"
 						aria-hidden="true"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -26,7 +26,7 @@
 							stroke-width="2"
 							d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
 					</svg>
-					<h3 class="mb-5 text-lg font-normal text-gray-100">
+					<h3 class="mb-5 text-lg font-normal text-gray-700 dark:text-gray-100">
 						Por un consumo responsable.
 						<br />
 						Al navegar por nuestra tienda eres responsable de cumplir con la mayoría de edad legal.
@@ -88,6 +88,7 @@
 	const $modalElement: HTMLElement | null = document.querySelector('#popup-modal');
 
 	const modalOptions: ModalOptions = {
+		placement: 'top-center',
 		backdrop: 'dynamic',
 		backdropClasses: 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-60',
 		closable: false,
