@@ -13,10 +13,10 @@ export function Button(props: Props) {
 			{...props}
 			type={props.type ?? 'button'}
 			class={twMerge(
-				'flex h-12 items-center justify-center gap-3 bg-theme-base-900 px-4 text-sm font-semibold uppercase text-white transition ',
+				'flex h-12 items-center justify-center gap-3 bg-theme-base-900 px-4 text-sm font-semibold uppercase text-white transition dark:bg-theme-base-100 dark:text-theme-base-900 ',
 				props.class,
 				(props.disabled || props.pending) && 'opacity-50',
-				!props.disabled && 'hover:bg-theme-base-600',
+				!props.disabled && 'hover:bg-theme-base-600 dark:hover:bg-theme-base-200',
 			)}
 		>
 			{props.pending ? <RiSystemLoader2Line class="animate-spin" /> : props.children}
@@ -45,7 +45,7 @@ export function SquareIconButton(props: SquareIconButtonProps) {
 			classList={{
 				'bg-theme-base-100 border-theme-base-200 text-theme-base-900 hover:enabled:border-theme-base-400 hover:enabled:bg-theme-base-300 disabled:text-theme-base-400 dark:bg-slate-700 dark:border-theme-base-600 dark:text-theme-base-100':
 					theme() === 'light',
-				'bg-theme-base-800 border-theme-base-700 text-theme-base-100 hover:enabled:border-theme-base-700 hover:enabled:bg-theme-base-800':
+				'bg-theme-base-800 border-theme-base-700 text-theme-base-100 hover:enabled:border-theme-base-700 hover:enabled:bg-theme-base-800 dark:bg-theme-base-100 dark:border-theme-base-200 dark:text-theme-base-900':
 					theme() === 'dark',
 			}}
 			class={`size-9 border transition grid-center data-[icon]:*:size-6 ${props.class ?? ''}`}
