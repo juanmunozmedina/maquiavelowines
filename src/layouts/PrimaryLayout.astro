@@ -64,36 +64,13 @@ const { title } = Astro.props;
 				window.gtag('config', 'G-L8WH2945BQ');
 			});
 		</script>
-		<script is:inline>
-			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-			if (
-				localStorage.getItem('color-theme') === 'dark' ||
-				(!('color-theme' in localStorage) &&
-					window.matchMedia('(prefers-color-scheme: light)').matches)
-			) {
-				document.documentElement.classList.add('dark');
-				document.documentElement.classList.add('cc--darkmode');
-			} else {
-				document.documentElement.classList.remove('dark');
-				document.documentElement.classList.remove('cc--darkmode');
-			}
-
-			document.addEventListener('astro:after-swap', () => {
-				if (localStorage.getItem('color-theme') === 'dark')
-					document.documentElement.classList.toggle('dark', true);
-				document.documentElement.classList.toggle('cc--darkmode');
-
-				if (!document.getElementById('theme-toggle').hasAttribute('onclick'))
-					document.getElementById('theme-toggle').addEventListener('click', handleToggleClick);
-			});
-		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
 		<SEO {...defaults} {title} />
 		<ViewTransitions />
 	</head>
-	<body class="content-grid dark:bg-maquiavelo-dark min-h-screen dark:text-theme-base-100">
+	<body class="content-grid min-h-screen dark:bg-maquiavelo-dark dark:text-theme-base-100">
 		<SiteRibbon />
 		<div class={`breakout border-b w-full border-theme-base-300 dark:border-theme-base-600`}></div>
 		<SiteHeader />
@@ -105,7 +82,6 @@ const { title } = Astro.props;
 		{import.meta.env.DEV && <SolidQueryDevtools client:idle />}
 		<div transition:persist="find-me-on-the-other-side" id="cc-container">
 			<CookieConsent />
-
 			<script is:inline>
 				// Restore the `show--consent` class if it was present before the page swap
 				document.addEventListener('astro:before-preparation', (event) => {

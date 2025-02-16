@@ -22,7 +22,7 @@ export function CartButton(props: StrictOmit<ComponentProps<typeof SquareIconBut
 			</SquareIconButton>
 			<div class="absolute right-0 top-0 -translate-y-1/3 translate-x-1/3">
 				<div
-					role="status"
+					role="img"
 					data-visible={itemCount() > 0 || undefined}
 					class="grid size-4 place-content-center rounded-full bg-slate-700 text-xs text-white opacity-0 transition-opacity data-[visible]:opacity-100 dark:bg-theme-base-100 dark:text-slate-700"
 				>
