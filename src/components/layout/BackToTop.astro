@@ -40,4 +40,9 @@
 
 	window.addEventListener('scroll', toggleBackToTopButton);
 	backToTopButton!.addEventListener('click', scrollToTop);
+
+        document.addEventListener('astro:after-swap', () => {
+                window.addEventListener('scroll', toggleBackToTopButton);
+	        backToTopButton!.addEventListener('click', scrollToTop);
+	});
 </script>
