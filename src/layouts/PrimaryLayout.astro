@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/inter';
 import { SolidQueryDevtools } from '~/components/SolidQueryDevtools.tsx';
+import BackToTop from '~/components/layout/BackToTop.astro';
 import SEO from '~/components/layout/SEO.astro';
 import SiteFooter from '~/components/layout/SiteFooter.astro';
 import SiteHeader from '~/components/layout/SiteHeader.astro';
@@ -175,5 +176,6 @@ const { title } = Astro.props;
 				});
 			</script>
 		</div>
+		<BackToTop />
 	</body>
 </html>
