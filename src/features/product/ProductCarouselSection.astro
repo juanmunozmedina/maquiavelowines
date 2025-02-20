@@ -17,7 +17,7 @@ const products = filterProducts(productsResponse.data?.items ?? []).filter((prod
 );
 ---
 
-<ProductCarousel {heading} client:idle>
+<ProductCarousel {heading} transition:persist client:idle>
 	<ul class="flex w-max pb-4" style={{ gap: GAP + 'px' }}>
 		{
 			products.map((product, idx) => (

@@ -2,6 +2,7 @@
 	id="back-to-top"
 	class="bg-primary text-primary-content invisible fixed bottom-5 right-5 rounded-full p-2 opacity-0 shadow-lg transition-opacity duration-300"
 	aria-label="Back to top"
+	transition:persist
 >
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -18,16 +19,16 @@
 	</svg>
 </button>
 
-<script>
+<script is:inline>
 	const backToTopButton = document.getElementById('back-to-top');
 
 	function toggleBackToTopButton() {
 		if (window.scrollY > 300) {
-			backToTopButton!.classList.remove('opacity-0', 'invisible');
-			backToTopButton!.classList.add('opacity-100', 'visible');
+			backToTopButton.classList.remove('opacity-0', 'invisible');
+			backToTopButton.classList.add('opacity-100', 'visible');
 		} else {
-			backToTopButton!.classList.add('opacity-0', 'invisible');
-			backToTopButton!.classList.remove('opacity-100', 'visible');
+			backToTopButton.classList.add('opacity-0', 'invisible');
+			backToTopButton.classList.remove('opacity-100', 'visible');
 		}
 	}
 
@@ -39,10 +40,10 @@
 	}
 
 	window.addEventListener('scroll', toggleBackToTopButton);
-	backToTopButton!.addEventListener('click', scrollToTop);
+	backToTopButton.addEventListener('click', scrollToTop);
 
-        document.addEventListener('astro:after-swap', () => {
-                window.addEventListener('scroll', toggleBackToTopButton);
-	        backToTopButton!.addEventListener('click', scrollToTop);
+	document.addEventListener('astro:after-swap', () => {
+		window.addEventListener('scroll', toggleBackToTopButton);
+		backToTopButton.addEventListener('click', scrollToTop);
 	});
 </script>

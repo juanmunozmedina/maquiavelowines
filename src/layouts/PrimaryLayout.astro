@@ -9,6 +9,7 @@ import SiteRibbon from '~/components/layout/SiteRibbon.astro';
 import '../styles.css';
 import { ViewTransitions } from 'astro:transitions';
 import CookieConsent from '../components/CookieConsent.astro';
+import 'aos/dist/aos.css';
 
 const defaults = {
 	name: 'Bodegas Maquiavelo',
@@ -151,6 +152,16 @@ const { title } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="content-grid min-h-screen dark:bg-maquiavelo-dark dark:text-theme-base-100">
+		<!-- animate on scroll script -->
+		<script>
+			import { aosInit } from '~/js/aos.js';
+
+			// runs on initial page load
+			aosInit();
+
+			// runs on view transitions navigation
+			document.addEventListener('astro:after-swap', aosInit);
+		</script>
 		<SiteRibbon />
 		<div class={`breakout border-b w-full border-theme-base-300 dark:border-theme-base-600`}></div>
 		<SiteHeader />
@@ -176,6 +187,6 @@ const { title } = Astro.props;
 				});
 			</script>
 		</div>
-		<BackToTop />
+		<BackToTop data-aos="fade-up" />
 	</body>
 </html>

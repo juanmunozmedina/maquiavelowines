@@ -100,14 +100,24 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 					productImages.length > 1 ? (
 						<>
 							<div class="-mx-4 -mt-8 md:m-0 lg:hidden">
-								<ProductImageCarousel client:idle {productImages} />
+								<ProductImageCarousel
+									transition:persist
+									data-aos="fade-in"
+									client:idle
+									{productImages}
+								/>
 							</div>
 							<div class="hidden lg:block">
-								<ProductImageSwitcher client:idle {productImages} />
+								<ProductImageSwitcher
+									transition:persist
+									data-aos="fade-in"
+									client:idle
+									{productImages}
+								/>
 							</div>
 						</>
 					) : (
-						<Card class="aspect-square justify-center">
+						<Card transition:persist data-aos="fade-in" class="aspect-square justify-center">
 							<img
 								src={firstImage.src}
 								srcset={firstImage.srcSet.attribute}
@@ -242,6 +252,8 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 		</div>
 
 		<ProductCarouselSection
+			transition:persist
+			data-aos="fade-up"
 			heading="También te puede gustar"
 			filterProducts={(products) => products.filter(({ id }) => id !== product.id)}
 		/>

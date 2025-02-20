@@ -11,7 +11,7 @@ const { class: className, ...props } = Astro.props;
 <nav
 	aria-label="Site navigation"
 	class:list={[
-		'dark:bg-maquiavelo-dark !flex min-h-20 flex-row items-center bg-white py-2 md:justify-between',
+		'!flex min-h-20 flex-row items-center bg-white py-2 dark:bg-maquiavelo-dark md:justify-between',
 		className,
 	]}
 	{...props}
@@ -23,7 +23,7 @@ const { class: className, ...props } = Astro.props;
 		</a>
 	</div>
 	<div class="flex flex-1 justify-end gap-2">
-		<CartDrawer client:idle />
+		<CartDrawer transition:persist client:idle />
 	</div>
 </nav>
 
