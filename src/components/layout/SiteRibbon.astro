@@ -4,7 +4,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 
 <aside
 	class="breakout focus-ring-light min-h-10 items-center justify-center text-balance bg-theme-base-100 py-2 text-center text-sm text-theme-base-900 dark:bg-slate-700 dark:text-theme-base-100"
-	transition:persist
+	transition:persist="modal"
 >
 	<div
 		id="popup-modal"
@@ -56,7 +56,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	</div>
 	<div class="relative">
 		<p class="content">¡Envío gratuito a partir de 60€!</p>
-		<ThemeIcon transition:persist />
+		<ThemeIcon transition:persist="icon" />
 	</div>
 </aside>
 

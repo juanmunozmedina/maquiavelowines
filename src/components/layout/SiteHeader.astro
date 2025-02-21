@@ -18,12 +18,12 @@ const { class: className, ...props } = Astro.props;
 >
 	<div class="flex-1">
 		<a class="-m-2 block w-fit p-2 transition hover:text-theme-base-600" href="/">
-			<AstroLogo transition:persist class="relative" />
+			<AstroLogo class="relative" />
 			<span class="sr-only">Inicio</span>
 		</a>
 	</div>
 	<div class="flex flex-1 justify-end gap-2">
-		<CartDrawer transition:persist client:idle />
+		<CartDrawer transition:persist="cart" client:idle />
 	</div>
 </nav>
 

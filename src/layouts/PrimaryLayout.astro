@@ -29,46 +29,34 @@ const { title } = Astro.props;
 
 <html lang="es" class="overflow-x-clip bg-white text-theme-base-900">
 	<head>
-		<script is:inline data-category="analytics">
-			function updateConsents() {
-				gtag('consent', 'update', {
-					ad_storage: 'granted',
-					ad_user_data: 'granted',
-					ad_personalization: 'granted',
-					analytics_storage: 'granted',
-				});
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-L8WH2945BQ"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
 			}
 		</script>
-		<!-- Google tag (gtag.js) -->
-		<script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-L8WH2945BQ"></script>
-		<script>
-			declare global {
-				interface Window {
-					dataLayer: Record<string, any>[];
-					gtag: (...args: any[]) => void;
-				}
-			}
-
-			// This is the important part!
-			document.addEventListener('astro:page-load', () => {
-				window.dataLayer = window.dataLayer || [];
-				window.gtag = function gtag(...args: any[]) {
-					window.dataLayer.push(args);
-				};
-				window.gtag('js', new Date());
-				window.gtag('consent', 'default', {
-					ad_storage: 'denied',
-					ad_user_data: 'denied',
-					ad_personalization: 'denied',
-					analytics_storage: 'denied',
-				});
-				window.gtag('config', 'G-L8WH2945BQ');
-			});
+		<script is:inline>
+			document.addEventListener(
+				'astro:page-load',
+				() => {
+					gtag('js', new Date());
+					gtag('config', 'G-L8WH2945BQ');
+				},
+				{ once: false },
+			);
 		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="google-site-verification" content="BTj1xCcsK436lJesDkgUU-FlmKanR69hHF0syq-kTb4" />
-		<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+		<meta name="google-site-verification" content="BTj1xCcsK436lJesDkgUU-FlmKanR69hHF0syq-kTb4" />
+		<!-- 👨‍🦲 para navegadores antiguos -->
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<!-- 🚀 SVG con modo claro/oscuro para navegadores modernos -->
+		<link rel="icon" href="/favicon.svg" sizes="image/svg+xml" />
+		<!-- 📱Imagen 180x180 para dispositivos Apple -->
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<!-- 🍏 2 imágenes 192x192 y 512x512 para android -->
+		<link rel="manifest" href="/manifest.webmanifest" />
 		<SEO {...defaults} {title} />
 		<ViewTransitions />
 	</head>
@@ -98,6 +86,6 @@ const { title } = Astro.props;
 				});
 			</script>
 		</div>
-		<BackToTop transition:persist />
+		<BackToTop transition:persist="back-top" />
 	</body>
 </html>
