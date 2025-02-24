@@ -43,9 +43,9 @@ export function SquareIconButton(props: SquareIconButtonProps) {
 			onClick={props.onClick}
 			disabled={props.disabled}
 			classList={{
-				'bg-theme-base-100 border-theme-base-200 text-theme-base-900 hover:enabled:border-theme-base-400 hover:enabled:bg-theme-base-300 dark:hover:enabled:bg-theme-base-800 disabled:text-theme-base-400 dark:bg-slate-700 dark:border-theme-base-600 dark:text-theme-base-100':
+				'bg-theme-base-100 border-theme-base-200 text-theme-base-900 hover:enabled:border-theme-base-400 hover:enabled:bg-theme-base-300 dark:hover:enabled:bg-theme-base-800 disabled:text-theme-base-400 dark:bg-slate-700 dark:disabled:bg-theme-base-500 dark:disabled:text-theme-base-300 dark:border-theme-base-600 dark:text-theme-base-100':
 					theme() === 'light',
-				'bg-theme-base-800 border-theme-base-700 text-theme-base-100 hover:enabled:border-theme-base-700 hover:enabled:bg-theme-base-800 dark:hover:enabled:bg-theme-base-300 dark:bg-theme-base-100 dark:border-theme-base-200 dark:text-theme-base-900':
+				'bg-theme-base-800 border-theme-base-700 text-theme-base-100 hover:enabled:border-theme-base-700 hover:enabled:bg-theme-base-800 dark:hover:enabled:bg-theme-base-300 dark:disabled:text-theme-base-600 dark:bg-theme-base-100 dark:border-theme-base-200 dark:text-theme-base-900':
 					theme() === 'dark',
 			}}
 			class={`size-9 border transition grid-center data-[icon]:*:size-6 ${props.class ?? ''}`}
