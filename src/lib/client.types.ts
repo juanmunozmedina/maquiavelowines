@@ -10,6 +10,8 @@ export type Product = {
 	medal?: Array<string>;
 	/** A longer description of the product. */
 	description: string | null;
+	/** A link to technical sheet of the product. */
+	technical?: string | null;
 	/** The price of the product in cents. */
 	price: number;
 	/** The discount amount in cents. Should be subtracted from the price to get the discounted price. */

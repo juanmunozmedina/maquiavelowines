@@ -26,7 +26,7 @@ export function ProductImageSwitcher(props: ProductImageSwitcherProps) {
 								setCurrentImageIndex(index());
 							}}
 							class={twMerge(
-								'relative aspect-square h-20 flex-shrink-0 border border-theme-base-200 bg-theme-base-100 p-1 first:mt-auto last:mb-auto',
+								'relative aspect-square h-20 flex-shrink-0 border border-theme-base-900 bg-theme-base-100 p-1 first:mt-auto last:mb-auto dark:border-theme-base-600 dark:bg-slate-700',
 								index() === currentImageIndex() && 'border-theme-base-900',
 							)}
 							type="button"
@@ -36,7 +36,7 @@ export function ProductImageSwitcher(props: ProductImageSwitcherProps) {
 								alt=""
 								src={image.src}
 								srcset={image.srcSet.attribute}
-								class="h-full w-full object-cover"
+								class="h-full w-full object-contain"
 							/>
 							<Show when={index() === currentImageIndex()}>
 								<RiSystemCheckLine
@@ -54,7 +54,7 @@ export function ProductImageSwitcher(props: ProductImageSwitcherProps) {
 					alt=""
 					src={currentImage().src}
 					srcset={currentImage().srcSet.attribute}
-					class="h-full w-full rounded-lg object-cover"
+					class="h-full w-full rounded-lg object-contain"
 				/>
 			</Card>
 		</div>

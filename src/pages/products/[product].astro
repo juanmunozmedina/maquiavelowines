@@ -4,6 +4,7 @@ import { getProductById } from 'storefront:client';
 import { Breadcrumbs } from 'astro-breadcrumbs';
 import { Icon } from 'astro-icon/components';
 import Card from '~/components/ui/Card.tsx';
+import ExternalLink from '~/components/ui/ExternalLink.astro';
 import { applyDefaultCacheHeaders } from '~/config.ts';
 import { AddToCartForm } from '~/features/cart/AddToCartForm.tsx';
 import CollectionSection from '~/features/collection/CollectionSection.astro';
@@ -14,8 +15,8 @@ import { ProductImageSwitcher } from '~/features/product/ProductImageSwitcher.ts
 import { ProductPrice } from '~/features/product/ProductPrice.tsx';
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 import { unwrap } from '~/lib/util.ts';
-
 import 'astro-breadcrumbs/breadcrumbs.css';
+import { RiArrowsArrowRightSLine } from 'solid-icons/ri';
 
 applyDefaultCacheHeaders(Astro.response.headers);
 
@@ -187,6 +188,23 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 											</a>
 										</li>
 									) : null}
+									{product.medal[2] ? (
+										<li>
+											<a
+												href={product.medal[2]}
+												data-pswp-width="500"
+												data-pswp-height="500"
+												target="_blank"
+											>
+												<img
+													alt="Medalla VinEspaña"
+													width="64"
+													height="64"
+													src={product.medal[2]}
+												/>
+											</a>
+										</li>
+									) : null}
 								</ul>
 							</fieldset>
 						) : null
@@ -202,6 +220,25 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 								set:html={product.description}
 							/>
 						</ProductDetailDescriptionDialog>
+					)
+				}
+				{
+					product.technical && (
+						<div>
+							<button>
+								<div class="mt-4 flex h-14 cursor-pointer list-none items-center justify-between border-y border-slate-300 font-bold text-slate-600 dark:border-slate-600 dark:text-theme-base-100">
+									<ExternalLink
+										href={product.technical}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="no-underline"
+									>
+										Ficha técnica
+									</ExternalLink>
+									<RiArrowsArrowRightSLine class="!size-6" />
+								</div>
+							</button>
+						</div>
 					)
 				}
 			</div>
