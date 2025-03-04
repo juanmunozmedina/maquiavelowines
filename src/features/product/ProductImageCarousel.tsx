@@ -48,7 +48,7 @@ export function ProductImageCarousel(props: ProductImageCarouselProps) {
 				<For each={props.productImages}>
 					{(image, index) => (
 						<li class="w-full shrink-0" data-index={index()}>
-							<Card class="flex aspect-square w-full items-center justify-center">
+							<Card class="flex aspect-square w-full justify-center">
 								<img
 									{...image.attributes}
 									alt=""
@@ -56,7 +56,8 @@ export function ProductImageCarousel(props: ProductImageCarouselProps) {
 									srcset={image.srcSet.attribute}
 									loading={index() === 0 ? 'eager' : 'lazy'}
 									draggable={false}
-									class="snap-center"
+									class="w-auto snap-center"
+									sizes="(min-width: 1280px) 960px, 100vw"
 								/>
 							</Card>
 						</li>
