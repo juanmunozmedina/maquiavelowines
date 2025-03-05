@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://maquiavelowines.netlify.app/*"
+  to = "https://maquiavelowines.com/:splat"
+  status = 301
+  force = true
