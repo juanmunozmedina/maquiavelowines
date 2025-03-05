@@ -25,6 +25,18 @@
 	.focus-ring-inset {
 		@apply ring-inset ring-offset-0;
 	}
+
+	.toggle-checkbox {
+		@apply absolute block h-6 w-6 cursor-pointer appearance-none rounded-full border-4 border-gray-100 bg-gray-800 focus:outline-none dark:border-gray-400 dark:bg-white;
+	}
+
+	.toggle-checkbox:checked {
+		@apply right-0 border-gray-400;
+	}
+
+	.toggle-label {
+		@apply block h-6 cursor-pointer overflow-hidden rounded-full border-2 border-gray-100 bg-gray-100 align-middle text-gray-100 dark:border-gray-400 dark:bg-gray-400 dark:text-gray-400;
+	}
 }
 
 @layer components {

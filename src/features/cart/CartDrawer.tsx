@@ -4,6 +4,7 @@ import { Button } from '~/components/ui/Button.tsx';
 import { Drawer } from '~/components/ui/Drawer.tsx';
 import { CartSummary } from '~/features/cart/CartSummary.tsx';
 import { cartQueryOptions } from '~/features/cart/cart.queries.ts';
+import { formatProductPrice } from '~/lib/currency.ts';
 import { queryClient } from '~/lib/query.ts';
 import { CartButton } from './CartButton.tsx';
 import { CartStore } from './store.ts';
@@ -39,9 +40,14 @@ export function CartDrawer() {
 						<Button type="submit">Proceso de pago</Button>
 					</form>
 				</Show>
-				<Show when={subtotal() / 100 < 60}>
+				<Show when={subtotal() / 100 === 0}>
 					<aside class="mt-3 text-balance text-center text-sm font-medium text-theme-base-500 dark:text-theme-base-300">
 						El pedido mínimo para el envío es de 60€.
+					</aside>
+				</Show>
+				<Show when={subtotal() / 100 < 60 && subtotal() > 0}>
+					<aside class="mt-3 text-balance text-center text-sm font-medium text-theme-base-500 dark:text-theme-base-300">
+						Te faltan {formatProductPrice(6000 - subtotal())} para llegar al pedido mínimo.
 					</aside>
 				</Show>
 			</div>
