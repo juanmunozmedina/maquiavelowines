@@ -44,7 +44,7 @@ export function CartSummary() {
 					<dt class="font-normal text-slate-600">Discount</dt>
 					<dd class="font-medium text-slate-700">{formatProductPrice(discount())}</dd>
 					<hr class="col-span-2 border-t border-slate-200" /> */}
-					<dt class="my-2 text-lg font-normal text-slate-600 dark:text-theme-base-100">Subtotal</dt>
+					<dt class="my-2 text-lg font-normal text-slate-600 dark:text-theme-base-100">Total</dt>
 					<dd
 						class="my-2 text-xl font-medium text-slate-700 dark:text-theme-base-100"
 						data-testid="cart-total"
