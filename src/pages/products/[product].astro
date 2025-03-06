@@ -279,7 +279,7 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 		</div>
 
 		<ProductCarouselSection
-			transition:persist="related"
+			transition:persist-props="related"
 			heading="También te puede gustar"
 			filterProducts={(products) => products.filter(({ id }) => id !== product.id)}
 		/>
