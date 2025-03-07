@@ -5,6 +5,7 @@ import { button } from '~/styles.ts';
 
 export interface Props {
 	name: string;
+	description: string;
 	slug: string;
 	imageUrl?: string;
 	cta?: string;
@@ -28,8 +29,11 @@ export interface Props {
 					/>
 				)
 			}
-			<p class="text-pretty text-3xl font-semibold">
+			<h3 class="text-pretty text-3xl font-semibold">
 				{Astro.props.name}
+			</h3>
+			<p class="text-slate-700 dark:text-theme-base-100">
+				<strong> {Astro.props.description}</strong>
 			</p>
 			<p class={button()}>
 				{Astro.props.cta ?? 'Compra ahora'}
