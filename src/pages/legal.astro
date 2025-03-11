@@ -1,7 +1,7 @@
 ---
+import { Breadcrumbs } from 'astro-breadcrumbs';
 import CollectionSection from '~/features/collection/CollectionSection.astro';
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
-import { Breadcrumbs } from 'astro-breadcrumbs';
 
 import 'astro-breadcrumbs/breadcrumbs.css';
 
@@ -9,7 +9,7 @@ export const prerender = true;
 ---
 
 <PrimaryLayout title="Bodegas Maquiavelo">
-	<main class="breakout mt-8 flex flex-col gap-y-8">
+	<main class="breakout mt-8 gap-y-8">
 		<Breadcrumbs
 			linkTextFormat="capitalized"
 			customizeLinks={[

@@ -1,5 +1,6 @@
 ---
 import LandingHero from '~/components/LandingHero.astro';
+import WallyWidget from '~/components/layout/WallyWidget.astro';
 import { applyDefaultCacheHeaders } from '~/config.ts';
 import CollectionSection from '~/features/collection/CollectionSection.astro';
 import ProductCarouselSection from '~/features/product/ProductCarouselSection.astro';
@@ -21,8 +22,9 @@ applyDefaultCacheHeaders(Astro.response.headers);
 			</p>
 		</div>
 		<div class="content">
-			<ProductCarouselSection heading="Popular ahora mismo" />
+			<ProductCarouselSection transition:persist-props="popular" heading="Popular ahora mismo" />
 		</div>
 		<CollectionSection />
+		<WallyWidget />
 	</main>
 </PrimaryLayout>

@@ -1,7 +1,7 @@
 ---
+import { Breadcrumbs } from 'astro-breadcrumbs';
 import CollectionSection from '~/features/collection/CollectionSection.astro';
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
-import { Breadcrumbs } from 'astro-breadcrumbs';
 
 import 'astro-breadcrumbs/breadcrumbs.css';
 
@@ -9,7 +9,7 @@ export const prerender = true;
 ---
 
 <PrimaryLayout title="Bodegas Maquiavelo">
-	<main class="breakout mt-8 flex flex-col gap-y-8">
+	<main class="breakout mt-8 gap-y-8">
 		<Breadcrumbs
 			linkTextFormat="capitalized"
 			customizeLinks={[
@@ -53,9 +53,8 @@ export const prerender = true;
 			<p>
 				Respetando lo establecido en la legislación vigente, <a
 					href="http://www.maquiavelowines.com">www.maquiavelowines.com</a
-				> (en adelante, también Sitio Web) se compromete a adoptar las medidas técnicas y
-				organizativas necesarias, según el nivel de seguridad adecuado al riesgo de los datos
-				recogidos.
+				> (en adelante, también Sitio Web) se compromete a adoptar las medidas técnicas y organizativas
+				necesarias, según el nivel de seguridad adecuado al riesgo de los datos recogidos.
 			</p>
 			<h3 class="text-1xl my-6 font-semibold">Leyes que incorpora esta política de privacidad</h3>
 			<p>
@@ -274,60 +273,55 @@ export const prerender = true;
 			<ul class="my-3 list-disc space-y-2">
 				<li>
 					<em>Derecho de acceso:</em> Es el derecho del Usuario a obtener confirmación de si Bodegas
-					Maquiavelo está tratando o no sus datos personales y, en caso afirmativo, obtener
-					información sobre sus datos concretos de carácter personal y del tratamiento que Bodegas
-					Maquiavelo haya realizado o realice, así como, entre otra, de la información disponible
-					sobre el origen de dichos datos y los destinatarios de las comunicaciones realizadas o
-					previstas de los mismos.
+					Maquiavelo está tratando o no sus datos personales y, en caso afirmativo, obtener información
+					sobre sus datos concretos de carácter personal y del tratamiento que Bodegas Maquiavelo haya
+					realizado o realice, así como, entre otra, de la información disponible sobre el origen de
+					dichos datos y los destinatarios de las comunicaciones realizadas o previstas de los mismos.
 				</li>
 				<li>
 					<em>Derecho de rectificación:</em> Es el derecho del Usuario a que se modifiquen sus datos
-					personales que resulten ser inexactos o, teniendo en cuenta los fines del tratamiento,
-					incompletos.
+					personales que resulten ser inexactos o, teniendo en cuenta los fines del tratamiento, incompletos.
 				</li>
 				<li>
 					<em>Derecho de supresión ("el derecho al olvido"):</em> Es el derecho del Usuario, siempre
 					que la legislación vigente no establezca lo contrario, a obtener la supresión de sus datos
-					personales cuando estos ya no sean necesarios para los fines para los cuales fueron
-					recogidos o tratados; el Usuario haya retirado su consentimiento al tratamiento y este no
-					cuente con otra base legal; el Usuario se oponga al tratamiento y no exista otro motivo
-					legítimo para continuar con el mismo; los datos personales hayan sido tratados
-					ilícitamente; los datos personales deban suprimirse en cumplimiento de una obligación
-					legal; o los datos personales hayan sido obtenidos producto de una oferta directa de
-					servicios de la sociedad de la información a un menor de 14 años. Además de suprimir los
-					datos, el Responsable del tratamiento, teniendo en cuenta la tecnología disponible y el
-					coste de su aplicación, deberá adoptar medidas razonables para informar a los responsables
-					que estén tratando los datos personales de la solicitud del interesado de supresión de
-					cualquier enlace a esos datos personales.
+					personales cuando estos ya no sean necesarios para los fines para los cuales fueron recogidos
+					o tratados; el Usuario haya retirado su consentimiento al tratamiento y este no cuente con
+					otra base legal; el Usuario se oponga al tratamiento y no exista otro motivo legítimo para
+					continuar con el mismo; los datos personales hayan sido tratados ilícitamente; los datos personales
+					deban suprimirse en cumplimiento de una obligación legal; o los datos personales hayan sido
+					obtenidos producto de una oferta directa de servicios de la sociedad de la información a un
+					menor de 14 años. Además de suprimir los datos, el Responsable del tratamiento, teniendo en
+					cuenta la tecnología disponible y el coste de su aplicación, deberá adoptar medidas razonables
+					para informar a los responsables que estén tratando los datos personales de la solicitud del
+					interesado de supresión de cualquier enlace a esos datos personales.
 				</li>
 				<li>
-					<em>Derecho a la limitación del tratamiento:</em> Es el derecho del Usuario a limitar el
-					tratamiento de sus datos personales. El Usuario tiene derecho a obtener la limitación del
-					tratamiento cuando impugne la exactitud de sus datos personales; el tratamiento sea
-					ilícito; el Responsable del tratamiento ya no necesite los datos personales, pero el
-					Usuario lo necesite para hacer reclamaciones; y cuando el Usuario se haya opuesto al
-					tratamiento.
+					<em>Derecho a la limitación del tratamiento:</em> Es el derecho del Usuario a limitar el tratamiento
+					de sus datos personales. El Usuario tiene derecho a obtener la limitación del tratamiento cuando
+					impugne la exactitud de sus datos personales; el tratamiento sea ilícito; el Responsable del
+					tratamiento ya no necesite los datos personales, pero el Usuario lo necesite para hacer reclamaciones;
+					y cuando el Usuario se haya opuesto al tratamiento.
 				</li>
 				<li>
-					<em>Derecho a la portabilidad de los datos:</em> En caso de que el tratamiento se efectúe
-					por medios automatizados, el Usuario tendrá derecho a recibir del Responsable del
-					tratamiento sus datos personales en un formato estructurado, de uso común y lectura
-					mecánica, y a transmitirlos a otro responsable del tratamiento. Siempre que sea
-					técnicamente posible, el Responsable del tratamiento transmitirá directamente los datos a
-					ese otro responsable.
+					<em>Derecho a la portabilidad de los datos:</em> En caso de que el tratamiento se efectúe por
+					medios automatizados, el Usuario tendrá derecho a recibir del Responsable del tratamiento sus
+					datos personales en un formato estructurado, de uso común y lectura mecánica, y a transmitirlos
+					a otro responsable del tratamiento. Siempre que sea técnicamente posible, el Responsable del
+					tratamiento transmitirá directamente los datos a ese otro responsable.
 				</li>
 				<li>
-					<em>Derecho de oposición:</em> Es el derecho del Usuario a que no se lleve a cabo el
-					tratamiento de sus datos de carácter personal o se cese el tratamiento de los mismos por
-					parte de Bodegas Maquiavelo.
+					<em>Derecho de oposición:</em> Es el derecho del Usuario a que no se lleve a cabo el tratamiento
+					de sus datos de carácter personal o se cese el tratamiento de los mismos por parte de Bodegas
+					Maquiavelo.
 				</li>
 				<li>
 					<em
 						>Derecho a no ser objeto de una decisión basada únicamente en el tratamiento
 						automatizado, incluida la elaboración de perfiles:</em
-					> Es el derecho del Usuario a no ser objeto de una decisión individualizada basada
-					únicamente en el tratamiento automatizado de sus datos personales, incluida la elaboración
-					de perfiles, existente salvo que la legislación vigente establezca lo contrario.
+					> Es el derecho del Usuario a no ser objeto de una decisión individualizada basada únicamente
+					en el tratamiento automatizado de sus datos personales, incluida la elaboración de perfiles,
+					existente salvo que la legislación vigente establezca lo contrario.
 				</li>
 			</ul>
 			<p>

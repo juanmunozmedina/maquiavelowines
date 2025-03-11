@@ -7,11 +7,12 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	transition:persist="modal"
 >
 	<div
-		id="popup-modal"
+		id="popupModal"
 		tabindex="-1"
 		class="popup-modal z-60 fixed left-0 right-0 top-0 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden md:inset-0"
 		aria-modal="true"
 		role="dialog"
+		title="Pop up"
 	>
 		<div class="relative max-h-full w-full max-w-md p-2">
 			<div class="relative rounded-lg bg-gray-100 shadow dark:bg-gray-700">
@@ -37,7 +38,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 					</h3>
 					<button
 						id="button-popup-modal"
-						data-modal-hide="popup-modal"
+						data-modal-hide="popupModal"
 						type="button"
 						class="inline-flex items-center rounded-lg bg-green-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
 					>
@@ -65,7 +66,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	import type { ModalOptions, ModalInterface } from 'flowbite';
 	import type { InstanceOptions } from 'flowbite';
 
-	const $modalElement: HTMLElement | null = document.querySelector('#popup-modal');
+	const $modalElement: HTMLElement | null = document.querySelector('#popupModal');
 
 	const modalOptions: ModalOptions = {
 		placement: 'top-center',
@@ -76,7 +77,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 
 	// instance options object
 	const instanceOptions: InstanceOptions = {
-		id: 'popup-modal',
+		id: 'popupModal',
 		override: true,
 	};
 

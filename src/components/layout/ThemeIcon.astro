@@ -1,4 +1,7 @@
-<label class="absolute -top-[2px] right-0 z-0 inline-flex cursor-pointer items-center">
+<label
+	for="themeToggle"
+	class="absolute -top-[2px] right-0 z-0 inline-flex cursor-pointer items-center"
+>
 	<input id="themeToggle" type="checkbox" value="" class="peer sr-only" />
 	<div
 		class="peer relative box-border flex h-6 w-11 justify-between rounded-full border border-solid border-theme-base-900 bg-theme-base-100 after:absolute after:start-[0.105em] after:top-[0.105em] after:h-[1.225rem] after:w-[1.225rem] after:rounded-full after:border after:border-theme-base-900 after:bg-theme-base-900 after:transition-all after:content-[''] peer-checked:bg-theme-base-100 peer-checked:after:translate-x-full peer-checked:after:border-theme-base-900 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-slate-700 dark:border-theme-base-100 dark:bg-slate-700 dark:after:border-slate-700 dark:after:bg-theme-base-100 dark:peer-checked:bg-theme-base-500 dark:peer-focus:ring-theme-base-300 rtl:peer-checked:after:-translate-x-full"
@@ -43,10 +46,10 @@
 			if (['dark', 'light'].includes(localStorageTheme)) {
 				return localStorageTheme;
 			}
-			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				return 'dark';
+			if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+				return 'light';
 			}
-			return 'light';
+			return 'dark';
 		})();
 
 		if (theme === 'light') {
