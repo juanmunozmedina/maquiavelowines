@@ -38,6 +38,7 @@ export function SquareIconButton(props: SquareIconButtonProps) {
 	const theme = () => props.theme ?? 'light';
 	return (
 		<Dynamic
+			transition:persist-props={'SquareIconButton'}
 			component={props.as ?? 'button'}
 			type={props.type ?? 'button'}
 			onClick={props.onClick}

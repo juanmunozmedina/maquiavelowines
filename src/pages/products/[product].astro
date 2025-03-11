@@ -4,7 +4,6 @@ import { getProductById } from 'storefront:client';
 import { Breadcrumbs } from 'astro-breadcrumbs';
 import { Icon } from 'astro-icon/components';
 import Card from '~/components/ui/Card.tsx';
-import ExternalLink from '~/components/ui/ExternalLink.astro';
 import { applyDefaultCacheHeaders } from '~/config.ts';
 import { AddToCartForm } from '~/features/cart/AddToCartForm.tsx';
 import CollectionSection from '~/features/collection/CollectionSection.astro';
@@ -227,14 +226,14 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 						<div>
 							<button>
 								<div class="mt-8 flex h-14 cursor-pointer list-none items-center justify-between border-y border-slate-300 font-bold text-slate-600 dark:border-slate-600 dark:text-theme-base-100">
-									<ExternalLink
+									<a
 										href={product.technical}
 										target="_blank"
 										rel="noopener noreferrer"
 										class="no-underline"
 									>
 										Ficha técnica
-									</ExternalLink>
+									</a>
 									<RiArrowsArrowRightSLine class="!size-6" />
 								</div>
 							</button>
@@ -279,7 +278,6 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 		</div>
 
 		<ProductCarouselSection
-			transition:persist-props="related"
 			heading="También te puede gustar"
 			filterProducts={(products) => products.filter(({ id }) => id !== product.id)}
 		/>

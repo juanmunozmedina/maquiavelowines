@@ -99,6 +99,10 @@
 	}
 }
 
+button {
+	cursor: pointer;
+}
+
 .c-breadcrumbs__crumbs {
 	gap: 0.5rem 0;
 }

@@ -100,7 +100,7 @@ export function AddToCartForm(props: { product: Product }) {
 							<div class="flex flex-wrap gap-2">
 								<For each={[...values]}>
 									{(value) => (
-										<label class="flex h-11 min-w-11 items-center justify-center gap-1.5 border border-slate-300 bg-slate-100 px-3 text-center text-sm text-slate-600 transition hover:border-slate-500 has-[:checked]:border-slate-900 has-[:checked]:text-slate-900 dark:border-slate-600 dark:bg-slate-700 dark:text-theme-base-100 dark:hover:border-slate-600">
+										<label class="flex h-11 min-w-11 cursor-pointer items-center justify-center gap-1.5 border border-slate-300 bg-slate-100 px-3 text-center text-sm text-slate-600 transition hover:border-slate-500 has-[:checked]:border-slate-900 has-[:checked]:text-slate-900 dark:border-slate-600 dark:bg-slate-700 dark:text-theme-base-100 dark:hover:border-slate-600 dark:has-[:checked]:border-slate-300 dark:has-[:checked]:text-slate-300">
 											<input
 												type="radio"
 												value={value}
@@ -132,7 +132,7 @@ export function AddToCartForm(props: { product: Product }) {
 				</label>
 				<NumberInput id="quantity" min={1} value={quantity()} setValue={setQuantity} />
 			</div>
-			<div class="dark:bg-maquiavelo-dark sticky bottom-0 mb-8 grid h-12 items-center gap-2 bg-white">
+			<div class="sticky bottom-0 mb-8 grid h-12 items-center gap-2 bg-white dark:bg-maquiavelo-dark">
 				<Switch
 					fallback={
 						<Button type="submit" pending={mutation.isPending}>

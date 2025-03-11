@@ -9,7 +9,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	<div
 		id="popup-modal"
 		tabindex="-1"
-		class="popup-modal fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden md:inset-0"
+		class="popup-modal z-60 fixed left-0 right-0 top-0 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden md:inset-0"
 		aria-modal="true"
 		role="dialog"
 	>
@@ -70,7 +70,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	const modalOptions: ModalOptions = {
 		placement: 'top-center',
 		backdrop: 'dynamic',
-		backdropClasses: 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-60',
+		backdropClasses: 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-50',
 		closable: false,
 	};
 
