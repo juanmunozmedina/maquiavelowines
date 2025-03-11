@@ -11,5 +11,8 @@
 	},
 	"typescript.tsdk": "node_modules\\typescript\\lib",
 	"javascript.preferences.importModuleSpecifierEnding": "js",
-	"typescript.preferences.importModuleSpecifierEnding": "js"
+	"typescript.preferences.importModuleSpecifierEnding": "js",
+	"files.associations": {
+		"*.css": "tailwindcss"
+	}
 }

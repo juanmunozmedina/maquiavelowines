@@ -298,6 +298,9 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 		lightbox = new PhotoSwipeLightbox({
 			gallery: '#medals',
 			children: 'a',
+			initialZoomLevel: 0.8,
+			secondaryZoomLevel: 0.8,
+			maxZoomLevel: 0.8,
 			pswpModule: () => import('photoswipe'),
 		});
 
