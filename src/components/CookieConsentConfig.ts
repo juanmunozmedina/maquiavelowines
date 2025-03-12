@@ -27,14 +27,6 @@ export const config: CookieConsentConfig = {
 			services: {
 				ga: {
 					label: 'Google Analytics',
-					onAccept: () => {
-						// Grant consent to the Google Analytics service
-						console.log('ga4 granted');
-					},
-					onReject: () => {
-						// Don't enable Google Analytics
-						console.log('ga4 rejected');
-					},
 				},
 			},
 		},

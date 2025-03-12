@@ -278,7 +278,6 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 		</div>
 
 		<ProductCarouselSection
-			transition:persist-props="related"
 			heading="También te puede gustar"
 			filterProducts={(products) => products.filter(({ id }) => id !== product.id)}
 		/>
@@ -297,9 +296,9 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 		lightbox = new PhotoSwipeLightbox({
 			gallery: '#medals',
 			children: 'a',
-			initialZoomLevel: 0.8,
-			secondaryZoomLevel: 0.8,
-			maxZoomLevel: 0.8,
+			initialZoomLevel: 0.6,
+			secondaryZoomLevel: 0.6,
+			maxZoomLevel: 0.6,
 			pswpModule: () => import('photoswipe'),
 		});
 
