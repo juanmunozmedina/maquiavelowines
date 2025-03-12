@@ -13,5 +13,7 @@
 		script.setAttribute('defer', '');
 		document.body.appendChild(script);
 	}
-	document.addEventListener('astro:page-load', loadScript);
+	if (document.getElementById('wallyWidget')) {
+		document.addEventListener('astro:page-load', loadScript);
+	}
 </script>
