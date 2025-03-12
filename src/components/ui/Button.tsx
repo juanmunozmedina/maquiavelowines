@@ -40,7 +40,7 @@ export function SquareIconButton(props: SquareIconButtonProps) {
 			type={props.type ?? 'button'}
 			onClick={props.onClick}
 			disabled={props.disabled}
-			class={`button-arrow size-9 border border-theme-base-200 bg-theme-base-100 text-theme-base-900 transition grid-center hover:enabled:border-theme-base-400 hover:enabled:bg-theme-base-300 disabled:text-theme-base-400 data-[icon]:*:size-6 dark:border-theme-base-700 dark:bg-theme-base-800 dark:text-theme-base-100 dark:hover:enabled:border-theme-base-700 dark:hover:enabled:bg-theme-base-800 dark:disabled:bg-theme-base-500 dark:disabled:text-theme-base-300 ${props.class ?? ''}`}
+			class={`size-9 border border-theme-base-200 bg-theme-base-100 text-theme-base-900 transition grid-center hover:enabled:border-theme-base-400 hover:enabled:bg-theme-base-300 disabled:text-theme-base-400 data-[icon]:*:size-6 dark:border-theme-base-600 dark:bg-slate-700 dark:text-theme-base-100 dark:hover:enabled:border-theme-base-700 dark:hover:enabled:bg-theme-base-800 dark:disabled:bg-theme-base-500 dark:disabled:text-theme-base-300 ${props.class ?? ''}`}
 		>
 			{props.children}
 		</Dynamic>
