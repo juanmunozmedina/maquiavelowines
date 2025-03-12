@@ -25,6 +25,10 @@
 	.focus-ring-inset {
 		@apply ring-inset ring-offset-0;
 	}
+
+	button, [role="button"] {
+                cursor: pointer;
+	}
 }
 
 @layer components {
@@ -97,10 +101,6 @@
 			justify-self: end;
 		}
 	}
-}
-
-button {
-	cursor: pointer;
 }
 
 .c-breadcrumbs__crumbs {
