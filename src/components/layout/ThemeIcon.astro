@@ -39,7 +39,8 @@
 	}
 </style>
 
-<script is:inline>
+<script is:inline type="module">
+	import 'astro:transitions/client';
 	document.addEventListener('astro:page-load', () => {
 		const theme = (() => {
 			const localStorageTheme = localStorage?.getItem('theme') ?? '';
