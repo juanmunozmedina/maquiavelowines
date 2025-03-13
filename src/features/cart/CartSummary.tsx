@@ -38,7 +38,7 @@ export function CartSummary() {
 				</Index>
 			</ul>
 			<Show when={query.data.items.length > 0}>
-				<dl class="grid grid-cols-[auto,1fr] gap-3 py-3 [&>dd]:text-right">
+				<dl class="grid grid-cols-[repeat(2,1fr)] gap-3 py-3 [&>dd]:text-right">
 					{/* <dt class="font-normal text-slate-600">Subtotal</dt>
 					<dd class="font-medium text-slate-700">{formatProductPrice(subtotal())}</dd>
 					<dt class="font-normal text-slate-600">Discount</dt>
