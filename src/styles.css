@@ -26,8 +26,9 @@
 		@apply ring-inset ring-offset-0;
 	}
 
-	button, [role="button"] {
-                cursor: pointer;
+	button,
+	[role='button'] {
+		cursor: pointer;
 	}
 }
 
@@ -128,4 +129,8 @@
 .dark svg[data-icon='mdi:credit-card-check'],
 .dark svg[data-icon='mdi:truck'] {
 	color: rgb(71 85 105);
+}
+
+.dark .by-astro svg path {
+	fill: #f9f3f4;
 }
