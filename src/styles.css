@@ -104,6 +104,11 @@
 	}
 }
 
+.c-breadcrumbs.is-truncated .c-breadcrumbs__crumb {
+	visibility: visible !important;
+	position: relative !important;
+}
+
 .c-breadcrumbs__crumbs {
 	gap: 0.5rem 0;
 }
