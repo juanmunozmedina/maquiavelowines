@@ -81,7 +81,9 @@ if (!order.shippingAddress) {
 ---
 
 <PrimaryLayout title="Gracias por tu pedido">
-	<div class="mx-auto flex w-full max-w-prose flex-col gap-y-2 text-slate-900">
+	<div
+		class="mx-auto flex w-full max-w-prose flex-col gap-y-2 text-slate-900 dark:text-theme-base-100"
+	>
 		<header class="flex flex-col gap-4 py-8">
 			<img
 				src={successIcon.src}
@@ -115,9 +117,9 @@ if (!order.shippingAddress) {
 							<div class="flex flex-1 flex-col gap-1">
 								<h3>{productVariant.product.name}</h3>
 								<div class="flex flex-wrap gap-1">
-									<p class="text-slate-700">Cantidad: {quantity}</p>
+									<p class="text-slate-700 dark:text-theme-base-300">Cantidad: {quantity}</p>
 									{Object.entries(productVariant.options).map(([option, value]) => (
-										<p class="text-slate-700 before:text-slate-500 before:content-['•']">
+										<p class="text-slate-700 before:text-slate-500 before:content-['•'] dark:text-theme-base-300 dark:before:text-theme-base-200">
 											{option}: {value}
 										</p>
 									))}
@@ -125,13 +127,13 @@ if (!order.shippingAddress) {
 							</div>
 							{productVariant.product.discount > 0 ? (
 								<p class="">
-									<span class="text-slate-500 line-through">
+									<span class="text-slate-500 line-through dark:text-theme-base-200">
 										{formatProductPrice(
 											(productVariant.product.price + productVariant.priceVariant) * quantity,
 										)}
 									</span>
 									<br />
-									<span class="text-slate-700">
+									<span class="text-slate-700 dark:text-theme-base-300">
 										{formatProductPrice(
 											(productVariant.product.price +
 												productVariant.priceVariant -
