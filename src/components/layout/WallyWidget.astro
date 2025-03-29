@@ -9,11 +9,15 @@
 	function loadScript() {
 		var script = document.createElement('script');
 		script.setAttribute('is:inline', '');
-		script.src = 'https://embed.getwally.net/embed.js';
 		script.setAttribute('defer', '');
-		document.body.appendChild(script);
+		script.src = 'https://embed.getwally.net/embed.js';
+		document.head.appendChild(script);
 	}
 	if (document.getElementById('wallyWidget')) {
 		document.addEventListener('astro:page-load', loadScript);
+		setTimeout(() => {
+			const iframe = document.getElementById('iFrameResizer0');
+			iframe.setAttribute('title', 'Reviews Widget For Your Website');
+		}, 1000);
 	}
 </script>
