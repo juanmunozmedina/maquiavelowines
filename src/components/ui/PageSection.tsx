@@ -9,7 +9,7 @@ export function PageSection(props: PageSectionProps) {
 	const [local, others] = splitProps(props, ['children', 'class']);
 
 	return (
-		<section class={`flex flex-col gap-4 pt-12 ${local.class || ''}`} {...others}>
+		<section class={`flex flex-col gap-4 pt-6 ${local.class || ''}`} {...others}>
 			{local.children}
 		</section>
 	);
