@@ -46,7 +46,7 @@ Los directorios principales del proyecto se describen a continuación:
 
 ## Servicios
 
-Este repositorio se conecta a servicios relacionados para impulsar pagos, correos electrónicos e incrustaciones de mapas. Visite el archivo [`astro.config.ts`](https://github.com/withastro/storefront/blob/main/astro.config.ts) para obtener una descripción general de todas las variables de entorno y los permisos de acceso necesarios para cada una.
+Este repositorio se conecta a servicios relacionados para impulsar pagos, correos electrónicos e incrustaciones de mapas. Visite el archivo [`astro.config.ts`](https://github.com/juanmunozmedina/maquiavelowines/blob/main/astro.config.ts) para obtener una descripción general de todas las variables de entorno y los permisos de acceso necesarios para cada una.
 
 Le invitamos a cambiar o eliminar por completo cualquiera de estos servicios para satisfacer sus necesidades.
 
@@ -56,7 +56,7 @@ Le invitamos a cambiar o eliminar por completo cualquiera de estos servicios par
 
 Este cliente no está disponible para uso público hoy, aunque proporcionamos una versión "simulada" de todas las funciones API en `src/lib/client.mock.ts`. Recomendamos utilizar este archivo como una forma de estandarizar las solicitudes para el proveedor de comercio electrónico de su elección.
 
-Para usar la API simulada, actualice la entrada [`tsconfig.json`](https://github.com/withastro/storefront/blob/main/tsconfig.json) para el módulo `storefront:client`:
+Para usar la API simulada, actualice la entrada [`tsconfig.json`](https://github.com/juanmunozmedina/maquiavelowines/blob/main/tsconfig.json) para el módulo `storefront:client`:
 
 ```diff
 {
