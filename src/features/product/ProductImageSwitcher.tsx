@@ -40,7 +40,7 @@ export function ProductImageSwitcher(props: ProductImageSwitcherProps) {
 							/>
 							<Show when={index() === currentImageIndex()}>
 								<RiSystemCheckLine
-									class="pointer-events-none absolute right-1 top-1 text-theme-base-900"
+									class="pointer-events-none absolute right-1 top-1 text-theme-base-900 dark:text-theme-base-100"
 									aria-hidden
 								/>
 							</Show>
