@@ -56,7 +56,13 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 		</div>
 	</div>
 	<div class="relative">
-		<p class="content">¡Envío a partir de 60€!</p>
+		<div class="swiper !z-0">
+			<div class="swiper-wrapper">
+				<div class="content swiper-slide">¡Pedidos a partir de 60€!</div>
+				<div class="content swiper-slide">¡Pago 100% seguro y rápido!</div>
+				<div class="content swiper-slide">¡Envío en 3/5 días!</div>
+			</div>
+		</div>
 		<ThemeIcon transition:persist="icon" />
 	</div>
 </aside>
@@ -65,6 +71,19 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	import { Modal } from 'flowbite';
 	import type { ModalOptions, ModalInterface } from 'flowbite';
 	import type { InstanceOptions } from 'flowbite';
+	import Swiper from 'swiper';
+	import { Autoplay } from 'swiper/modules';
+	import 'swiper/css';
+
+	new Swiper('.swiper', {
+		modules: [Autoplay],
+		loop: true,
+		allowTouchMove: false,
+		autoplay: {
+			delay: 4000,
+			disableOnInteraction: false,
+		},
+	});
 
 	const $modalElement: HTMLElement | null = document.querySelector('#popupModal');
 
