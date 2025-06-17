@@ -9,7 +9,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	<div
 		id="popupModal"
 		tabindex="-1"
-		class="popup-modal z-60 fixed left-0 right-0 top-0 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden md:inset-0"
+		class="popup-modal z-60 fixed left-0 right-0 top-0 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden transition-all duration-500 md:inset-0"
 		aria-modal="true"
 		role="dialog"
 		title="Pop up"
@@ -105,7 +105,9 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	if (!window.localStorage.getItem('popupShown')) {
 		const buttonElement = document.activeElement as HTMLElement; // Get the currently focused element
 		buttonElement.blur(); // Remove focus from the button
-		modal.show();
+		setTimeout(() => {
+			modal.show();
+		}, 1000);
 		const element = document.getElementById('button-popup-modal');
 		element!.addEventListener('click', (): void => {
 			window.localStorage.setItem('popupShown', 'true');
