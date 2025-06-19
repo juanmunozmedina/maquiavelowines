@@ -80,7 +80,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 		loop: true,
 		allowTouchMove: false,
 		autoplay: {
-			delay: 4000,
+			delay: 3000,
 			disableOnInteraction: false,
 		},
 	});
@@ -107,7 +107,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 		buttonElement.blur(); // Remove focus from the button
 		setTimeout(() => {
 			modal.show();
-		}, 1000);
+		}, 1500);
 		const element = document.getElementById('button-popup-modal');
 		element!.addEventListener('click', (): void => {
 			window.localStorage.setItem('popupShown', 'true');
