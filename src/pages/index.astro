@@ -1,6 +1,5 @@
 ---
 import LandingHero from '~/components/LandingHero.astro';
-import MapIframe from '~/components/layout/MapIframe.astro';
 import WallyWidget from '~/components/layout/WallyWidget.astro';
 import { applyDefaultCacheHeaders } from '~/config.ts';
 import CollectionSection from '~/features/collection/CollectionSection.astro';
@@ -27,6 +26,5 @@ applyDefaultCacheHeaders(Astro.response.headers);
 		</div>
 		<CollectionSection />
 		<WallyWidget />
-		<MapIframe />
 	</main>
 </PrimaryLayout>
