@@ -56,7 +56,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 		</div>
 	</div>
 	<div class="relative">
-		<div class="swiper !z-0">
+		<div transition:persist="swiper" class="swiper !z-0">
 			<div class="swiper-wrapper">
 				<div class="content swiper-slide">¡Pedidos a partir de 60€!</div>
 				<div class="content swiper-slide">¡Pago 100% seguro y rápido!</div>
@@ -74,16 +74,6 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	import Swiper from 'swiper';
 	import { Autoplay } from 'swiper/modules';
 	import 'swiper/css';
-
-	new Swiper('.swiper', {
-		modules: [Autoplay],
-		loop: true,
-		allowTouchMove: false,
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: false,
-		},
-	});
 
 	const $modalElement: HTMLElement | null = document.querySelector('#popupModal');
 
@@ -113,4 +103,14 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 			window.localStorage.setItem('popupShown', 'true');
 		});
 	}
+
+	new Swiper('.swiper', {
+		modules: [Autoplay],
+		loop: true,
+		allowTouchMove: false,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+	});
 </script>
