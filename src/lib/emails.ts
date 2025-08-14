@@ -1,12 +1,12 @@
-import Stripe from 'stripe';
-import { formatProductPrice } from '~/lib/currency.ts';
-import { stripeProductMetadataSchema } from '~/lib/products';
 import {
 	LOOPS_API_KEY,
 	LOOPS_FULFILLMENT_EMAIL,
 	LOOPS_FULFILLMENT_TRANSACTIONAL_ID,
 	LOOPS_SHOP_TRANSACTIONAL_ID,
 } from 'astro:env/server';
+import Stripe from 'stripe';
+import { formatProductPrice } from '~/lib/currency.ts';
+import { stripeProductMetadataSchema } from '~/lib/products';
 
 export async function sendCheckoutSuccessEmail(
 	email: string,
@@ -62,6 +62,8 @@ export async function sendCheckoutSuccessEmail(
 		total: formatProductPrice(session.amount_total ?? 0),
 		address: formattedAddress,
 		items: itemList,
+		email: session.customer_details?.email ?? '',
+		phone: session.customer_details?.phone ?? '',
 	};
 
 	const requestInit: RequestInit = {
