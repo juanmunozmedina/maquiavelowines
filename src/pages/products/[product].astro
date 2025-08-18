@@ -45,11 +45,6 @@ const productImages = await Promise.all(
 const firstImage = productImages[0];
 if (!firstImage) throw new Error(`No se encontraron imágenes para el producto ${id}`);
 
-const slug = product.name
-	.toLowerCase()
-	.replace(/\s+/g, '-')
-	.replace(/[^\w-]+/g, '');
-
 const anim = {
 	old: {
 		name: 'bump',
@@ -133,7 +128,7 @@ const customTransition = {
 					) : (
 						<Card class="aspect-square justify-center">
 							<img
-								transition:name={`${slug} image`}
+								transition:name={`${product.slug} image`}
 								transition:animate={customTransition}
 								src={firstImage.src}
 								srcset={firstImage.srcSet.attribute}
