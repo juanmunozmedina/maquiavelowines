@@ -341,12 +341,12 @@ const products: Record<string, Product> = {
 			'<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell Pie Franco</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Vino seleccionado y escogido para ser embotellado a mano de una edición especial y limitada. Su tipo de elaboración, etiquetado y lacrado manual, hacen que en tus manos sostengas una pieza única procedente de viñedos centenarios.</p> <p><b>Vista</b>: Color picota oscuro con borde granate.<br> <b>Nariz</b>: Muy expresivo y con buena complejidad. Aromas de fruta roja y negra muy madura, casi mermelada, chocolate, especiados, café, recuerdos balsámicos y minerales.<br> <b>Boca</b>: Potencia controlada, sabroso, con la fruta madura predominando sobre las notas tostadas. Combinación de frescos balsámicos con agradables especiados. Taninos pulidos, final largo y gran persistencia.<br></p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>',
 		price: 3400,
 		imageUrl: '/assets/ancestral_especial.png',
-		images: [
+		/*images: [
 			{
 				id: 'ancestral_especial_reverso',
 				url: '/assets/ancestral_especial_reverso.png',
 			},
-		],
+		],*/
 		collectionIds: ['ancestral'],
 		variants: [
 			{

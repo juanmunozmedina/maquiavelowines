@@ -14,6 +14,25 @@ interface Props extends Product {
 }
 
 const { class: className, elementId, imageLoading, ...product } = Astro.props;
+
+const anim = {
+	old: {
+		name: 'bump',
+		duration: '0.5s',
+		easing: 'ease-in',
+		direction: 'reverse',
+	},
+	new: {
+		name: 'bump',
+		duration: '0.5s',
+		easing: 'ease-in-out',
+	},
+};
+
+const customTransition = {
+	forwards: anim,
+	backwards: anim,
+};
 ---
 
 <a
@@ -25,6 +44,9 @@ const { class: className, elementId, imageLoading, ...product } = Astro.props;
 	<article>
 		<Card class="flex aspect-[5/6] items-center justify-center">
 			<Image
+				transition:name={`${product.slug} image`}
+				transition:animate={customTransition}
+				class="transition-all"
 				src={new URL(product.imageUrl, Astro.url).href}
 				alt={product.name}
 				width={290}
