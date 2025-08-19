@@ -2,29 +2,44 @@
 	<h2 class="mb-4 text-2xl font-bold md:text-3xl">Reseñas de nuestros clientes</h2>
 	<div id="wallyWidget" data-wally-widget="67d07418ff5d0b00140e2972" class="-m-2 h-full"></div>
 </section>
+
 <script is:inline>
-	function loadScript() {
-		var script = document.createElement('script');
-		script.setAttribute('is:inline', '');
-		script.setAttribute('defer', '');
-		script.setAttribute('id', 'getwally');
+	// Load the external Wally script if not already loaded
+	function loadWallyScript() {
+		if (document.getElementById('getwally')) return;
+
+		const script = document.createElement('script');
+		script.id = 'getwally';
+		script.defer = true;
 		script.src = 'https://embed.getwally.net/embed.js';
 		document.head.appendChild(script);
 	}
 
-	function wallyWidgetScroll() {
-		if (
-			window.scrollY > 0 &&
-			document.getElementById('wallyWidget') &&
-			document.getElementById('getwally') == null
-		) {
-			loadScript();
-		}
+	// Observe the widget and load the script when it becomes visible in the viewport
+	function observeWallyWidget() {
+		const widget = document.getElementById('wallyWidget');
+		if (!widget) return;
+
+		const observer = new IntersectionObserver(
+			(entries, obs) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						loadWallyScript();
+						obs.unobserve(entry.target); // Stop observing after first load
+					}
+				}
+			},
+			{
+				rootMargin: '100px', // Preload just before it's visible
+			},
+		);
+
+		observer.observe(widget);
 	}
 
-	window.addEventListener('scroll', wallyWidgetScroll);
+	// Initial observer setup on first page load
+	observeWallyWidget();
 
-	document.addEventListener('astro:after-swap', () => {
-		document.addEventListener('astro:page-load', wallyWidgetScroll);
-	});
+	// Re-run observer on page transitions (for Astro View Transitions)
+	document.addEventListener('astro:after-swap', observeWallyWidget);
 </script>

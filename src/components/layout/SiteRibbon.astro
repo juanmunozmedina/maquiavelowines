@@ -104,13 +104,17 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 		});
 	}
 
-	new Swiper('.swiper', {
-		modules: [Autoplay],
-		loop: true,
-		allowTouchMove: false,
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: false,
-		},
+	document.addEventListener('DOMContentLoaded', () => {
+		if (!document.querySelector('.swiper-initialized')) {
+			new Swiper('.swiper', {
+				modules: [Autoplay],
+				loop: true,
+				allowTouchMove: false,
+				autoplay: {
+					delay: 3000,
+					disableOnInteraction: false,
+				},
+			});
+		}
 	});
 </script>
