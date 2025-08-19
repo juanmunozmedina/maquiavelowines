@@ -44,25 +44,6 @@ const productImages = await Promise.all(
 );
 const firstImage = productImages[0];
 if (!firstImage) throw new Error(`No se encontraron imágenes para el producto ${id}`);
-
-const anim = {
-	old: {
-		name: 'bump',
-		duration: '0.5s',
-		easing: 'ease-in',
-		direction: 'reverse',
-	},
-	new: {
-		name: 'bump',
-		duration: '0.5s',
-		easing: 'ease-in-out',
-	},
-};
-
-const customTransition = {
-	forwards: anim,
-	backwards: anim,
-};
 ---
 
 <PrimaryLayout title={`Bodegas Maquiavelo | ${product.name}`}>
@@ -129,7 +110,7 @@ const customTransition = {
 						<Card class="aspect-square justify-center">
 							<img
 								transition:name={`${product.slug} image`}
-								transition:animate={customTransition}
+								transition:animate="initial"
 								src={firstImage.src}
 								srcset={firstImage.srcSet.attribute}
 								sizes={firstImage.attributes.sizes}

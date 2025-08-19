@@ -3,13 +3,13 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 ---
 
 <aside
-	class="breakout focus-ring-light min-h-10 items-center justify-center text-balance bg-theme-base-100 py-2 text-center text-sm text-theme-base-900 dark:bg-slate-700 dark:text-theme-base-100"
+	class="breakout focus-ring-light bg-theme-base-100 text-theme-base-900 dark:text-theme-base-100 min-h-10 items-center justify-center py-2 text-center text-sm text-balance dark:bg-slate-700"
 	transition:persist="modal"
 >
 	<div
 		id="popupModal"
 		tabindex="-1"
-		class="popup-modal z-60 fixed left-0 right-0 top-0 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden transition-all duration-500 md:inset-0"
+		class="popup-modal fixed top-0 right-0 left-0 z-60 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-x-hidden overflow-y-auto transition-all duration-500 md:inset-0"
 		aria-modal="true"
 		role="dialog"
 		title="Pop up"
@@ -40,14 +40,14 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 						id="button-popup-modal"
 						data-modal-hide="popupModal"
 						type="button"
-						class="inline-flex items-center rounded-lg bg-green-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
+						class="inline-flex items-center rounded-lg bg-green-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 focus:outline-none"
 					>
 						Sí, tengo más de 18 años.
 					</button>
 					<a
 						href="https://www.google.com/?hl=es"
 						type="button"
-						class="ms-3 rounded-lg bg-red-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-red-800 focus:z-10 focus:outline-none focus:ring-4 focus:ring-red-300"
+						class="ms-3 rounded-lg bg-red-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-red-800 focus:z-10 focus:ring-4 focus:ring-red-300 focus:outline-none"
 					>
 						No
 					</a>
@@ -55,7 +55,6 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 			</div>
 		</div>
 	</div>
-
 	<div class="relative">
 		<div transition:persist="swiper" class="swiper !z-0">
 			<div class="swiper-wrapper">
@@ -85,6 +84,7 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 		closable: false,
 	};
 
+	// instance options object
 	const instanceOptions: InstanceOptions = {
 		id: 'popupModal',
 		override: true,
@@ -92,53 +92,25 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 
 	const modal: ModalInterface = new Modal($modalElement, modalOptions, instanceOptions);
 
-	// Mostrar modal solo si no ha sido mostrado antes
 	if (!window.localStorage.getItem('popupShown')) {
 		const buttonElement = document.activeElement as HTMLElement; // Get the currently focused element
 		buttonElement.blur(); // Remove focus from the button
 		setTimeout(() => {
 			modal.show();
 		}, 1500);
-
 		const element = document.getElementById('button-popup-modal');
 		element!.addEventListener('click', (): void => {
 			window.localStorage.setItem('popupShown', 'true');
 		});
 	}
 
-	// Asegurarse de que Swiper se actualice al final de la transición
-	let swiperInstance: Swiper | undefined;
-
-	// Función para inicializar Swiper solo si no está ya inicializado
-	const initializeSwiper = () => {
-		if (!swiperInstance) {
-			swiperInstance = new Swiper('.swiper', {
-				modules: [Autoplay],
-				loop: true,
-				autoplay: {
-					delay: 3000,
-					disableOnInteraction: false,
-				},
-			});
-		}
-	};
-
-	// Llamar a `initializeSwiper` cuando la página se haya cargado
-	if (typeof window !== 'undefined') {
-		window.addEventListener('load', initializeSwiper);
-	}
-
-	// Función para actualizar el Swiper cuando termine la transición
-	const onTransitionEnd = (event: TransitionEvent) => {
-		// Asegurarse de que solo actualice el Swiper cuando la transición del swiper haya terminado
-		if (event.target && event.target instanceof HTMLElement && event.target.matches('.swiper')) {
-			// Verificar que swiperInstance está inicializado antes de llamar `update`
-			if (swiperInstance) {
-				swiperInstance.update();
-			}
-		}
-	};
-
-	// Asegurarse de que el swiper se reinicie al terminar una transición
-	document.addEventListener('transitionend', onTransitionEnd);
+	new Swiper('.swiper', {
+		modules: [Autoplay],
+		loop: true,
+		allowTouchMove: false,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+	});
 </script>
