@@ -1,0 +1,46 @@
+{
+	"id": "brut-excellence-espumoso",
+	"name": "Brut Excellence Espumoso",
+	"slug": "brut-excellence-espumoso",
+	"tagline": "Maquiavelo edición especial de vino espumoso brut excellence.",
+	"medal": ["/assets/plata-2025.webp"],
+	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Viura / Airen / Chardonay</p> <p><b>Graduación</b>: 11% Alc. Vol.</p> <p><b>Región</b>: Yecla</p> </div> <div> <p><b>Descripción</b></p> <p>Método tradicional champanoise. Baja intervención carbónica y sin azúcar añadido.</p> <p><b>Vista</b></p> <p>Amarillo claro / Reflejos dorados / Numerosas burbujas / Suave espuma</p> <p><b>Nariz</b></p> <p>Aromas frutales amarillas / Frutos secos</p> <p><b>Boca</b></p> <p>Elegante / Buen equilibrio / Agradable / Ligera / Refrescante</p> <p><b>Maridajes</b></p> <p>Productos del mar y carnes blancas.</p> <p><b>Recomendaciones</b></p> <p>Degustar entre 8 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
+	"price": 1590,
+	"imageUrl": "/assets/brut_excellence.png",
+	"collectionIds": ["maquiavelo"],
+	"variants": [
+		{
+			"id": "brut-excellence-espumoso-3",
+			"name": "Brut Excellence Espumoso Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 3180
+		},
+		{
+			"id": "brut-excellence-espumoso-6",
+			"name": "Brut Excellence Espumoso Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 7950
+		},
+		{
+			"id": "brut-excellence-espumoso-12",
+			"name": "Brut Excellence Espumoso Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 17490
+		},
+		{
+			"id": "brut-excellence-espumoso-24",
+			"name": "Brut Excellence Espumoso Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 38160
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

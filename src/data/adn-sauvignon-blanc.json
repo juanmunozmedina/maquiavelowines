@@ -1,0 +1,45 @@
+{
+	"id": "adn-sauvignon-blanc",
+	"name": "ADN Sauvignon Blanc",
+	"slug": "adn-sauvignon-blanc",
+	"tagline": "Identidad propia del vino blanco.",
+	"description": "<div><p><b>Botella</b>: 75 cl.</p><p><b>Tipo de uva</b>: Sauvignon Blanc</p><p><b>Graduación</b>: 12% Alc. Vol.</p><p><b>Año</b>: Añada más reciente.</p><p><b>Denominación de origen</b>: Jumilla (Protegida)</p></div><div><p><b>Descripción</b></p><p>Maquiavelo ADN Sauvignon Blanc es un vino blanco joven de la cosecha más reciente elaborado en su totalidad con selecta uva sauvignon blanc. Su sabor destaca por ser suave en paladar y con un toque semi seco en boca. Ideal para acompañar con cualquier tipo de pescados, mariscos, verduras, pastas con salsas suaves o incluso para degustar solo plácidamente. Un vino joven para los paladares que no te dejará indiferente.</p><p><b>Recomendaciones</b></p><p>Servir entre 7 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
+	"price": 1070,
+	"imageUrl": "/assets/blanco.png",
+	"collectionIds": ["maquiavelo"],
+	"variants": [
+		{
+			"id": "adn-sauvignon-blanc-3",
+			"name": "ADN Sauvignon Blanc Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 2140
+		},
+		{
+			"id": "adn-sauvignon-blanc-6",
+			"name": "ADN Sauvignon Blanc Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 5350
+		},
+		{
+			"id": "adn-sauvignon-blanc-12",
+			"name": "ADN Sauvignon Blanc Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 11770
+		},
+		{
+			"id": "adn-sauvignon-blanc-24",
+			"name": "ADN Sauvignon Blanc Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 24610
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

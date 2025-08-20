@@ -1,0 +1,45 @@
+{
+	"id": "ribera-del-duero-tempranillo-barrica",
+	"name": "Ribera del Duero Tempranillo Barrica",
+	"slug": "ribera-del-duero-tempranillo-barrica",
+	"tagline": "Maquiavelo Ribera del Duero Tempranillo Barrica, vino de autor.",
+	"medal": ["/assets/plata-2025.webp"],
+	"price": 1490,
+	"imageUrl": "/assets/ribera_tempranillo_barrica.png",
+	"collectionIds": ["maquiavelo"],
+	"variants": [
+		{
+			"id": "ribera-del-duero-tempranillo-barrica-3",
+			"name": "Ribera del Duero Tempranillo Barrica Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 2980
+		},
+		{
+			"id": "ribera-del-duero-tempranillo-barrica-6",
+			"name": "Ribera del Duero Tempranillo Barrica Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 7450
+		},
+		{
+			"id": "ribera-del-duero-tempranillo-barrica-12",
+			"name": "Ribera del Duero Tempranillo Barrica Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 16390
+		},
+		{
+			"id": "ribera-del-duero-tempranillo-barrica-24",
+			"name": "Ribera del Duero Tempranillo Barrica Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 34270
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

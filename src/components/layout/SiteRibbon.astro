@@ -3,13 +3,13 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 ---
 
 <aside
-	class="breakout focus-ring-light bg-theme-base-100 text-theme-base-900 dark:text-theme-base-100 min-h-10 items-center justify-center py-2 text-center text-sm text-balance dark:bg-slate-700"
+	class="breakout focus-ring-light min-h-10 items-center justify-center text-balance bg-theme-base-100 py-2 text-center text-sm text-theme-base-900 dark:bg-slate-700 dark:text-theme-base-100"
 	transition:persist="modal"
 >
 	<div
 		id="popupModal"
 		tabindex="-1"
-		class="popup-modal fixed top-0 right-0 left-0 z-60 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-x-hidden overflow-y-auto transition-all duration-500 md:inset-0"
+		class="popup-modal z-60 fixed left-0 right-0 top-0 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden transition-all duration-500 md:inset-0"
 		aria-modal="true"
 		role="dialog"
 		title="Pop up"
@@ -40,14 +40,14 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 						id="button-popup-modal"
 						data-modal-hide="popupModal"
 						type="button"
-						class="inline-flex items-center rounded-lg bg-green-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 focus:outline-none"
+						class="inline-flex items-center rounded-lg bg-green-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
 					>
 						Sí, tengo más de 18 años.
 					</button>
 					<a
 						href="https://www.google.com/?hl=es"
 						type="button"
-						class="ms-3 rounded-lg bg-red-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-red-800 focus:z-10 focus:ring-4 focus:ring-red-300 focus:outline-none"
+						class="ms-3 rounded-lg bg-red-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-red-800 focus:z-10 focus:outline-none focus:ring-4 focus:ring-red-300"
 					>
 						No
 					</a>
@@ -74,6 +74,8 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	import Swiper from 'swiper';
 	import { Autoplay } from 'swiper/modules';
 	import 'swiper/css';
+
+	let swiperInstance: Swiper | null = null;
 
 	const $modalElement: HTMLElement | null = document.querySelector('#popupModal');
 
@@ -104,17 +106,29 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 		});
 	}
 
-	document.addEventListener('DOMContentLoaded', () => {
-		if (!document.querySelector('.swiper-initialized')) {
-			new Swiper('.swiper', {
-				modules: [Autoplay],
-				loop: true,
-				allowTouchMove: false,
-				autoplay: {
-					delay: 3000,
-					disableOnInteraction: false,
-				},
-			});
+	function initSwiper() {
+		if (swiperInstance) {
+			swiperInstance.destroy(true, true);
+		}
+		swiperInstance = new Swiper('.swiper', {
+			modules: [Autoplay],
+			loop: true,
+			allowTouchMove: false,
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+		});
+	}
+
+	document.addEventListener('astro:page-load', () => {
+		initSwiper();
+	});
+
+	document.addEventListener('astro:before-swap', () => {
+		if (swiperInstance) {
+			swiperInstance.destroy(true, true);
+			swiperInstance = null;
 		}
 	});
 </script>

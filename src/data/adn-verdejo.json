@@ -1,0 +1,46 @@
+{
+	"id": "adn-verdejo",
+	"name": "ADN Verdejo",
+	"slug": "adn-verdejo",
+	"tagline": "100% Verdejo.",
+	"medal": ["/assets/oro-2024.webp"],
+	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Verdejo</p> <p><b>Graduación</b>: 12% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> </div> <div> <p><b>Descripción</b></p> <p>ADN 100% Verdejo. Ideal para acompañar con quesos azules, entrantes, pescados blancos, paella y arroces.</p> <p><b>Vista</b>: Limpio y fresco en que las notas herbáceas se unen a los aromas frutales, como sus matices a hinojo propios de la uva verdejo.<br> <b>Nariz</b>: Potente en nariz y con un largo retrogusto, es un vino ideal para acompañar platos de mar y también para degustar solo.<br> <b>Boca</b>: Vino extremadamente fresco con una vivacidad y prolongada persistencia floral.<br></p> <p><b>Recomendaciones</b></p> <p>Servir entre 7 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
+	"price": 1070,
+	"imageUrl": "/assets/verdejo.png",
+	"collectionIds": ["maquiavelo"],
+	"variants": [
+		{
+			"id": "adn-verdejo-3",
+			"name": "ADN Verdejo Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 2140
+		},
+		{
+			"id": "adn-verdejo-6",
+			"name": "ADN Verdejo Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 5350
+		},
+		{
+			"id": "adn-verdejo-12",
+			"name": "ADN Verdejo Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 11770
+		},
+		{
+			"id": "adn-verdejo-24",
+			"name": "ADN Verdejo Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 24610
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

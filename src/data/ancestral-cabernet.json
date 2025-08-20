@@ -1,0 +1,46 @@
+{
+	"id": "ancestral-cabernet",
+	"name": "Ancestral Cabernet",
+	"slug": "ancestral-cabernet",
+	"tagline": "Ancestral edición especial cabernet.",
+	"medal": ["/assets/oro-2025.webp"],
+	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Cabernet Sauvignon</p> <p><b>Graduación</b>: 14% Alc. Vol.</p> <p><b>Denominación de origen</b>: Varietal CLM Yecla & Fuente Álamo</p> </div> <div> <p><b>Descripción</b>: De viñedos de más de 30 años situados a 735m. de altitud.</br>Seleccionado por Fernando Galvañ, winemaker.</p> <p><b>Vinificación</b></p> <p>Las uvas vendimiadas en su momento óptimo de maduración son despalilladas y sometidas a una maceración prefermentativa a 10 ºC para obtener mayor complejidad aromática. La fermentación y maceración tiene una duración de 14 días a una temperatura no superior a 25ºC, para potenciar las características varietales del vino. Tras la fermentación maloláctica, el vino permanece en barricas de roble francés y roble americano entre 18 meses para su crianza y redondez en sótano climatizado.</p> <p>Clarificación y filtración antes del embotellado, con posterior crianza durante un mínimo de 3 meses en botella para redondear y mantener el bouquet y características de este vino, en almacén climatizado entre 15 - 18 ºC.</p> <p><b>Nota de cata</b></p> <p>Intenso color rojo cereza. Afrutado y especiado, con toques minerales. En boca resulta suave y equilibrado.</p> <p><b>Temperatura</b></p> <p>Temperatura de servicio entre 14 y 16 ºC.</p> <p><b>Maridaje</b></p> <p>Ideal para acompañar con carnes, asados y quesos curados.</p> </div>",
+	"price": 1900,
+	"imageUrl": "/assets/ancestral_cabernet.png",
+	"collectionIds": ["ancestral"],
+	"variants": [
+		{
+			"id": "ancestral-cabernet-3",
+			"name": "Ancestral Cabernet Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 3800
+		},
+		{
+			"id": "ancestral-cabernet-6",
+			"name": "Ancestral Cabernet Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 9500
+		},
+		{
+			"id": "ancestral-cabernet-12",
+			"name": "Ancestral Cabernet Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 20900
+		},
+		{
+			"id": "ancestral-cabernet-24",
+			"name": "Ancestral Cabernet Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 43700
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

@@ -1,0 +1,46 @@
+{
+	"id": "ancestral-alicante-bouschet",
+	"name": "Ancestral Alicante Bouschet",
+	"slug": "ancestral-alicante-bouschet",
+	"tagline": "Ancestral edición especial Alicante bouschet.",
+	"medal": ["/assets/plata-2025.webp"],
+	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Garnacha Tintorera</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Sub-zona</b>: Paraje de la Fuente la Negra</p> <p><b>Denominación de origen</b>: Varietal CLM Yecla & Fuente Álamo</p> </div> <div> <p><b>Color</b>: Limpio en fase visual de color rubí con alta capa de color.</p> <p><b>Bouquet</b></p> <p><b>Nariz</b>: Predominan los aromas de la Garnacha Tintorera muy madura, pomelo, pastel de higos, grosella y moras negras, mezclados con las notas balsámicas y ahumada de la crianza.<br> <b>Boca:</b> De entrada dulce, el equilibrio entre acidez y tanicidad acentúa su persistencia, la fuerza de la Garnacha Tintorera es patente y su final torrefacto lo hacen un vino largo, la sensación final es un complejo recuerdo de frutas rojas del bosque mezclado con toques de vainilla, café y tabaco.</p> <p><b>Descripción</b></p> <p>Vino seleccionado y escogido para ser embotellado a mano en una edición especial y limitada. Su tipo de elaboración, etiquetado y lacrado manual, hacen que en tus manos sostengas una pieza única procedente de viñedos centenarios.</p> <p><b>Maridaje y consumo</b></p> <p>Ideal para acompañar, carnes de vacuno, caza y quesos fuertes curados.</br>Las proteínas de la carne y los taninos del vino hacen una perfecta sinergia dentro de la boca.</p> <p><b>Altitud</b></p> <p>735 mts.</p> <p><b>Recomendaciones</b></p> <p>Recomendamos consumir este vino crianza en los diez años posteriores a su cosecha siendo la temperatura de servicio óptimo entre 16-18°C.</p> <p><b>Viñedos</b></p> <p>Los viñedos para la elaboración de nuestros embotellados son estrictamente seleccionados por nuestro equipo técnico, edad, bajo rendimiento y sanidad del viñedo así como parámetros físico-químicos de la uva son directrices en la búsqueda de la máxima calidad.</br>Para nuestro vino estrella se cuidan todos los detalles desde la brotación del viñedo hasta la recolección. Viñedos con una antigüedad mínima de 30 años. La vendimia se realiza en cajones de 200 kgs con una rigurosa selección en la entrada en bodega.</p> <p><b>Elaboración</b></p> <p>Vino elaborado a partir de Garnacha Tintorera \"Alicante Bouschet\".</br>La vinificación se realizó de modo tradicional con despalillado de uva, en depósitos de acero inoxidable con inyección de aire/nitrogeno. La temperatura de fermentación estuvo alrededor de 28°C, con un tiempo en contacto entre pieles y mosto de 10 días.</p> <p><b>Envejecimiento en barrica</b></p> <p>La fermentación maloláctica se realiza en una selección de barricas nuevas de roble francés de 500 litros de grano muy fino. Para permanecer en ellas un tiempo mínimo de 8 meses +8 meses en Guarda Botella, terminando el proceso con una ligera clarificación y estabilización por frío.</p> <p><b>Enólogo</b></p> <p>Seleccionado por Fernando Galvañ, winemaker.</p> </div>",
+	"price": 1590,
+	"imageUrl": "/assets/ancestral_bouschet.png",
+	"collectionIds": ["ancestral"],
+	"variants": [
+		{
+			"id": "ancestral-alicante-bouschet-3",
+			"name": "Ancestral Alicante Bouschet Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 3180
+		},
+		{
+			"id": "ancestral-alicante-bouschet-6",
+			"name": "Ancestral Alicante Bouschet Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 7950
+		},
+		{
+			"id": "ancestral-alicante-bouschet-12",
+			"name": "Ancestral Alicante Bouschet Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 17490
+		},
+		{
+			"id": "ancestral-alicante-bouschet-24",
+			"name": "Ancestral Alicante Bouschet Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 36570
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

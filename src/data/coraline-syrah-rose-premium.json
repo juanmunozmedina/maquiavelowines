@@ -1,0 +1,45 @@
+{
+	"id": "coraline-syrah-rose-premium",
+	"name": "Coraline Syrah Rosé Premium",
+	"slug": "coraline-syrah-rose-premium",
+	"tagline": "Maquiavelo y syrah rosé premium.",
+	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Syrah</p> <p><b>Graduación</b>: 12% Alc. Vol.</p> <p><b>Sub-zona</b>: Paraje de la Fuente la Negra</p> <p><b>Denominación de origen</b>: Varietal CLM Yecla & Fuente Álamo</p> </div> <div> <p><b>Tapón</b>: Corcho natural.</p> <p><b>Color</b>: Color piel de cebolla intenso con reflejos azules, brillante y cristalino. Potente y expresiva nariz, muy aromática fruta roja (fresa, frambuesa y grosella). En boca se muestra goloso, amplio, muy fresco y con un post-gusto largo y agradable, donde vuelven a aparecer esos aromas con recuerdos frutales.</p> <p><b>Descripción</b></p> <p><b>Elaboración</b>: Despalillado suave. Maceración durante un breve periodo de tiempo y sangrado de mosto en flor, fermentado a una temperatura no superior a 17° C.<br> <b>Maridaje:</b> Aconsejable para acompañar platos de pasta, ensaladas, pescados blancos, mariscos y arroces.<br> <b>Servicio:</b> Entre 8-10° C.<br> <b>Notas de cata:</b> Vino rosado de la variedad Syrah. Aromas varietales elegantes a flores y frutas rojas. Paso en boca ligeramente ácido, transmite sensaciones de frescura con agradable sensación final. Aspecto brillante y limpio con tonalidades frambuesa.</p> <p><b>Enólogo</b></p> <p>Seleccionado por Fernando Galvañ, winemaker.</p> </div>",
+	"price": 1190,
+	"imageUrl": "/assets/coraline_syrah.png",
+	"collectionIds": ["maquiavelo"],
+	"variants": [
+		{
+			"id": "coraline-syrah-rose-premium-3",
+			"name": "Coraline Syrah Rosé Premium Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 2380
+		},
+		{
+			"id": "coraline-syrah-rose-premium-6",
+			"name": "Coraline Syrah Rosé Premium Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 5950
+		},
+		{
+			"id": "coraline-syrah-rose-premium-12",
+			"name": "Coraline Syrah Rosé Premium Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 13090
+		},
+		{
+			"id": "coraline-syrah-rose-premium-24",
+			"name": "Coraline Syrah Rosé Premium Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 27370
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

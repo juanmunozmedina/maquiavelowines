@@ -3,7 +3,7 @@ import typography from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
 import animate from 'tailwindcss-animate';
 import colors from 'tailwindcss/colors.js';
-import { fontFamily } from 'tailwindcss/defaultTheme.js';
+import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin.js';
 
 /** @type {import('tailwindcss').Config} */
@@ -15,7 +15,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Inter Variable', ...fontFamily.sans],
+				sans: ['Inter Variable', ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				theme: {
@@ -42,7 +42,4 @@ export default {
 			});
 		}),
 	],
-	corePlugins: {
-		container: false,
-	},
 } satisfies Config;

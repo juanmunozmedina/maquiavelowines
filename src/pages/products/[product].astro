@@ -149,66 +149,30 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 						<span> / botella</span>
 					</p>
 					{
-						product.medal ? (
+						product.medal && product.medal.length > 0 && (
 							<fieldset id="medals">
 								<label class="mb-2 mt-4 block text-slate-700 dark:text-theme-base-100">
 									Medallas
 								</label>
 								<ul class="inline-flex gap-2">
-									{product.medal[0] ? (
-										<li>
-											<a
-												href={product.medal[0]}
-												data-pswp-width="500"
-												data-pswp-height="500"
-												target="_blank"
-											>
-												<img
-													alt="Medalla VinEspaña"
-													width="64"
-													height="64"
-													src={product.medal[0]}
-												/>
-											</a>
-										</li>
-									) : null}
-									{product.medal[1] ? (
-										<li>
-											<a
-												href={product.medal[1]}
-												data-pswp-width="500"
-												data-pswp-height="500"
-												target="_blank"
-											>
-												<img
-													alt="Medalla VinEspaña"
-													width="64"
-													height="64"
-													src={product.medal[1]}
-												/>
-											</a>
-										</li>
-									) : null}
-									{product.medal[2] ? (
-										<li>
-											<a
-												href={product.medal[2]}
-												data-pswp-width="500"
-												data-pswp-height="500"
-												target="_blank"
-											>
-												<img
-													alt="Medalla VinEspaña"
-													width="64"
-													height="64"
-													src={product.medal[2]}
-												/>
-											</a>
-										</li>
-									) : null}
+									{product.medal.map((url, i) =>
+										url ? (
+											<li>
+												<a
+													href={url}
+													data-pswp-width="500"
+													data-pswp-height="500"
+													target="_blank"
+													rel="noopener noreferrer"
+												>
+													<img alt={`Medalla ${i + 1}`} width="64" height="64" src={url} />
+												</a>
+											</li>
+										) : null,
+									)}
 								</ul>
 							</fieldset>
-						) : null
+						)
 					}
 				</header>
 

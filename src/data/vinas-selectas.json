@@ -1,0 +1,45 @@
+{
+	"id": "vinas-selectas",
+	"name": "Viñas Selectas",
+	"slug": "vinas-selectas",
+	"tagline": "El vino selecto de Maquiavelo.",
+	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell (Viñas Selectas)</p> <p><b>Graduación</b>: 14% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Maquiavelo Viñas Selectas es un vino tinto joven de la cosecha más reciente elaborado con uva monastrell de viñas selectas. Un espectáculo de sabores que te dejará con la boca abierta. Cada uva ha sido seleccionada entre las mejores de cada viña y conservado 4 meses en barrica de roble francés. Ideal para acompañar con carnes, especialmente carnes rojas, pastas, verduras, quesos de cualquier tipo o degustar solo. Su mezcla de sabores te hará rememorar viejos recuerdos.</p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
+	"price": 775,
+	"imageUrl": "/assets/vinas.png",
+	"collectionIds": ["maquiavelo"],
+	"variants": [
+		{
+			"id": "vinas-selectas-3",
+			"name": "Viñas Selectas Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 1550
+		},
+		{
+			"id": "vinas-selectas-6",
+			"name": "Viñas Selectas Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 3875
+		},
+		{
+			"id": "vinas-selectas-12",
+			"name": "Viñas Selectas Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 8525
+		},
+		{
+			"id": "vinas-selectas-24",
+			"name": "Viñas Selectas Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 17825
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

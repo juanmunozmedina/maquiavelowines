@@ -130,7 +130,7 @@ export type GetProductsData = {
 		order?: 'asc' | 'desc';
 		/** Search for products by name or description */
 		search?: string;
-		sort?: 'name' | 'price' | 'updatedAt';
+		sort?: 'name' | 'price' | 'updatedAt' | 'random';
 	};
 };
 

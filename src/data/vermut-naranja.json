@@ -1,0 +1,45 @@
+{
+	"id": "vermut-naranja",
+	"name": "Vermut Naranja",
+	"slug": "vermut-naranja",
+	"tagline": "Maquiavelo vermut artesanal con naranjas.",
+	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Moscatel uva blanca</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Ingredientes</b>: Jengibre, canela, salvia seca, clavo, zumo de naranja, piel de naranja y vainas de cardamomo.</p> </div> <div> <p><b>Descripción</b></p> <p>Auténtico Vermut Naranja. Elaborado artesanalmente a partir de vino blanco tratado mediante maceración pausada, durante 9 meses, con una compleja mezcla de hierbas donde destaca la \"genciana\".</p> <p><b>Notas de sabor</b>: Profundo aroma especiado con naranja donde destacan notas de clavo y canela que se funden en un elegante amargor final.<br>Con tonos dulces avainillados, balsámicos y tostados; ligero toque de regaliz.<br>Además de su elegante color cobrizo, en boca se pueden sentir también matices de ajenjo, naranja, nuez moscada y quina. Sin duda, toda una experiencia para el paladar.</p> <p><b>Recomendaciones</b></p> <p>Consumir frío, solo o con hielo, mezclado con zumos de frutas, como arte principal de numerosas recetas de cócteles etc. Excelente aperitivo.</p></div>",
+	"price": 1190,
+	"imageUrl": "/assets/vermut_naranja.png",
+	"collectionIds": ["maquiavelo"],
+	"variants": [
+		{
+			"id": "vermut-naranja-3",
+			"name": "Vermut Naranja Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 2380
+		},
+		{
+			"id": "vermut-naranja-6",
+			"name": "Vermut Naranja Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 5950
+		},
+		{
+			"id": "vermut-naranja-12",
+			"name": "Vermut Naranja Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 13090
+		},
+		{
+			"id": "vermut-naranja-24",
+			"name": "Vermut Naranja Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 27370
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

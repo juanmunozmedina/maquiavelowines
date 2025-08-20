@@ -1,0 +1,45 @@
+{
+	"id": "ancestral-monastrell-crianza",
+	"name": "Ancestral Monastrell Crianza",
+	"slug": "ancestral-monastrell-crianza",
+	"tagline": "Ancestral edición especial crianza.",
+	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell Crianza</p> <p><b>Graduación</b>: 15% Alc. Vol.</p> <p><b>Sub-zona</b>: Valle de la Flor</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Color</b>: Color cereza con borde violáceo.</p> <p><b>Bouquet</b></p> <p><b>Nariz</b>: En esta fase se muestra equilibrado, con aromas a fruta roja y hierbas silvestres.<br> <b>Boca:</b> Tinto sabroso y fácil de beber con una marcada sensación a fruta madura.</p> <p><b>Maridaje y consumo</b></p> <p>Ideal para acompañar, carnes de vacuno, caza y quesos fuertes curados.</br>Las proteínas de la carne y los taninos del vino hacen una perfecta sinergia dentro de la boca.</br>Vino seleccionado y escogido para ser embotellado a mano en una edición especial y limitada. Su tipo de elaboración, etiquetado y lacrado manual, hacen que en tus manos sostengas una pieza única procedente de viñedos centenarios.</p> <p><b>Altitud</b></p> <p>735 mts.</p> <p><b>Recomendaciones</b></p> <p>Recomendamos consumir este vino crianza en los diez años posteriores a su cosecha siendo la temperatura de servicio óptimo entre 16-18°C.</p> <p><b>Viñedos</b></p> <p>La vendimia se lleva a cabo a finales de septiembre y los racimos se transportan en contenedores de 1.500 kg. Después de un cuidadoso despalillado, la fermentación se realiza con levaduras naturales en depósitos de acero inoxidable a una temperatura controlada entre 24 y 27°C.</br>Para nuestro vino Ancestral se cuidan todos los detalles desde la brotación del viñedo hasta la recolección. Viñedos con una antigüedad mínima de 30 años. La vendimia se realiza en cajones de 200 kgs con una rigurosa selección en la entrada en bodega.</p> <p><b>Elaboración</b></p> <p>La Monastrell envejece durante 12 meses en barricas de roble francés y americano antes de su comercialización. Este tinto destaca por su perfil frutal y suave, y es una excelente representación del estilo de la bodega de vinos ligeros y finos.</p> <p><b>Envejecimiento en barrica</b></p> <p>Nuestro Ancestral Crianza Monastrell envejece durante 12 meses en barricas de roble francés y americano antes de su comercialización. Este tinto destaca por su perfil frutal y suave, y es una excelente representación del estilo de la bodega de vinos ligeros y finos.</p> <p><b>Enólogo</b></p> <p>Seleccionado por Fernando Galvañ, winemaker.</p> </div>",
+	"price": 1290,
+	"imageUrl": "/assets/ancestral_crianza.png",
+	"collectionIds": ["ancestral"],
+	"variants": [
+		{
+			"id": "ancestral-monastrell-crianza-3",
+			"name": "Ancestral Monastrell Crianza Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 2580
+		},
+		{
+			"id": "ancestral-monastrell-crianza-6",
+			"name": "Ancestral Monastrell Crianza Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 6450
+		},
+		{
+			"id": "ancestral-monastrell-crianza-12",
+			"name": "Ancestral Monastrell Crianza Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 14190
+		},
+		{
+			"id": "ancestral-monastrell-crianza-24",
+			"name": "Ancestral Monastrell Crianza Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 29670
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

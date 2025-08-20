@@ -1,0 +1,46 @@
+{
+	"id": "premium",
+	"name": "Premium",
+	"slug": "premium",
+	"tagline": "El vino secreto de Maquiavelo.",
+	"medal": ["/assets/gran-oro-2023.webp", "/assets/oro-2024.webp"],
+	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell / Cabernet Sauvignon</p> <p><b>Graduación</b>: 14% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Maquiavelo Premium es un vino tinto de la cosecha más reciente elaborado con selecta uva monastrell (85%) y una pequeña parte de uva cabernet sauvignon (15%). Su sabor destaca por ser suave en boca, con retrogusto floral y toques de madera. Acabado con un recubrimiento lacrado en bronce y conservado 18 meses en barrica de roble francés. Ideal para acompañar con cualquier tipo de carnes, especialmente carnes rojas, pastas, verduras o quesos curados. Sin duda, un auténtico placer para los paladares más exigentes.</p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
+	"price": 1580,
+	"imageUrl": "/assets/premium.png",
+	"collectionIds": ["maquiavelo"],
+	"variants": [
+		{
+			"id": "premium-3",
+			"name": "Premium Pack 3 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 3160
+		},
+		{
+			"id": "premium-6",
+			"name": "Premium Pack 6 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 7900
+		},
+		{
+			"id": "premium-12",
+			"name": "Premium Pack 12 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 17380
+		},
+		{
+			"id": "premium-24",
+			"name": "Premium Pack 24 botellas",
+			"stock": 1000,
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 36340
+		}
+	],
+	"images": [],
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}
