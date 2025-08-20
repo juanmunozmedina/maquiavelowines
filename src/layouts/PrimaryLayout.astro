@@ -93,6 +93,17 @@ const { title } = Astro.props;
 				if (window.netlifyIdentity) {
 					window.netlifyIdentity.init();
 
+					// Abrir automáticamente el widget si la URL tiene un token de recuperación o confirmación
+					const params = new URLSearchParams(window.location.search);
+					if (
+						params.has('recovery_token') ||
+						params.has('confirmation_token') ||
+						params.has('token') ||
+						params.has('invite_token')
+					) {
+						window.netlifyIdentity.open();
+					}
+
 					window.netlifyIdentity.on('login', (user) => {
 						console.log('Usuario logueado:', user);
 						window.netlifyIdentity.close();
