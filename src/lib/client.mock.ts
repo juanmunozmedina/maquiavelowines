@@ -31,28 +31,11 @@ import type {
 
 export * from './client.types.ts';
 
-function getSessionSeed(): number {
-	if (typeof window === 'undefined' || !window.sessionStorage) {
-		// Entorno SSR o sin sessionStorage: usa semilla fija
-		return 123456789;
-	}
-
-	const key = 'shuffleSeed';
-	let seed = sessionStorage.getItem(key);
-	if (!seed) {
-		seed = String(Math.floor(Math.random() * 1_000_000_000));
-		sessionStorage.setItem(key, seed);
-	}
-	return Number(seed);
-}
-
 export const getProducts = <ThrowOnError extends boolean = false>(
 	options?: Options<GetProductsData, ThrowOnError>,
 ): RequestResult<GetProductsResponse, GetProductsError, ThrowOnError> => {
 	let items =
-		options?.query?.sort === 'random'
-			? shuffle(Object.values(products), getSessionSeed())
-			: Object.values(products);
+		options?.query?.sort === 'random' ? shuffle(Object.values(products)) : Object.values(products);
 
 	if (options?.query?.collectionId) {
 		const collectionId = options.query.collectionId;
@@ -119,7 +102,8 @@ export const getCollectionById = <ThrowOnError extends boolean = false>(
 
 	if (sort) {
 		if (sort === 'random') {
-			productsInCollection = shuffle(productsInCollection, getSessionSeed());
+			// Shuffle products but keep a stable shuffle per session if quieres
+			productsInCollection = shuffle(productsInCollection);
 		} else if (sort === 'price') {
 			productsInCollection = productsInCollection.sort((a, b) =>
 				order === 'asc' ? a.price - b.price : b.price - a.price,
