@@ -1,0 +1,202 @@
+---
+import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
+---
+
+<PrimaryLayout title="Admin">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Admin Maquiavelo Wines</title>
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body class="bg-gray-100 font-sans text-gray-800">
+		<div class="mx-auto max-w-3xl p-6 text-center">
+			<h1 class="mb-6 text-3xl font-bold">Panel de administración</h1>
+
+			<div id="login-ui" class="mb-6">
+				<button id="login-btn" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+					Iniciar sesión
+				</button>
+				<button
+					id="logout-btn"
+					class="hidden rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+				>
+					Cerrar sesión
+				</button>
+				<p id="user-info" class="mt-2 text-sm text-gray-600"></p>
+			</div>
+
+			<div id="admin-panel" class="hidden rounded bg-white p-6 shadow" aria-live="polite">
+				<h2 class="mb-4 text-xl font-semibold">Actualizar stock de variantes</h2>
+
+				<div class="mb-4">
+					<label for="product-select" class="mb-1 block font-medium">Producto:</label>
+					<select
+						id="product-select"
+						class="w-full rounded border p-2"
+						aria-label="Selecciona un producto"></select>
+				</div>
+
+				<div class="mb-4">
+					<label for="variant-select" class="mb-1 block font-medium">Variante:</label>
+					<select
+						id="variant-select"
+						class="w-full rounded border p-2"
+						aria-label="Selecciona una variante"></select>
+				</div>
+
+				<div class="mb-4">
+					<label for="stock-input" class="mb-1 block font-medium">Nuevo stock:</label>
+					<input
+						id="stock-input"
+						type="number"
+						min="0"
+						class="w-full rounded border p-2"
+						aria-label="Nuevo stock"
+					/>
+				</div>
+
+				<button
+					id="update-stock-btn"
+					class="rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+				>
+					Actualizar Stock
+				</button>
+
+				<p id="status-msg" class="mt-4 text-sm text-gray-700"></p>
+			</div>
+		</div>
+
+		<script is:inline>
+			const netlifyIdentity = window.netlifyIdentity;
+			const loginBtn = document.getElementById('login-btn');
+			const logoutBtn = document.getElementById('logout-btn');
+			const userInfo = document.getElementById('user-info');
+			const adminPanel = document.getElementById('admin-panel');
+			const productSelect = document.getElementById('product-select');
+			const variantSelect = document.getElementById('variant-select');
+			const stockInput = document.getElementById('stock-input');
+			const updateBtn = document.getElementById('update-stock-btn');
+			const statusMsg = document.getElementById('status-msg');
+
+			let products = [];
+
+			function updateUI(user) {
+				if (!loginBtn || !logoutBtn || !userInfo || !adminPanel) return;
+
+				if (user) {
+					loginBtn.classList.add('hidden');
+					logoutBtn.classList.remove('hidden');
+					userInfo.textContent = `Hola, ${user.user_metadata?.full_name || user.email}`;
+					adminPanel.classList.remove('hidden');
+					loadProducts();
+				} else {
+					loginBtn.classList.remove('hidden');
+					logoutBtn.classList.add('hidden');
+					userInfo.textContent = '';
+					adminPanel.classList.add('hidden');
+				}
+			}
+
+			function loadProducts() {
+				fetch('/.netlify/functions/get-products')
+					.then((res) => res.json())
+					.then((data) => {
+						products = data;
+						productSelect.innerHTML = '';
+						data.forEach((prod) => {
+							const opt = document.createElement('option');
+							opt.value = prod.id;
+							opt.textContent = prod.name;
+							productSelect.appendChild(opt);
+						});
+						updateVariants();
+					})
+					.catch(() => {
+						statusMsg.textContent = 'Error al cargar productos.';
+					});
+			}
+
+			function updateVariants() {
+				const prodId = productSelect.value;
+				const product = products.find((p) => p.id === prodId);
+				variantSelect.innerHTML = '';
+				if (product) {
+					product.variants.forEach((v) => {
+						const opt = document.createElement('option');
+						opt.value = v.id;
+						opt.textContent = `${v.name} (stock: ${v.stock})`;
+						variantSelect.appendChild(opt);
+					});
+				}
+			}
+
+			productSelect.onchange = updateVariants;
+
+			updateBtn.onclick = async () => {
+				const productId = productSelect.value;
+				const variantId = variantSelect.value;
+				const newStock = parseInt(stockInput.value, 10);
+
+				if (!productId || !variantId || isNaN(newStock)) {
+					statusMsg.textContent = 'Completa todos los campos correctamente.';
+					return;
+				}
+
+				statusMsg.textContent = 'Actualizando stock...';
+
+				const user = netlifyIdentity.currentUser();
+				if (!user) {
+					statusMsg.textContent = 'Debes iniciar sesión para actualizar stock.';
+					return;
+				}
+
+				try {
+					const token = await user.jwt();
+
+					const res = await fetch('/.netlify/functions/update-stock', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							Authorization: `Bearer ${token}`,
+						},
+						body: JSON.stringify({ productId, variantId, newStock }),
+					});
+
+					const resp = await res.json();
+
+					if (resp.success) {
+						statusMsg.textContent = 'Stock actualizado correctamente.';
+						const product = products.find((p) => p.id === productId);
+						if (product) {
+							const variant = product.variants.find((v) => v.id === variantId);
+							if (variant) variant.stock = newStock;
+							updateVariants();
+						}
+					} else {
+						statusMsg.textContent = 'Error al actualizar stock: ' + (resp.error || '');
+					}
+				} catch {
+					statusMsg.textContent = 'Error al actualizar stock.';
+				}
+			};
+
+			document.addEventListener('DOMContentLoaded', () => {
+				netlifyIdentity?.init();
+				updateUI(netlifyIdentity?.currentUser());
+			});
+
+			netlifyIdentity?.on('login', (user) => {
+				updateUI(user);
+				netlifyIdentity?.close();
+			});
+
+			netlifyIdentity?.on('logout', () => {
+				updateUI(null);
+			});
+
+			loginBtn.onclick = () => netlifyIdentity.open();
+			logoutBtn.onclick = () => netlifyIdentity.logout();
+		</script>
+	</body>
+</PrimaryLayout>
