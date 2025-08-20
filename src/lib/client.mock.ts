@@ -210,23 +210,12 @@ const collections: Record<string, Collection> = {
 	},
 };
 
-function shuffle<T>(array: T[], seed = Date.now()): T[] {
-	const rng = mulberry32(seed); // define un PRNG
+function shuffle<T>(array: T[]): T[] {
 	return array
-		.map((value) => ({ value, sort: rng() }))
+		.map((value) => ({ value, sort: Math.random() }))
 		.sort((a, b) => a.sort - b.sort)
 		.map(({ value }) => value);
 }
-
-const mulberry32 = (a: number) => {
-	let t = a;
-	return () => {
-		t += 0x6d2b79f5;
-		t = Math.imul(t ^ (t >>> 15), t | 1);
-		t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-		return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-	};
-};
 
 // Dynamically load all products from the folder src/data
 const productModules = import.meta.glob('../data/*.json', { eager: true });
