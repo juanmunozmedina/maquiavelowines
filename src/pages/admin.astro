@@ -68,7 +68,6 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 		</div>
 
 		<script is:inline>
-			const netlifyIdentity = window.netlifyIdentity;
 			const loginBtn = document.getElementById('login-btn');
 			const logoutBtn = document.getElementById('logout-btn');
 			const userInfo = document.getElementById('user-info');
@@ -182,21 +181,22 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 			};
 
 			document.addEventListener('DOMContentLoaded', () => {
+				const netlifyIdentity = window.netlifyIdentity;
 				netlifyIdentity?.init();
 				updateUI(netlifyIdentity?.currentUser());
-			});
 
-			netlifyIdentity?.on('login', (user) => {
-				updateUI(user);
-				netlifyIdentity?.close();
-			});
+				netlifyIdentity?.on('login', (user) => {
+					updateUI(user);
+					netlifyIdentity?.close();
+				});
 
-			netlifyIdentity?.on('logout', () => {
-				updateUI(null);
-			});
+				netlifyIdentity?.on('logout', () => {
+					updateUI(null);
+				});
 
-			loginBtn.onclick = () => netlifyIdentity.open();
-			logoutBtn.onclick = () => netlifyIdentity.logout();
+				loginBtn.onclick = () => netlifyIdentity.open();
+				logoutBtn.onclick = () => netlifyIdentity.logout();
+			});
 		</script>
 	</body>
 </PrimaryLayout>
