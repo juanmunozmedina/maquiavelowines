@@ -10,3 +10,6 @@
   status = 200
   force = true
   role = "admin"
+
+[functions]
+  included_files = ["src/data/*.json"]
