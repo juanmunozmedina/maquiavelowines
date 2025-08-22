@@ -73,7 +73,7 @@ export const handler: Handler = async (event) => {
 		const updatedContent = Buffer.from(JSON.stringify(data, null, 2)).toString('base64');
 
 		const updateRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
-			method: 'PUT',
+			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${GITHUB_TOKEN}`,
 				Accept: 'application/vnd.github.v3+json',
