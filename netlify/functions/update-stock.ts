@@ -9,17 +9,25 @@ export const handler: Handler = async (event) => {
 		};
 	}
 
-	const { password, productId, stock } = JSON.parse(event.body || '{}');
+	let body: { password?: string; productId?: string; stock?: boolean } = {};
+	try {
+		body = JSON.parse(event.body || '{}');
+	} catch {
+		return {
+			statusCode: 400,
+			body: JSON.stringify({ error: 'Body JSON inválido' }),
+		};
+	}
 
-	// 🔐 Validar contraseña
-	if (password !== process.env.ADMIN_PASSWORD) {
+	if (typeof body.password !== 'string' || body.password !== process.env.ADMIN_PASSWORD) {
 		return {
 			statusCode: 401,
 			body: JSON.stringify({ error: 'No autorizado: contraseña incorrecta' }),
 		};
 	}
 
-	// Validación de parámetros
+	const { productId, stock } = body;
+
 	if (!productId || typeof stock !== 'boolean') {
 		return {
 			statusCode: 400,
@@ -42,7 +50,6 @@ export const handler: Handler = async (event) => {
 		const FILE_PATH = `src/data/${productId}.json`;
 		const BRANCH = 'main';
 
-		// Obtener archivo actual
 		const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
 			headers: {
 				Authorization: `Bearer ${GITHUB_TOKEN}`,
@@ -61,12 +68,10 @@ export const handler: Handler = async (event) => {
 		const content = Buffer.from(file.content, 'base64').toString('utf-8');
 		const data = JSON.parse(content) as Product;
 
-		// ✅ Actualizar el campo stock
 		data.stock = stock;
 
 		const updatedContent = Buffer.from(JSON.stringify(data, null, 2)).toString('base64');
 
-		// Subir cambios a GitHub
 		const updateRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
 			method: 'PUT',
 			headers: {

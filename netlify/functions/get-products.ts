@@ -8,8 +8,10 @@ export const handler: Handler = async (event) => {
 		};
 	}
 
-	// Puedes recibir la contraseña en headers o query string, aquí uso headers
-	const password = event.headers['x-admin-password'];
+	const headers = Object.fromEntries(
+		Object.entries(event.headers).map(([k, v]) => [k.toLowerCase(), v]),
+	);
+	const password = headers['x-admin-password'];
 
 	if (password !== process.env.ADMIN_PASSWORD) {
 		return {
@@ -19,8 +21,6 @@ export const handler: Handler = async (event) => {
 	}
 
 	try {
-		// Aquí lee y devuelve tus productos. Ejemplo si usas archivos JSON en GitHub:
-
 		const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 		if (!GITHUB_TOKEN) {
 			return {
@@ -31,9 +31,6 @@ export const handler: Handler = async (event) => {
 
 		const REPO = 'juanmunozmedina/maquiavelowines';
 		const BRANCH = 'main';
-
-		// Listar archivos o cargar un índice con los productos.
-		// Por simplicidad, supongamos que tienes un archivo 'products.json' con la lista:
 
 		const res = await fetch(
 			`https://api.github.com/repos/${REPO}/contents/src/data/products.json?ref=${BRANCH}`,
@@ -53,8 +50,16 @@ export const handler: Handler = async (event) => {
 		}
 
 		const file = await res.json();
-		const content = Buffer.from(file.content, 'base64').toString('utf-8');
-		const products = JSON.parse(content);
+		let products;
+		try {
+			const content = Buffer.from(file.content, 'base64').toString('utf-8');
+			products = JSON.parse(content);
+		} catch {
+			return {
+				statusCode: 500,
+				body: JSON.stringify({ error: 'Error al parsear productos' }),
+			};
+		}
 
 		return {
 			statusCode: 200,
