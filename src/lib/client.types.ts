@@ -99,7 +99,6 @@ export type OrderInput = {
 	customerName: string;
 	lineItems: Array<LineItemInput>;
 	totalPrice: number;
-	shippingPrice: number;
 	billingAddress?: Address;
 	shippingAddress?: Address;
 };

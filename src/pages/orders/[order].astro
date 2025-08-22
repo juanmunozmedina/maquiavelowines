@@ -1,12 +1,9 @@
 ---
-import { GOOGLE_GEOLOCATION_SERVER_KEY } from 'astro:env/server';
-import { type Address, type LineItem, getOrderById } from 'storefront:client';
-import { z } from 'astro/zod';
+import { type LineItem, getOrderById } from 'storefront:client';
 import successIcon from '~/assets/checkout-success-icon.svg';
 import Shipping from '~/components/Shipping.astro';
 import { ONE_DAY } from '~/config.ts';
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
-import { formatOneLineAddress } from '~/lib/address.ts';
 import { formatProductPrice } from '~/lib/currency.ts';
 import { unwrap } from '~/lib/util.ts';
 import { productPath } from '~/paths.ts';
@@ -21,48 +18,6 @@ if (!orderResponse.data) {
 
 const order = orderResponse.data;
 
-async function getGeoLocation(address: Exclude<Address, null>) {
-	if (!GOOGLE_GEOLOCATION_SERVER_KEY) {
-		console.error('Desaparecida GOOGLE_GEOLOCATION_SERVER_KEY');
-		return undefined;
-	}
-	const url = new URL('https://maps.googleapis.com/maps/api/geocode/json');
-	url.searchParams.append('address', formatOneLineAddress(address));
-	url.searchParams.append('key', GOOGLE_GEOLOCATION_SERVER_KEY);
-	let geo;
-	try {
-		geo = await fetch(url);
-		const { results } = z
-			.object({
-				results: z
-					.array(
-						z.object({
-							geometry: z.object({
-								location: z.object({
-									lat: z.number(),
-									lng: z.number(),
-								}),
-							}),
-						}),
-					)
-					.nonempty(),
-			})
-			.parse(await geo.clone().json());
-		return results[0].geometry.location;
-	} catch (error) {
-		if (geo) {
-			console.error(
-				`No se pudo obtener la ubicación geográfica de la dirección de envío [${geo.status}]`,
-				error,
-			);
-			console.error('Respuesta completa: ', await geo.text());
-			return undefined;
-		}
-		throw error;
-	}
-}
-
-const geoLocation = order.shippingAddress && (await getGeoLocation(order.shippingAddress));
 if (!order.shippingAddress) {
 	console.error(
 		'Stripe inesperadamente no proporcionó una dirección de envío en los detalles de la sesión.',
@@ -98,11 +53,7 @@ if (!order.shippingAddress) {
 				}
 			</h1>
 		</header>
-		{
-			order.shippingAddress && geoLocation && (
-				<Shipping address={order.shippingAddress} location={geoLocation} />
-			)
-		}
+		{order.shippingAddress && <Shipping address={order.shippingAddress} />}
 		<h2 class="mb-4 mt-8 text-lg font-bold">Artículos en su pedido</h2>
 		<ul>
 			{
@@ -154,14 +105,6 @@ if (!order.shippingAddress) {
 				))
 			}
 		</ul>
-		<div class="flex justify-between gap-4">
-			<p>Subtotal</p>
-			<p class="text-right">{formatProductPrice(order.totalPrice - order.shippingPrice)}</p>
-		</div>
-		<div class="flex justify-between gap-4">
-			<p>Envío</p>
-			<p class="text-right">{formatProductPrice(order.shippingPrice)}</p>
-		</div>
 		<hr class="my-2" />
 		<div class="flex justify-between gap-4 text-lg">
 			<p>Total</p>

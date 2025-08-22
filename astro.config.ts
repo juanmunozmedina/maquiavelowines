@@ -96,16 +96,6 @@ export default defineConfig({
 				access: 'public',
 				optional: true,
 			}),
-			GOOGLE_GEOLOCATION_SERVER_KEY: envField.string({
-				context: 'server',
-				access: 'secret',
-				optional: true,
-			}),
-			GOOGLE_MAPS_BROWSER_KEY: envField.string({
-				context: 'client',
-				access: 'public',
-				optional: true,
-			}),
 			LOOPS_API_KEY: envField.string({
 				context: 'server',
 				access: 'secret',
@@ -137,14 +127,6 @@ export default defineConfig({
 				access: 'secret',
 				optional: true,
 			}),
-			/*ES_SHIPPING_RATE_ID: envField.string({
-                    context: 'server',
-                    access: 'secret',
-                }),
-                INTERNATIONAL_SHIPPING_RATE_ID: envField.string({
-                    context: 'server',
-                    access: 'secret',
-                }),*/
 		},
 	},
 });
