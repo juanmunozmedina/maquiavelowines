@@ -1,29 +1,5 @@
-import { Handler } from '@netlify/functions';
+import type { Handler } from '@netlify/functions';
 import type { Product } from '../../src/lib/client.types';
-
-type NetlifyIdentityUser = {
-	sub: string;
-	app_metadata?: {
-		roles?: string[];
-	};
-	[key: string]: unknown;
-};
-
-async function validateToken(token: string): Promise<NetlifyIdentityUser | null> {
-	try {
-		const res = await fetch('https://api.netlify.com/.netlify/identity/user', {
-			headers: {
-				Authorization: `Bearer ${token}`,
-			},
-		});
-
-		if (!res.ok) return null;
-		const user = await res.json();
-		return user as NetlifyIdentityUser;
-	} catch {
-		return null;
-	}
-}
 
 export const handler: Handler = async (event) => {
 	if (event.httpMethod !== 'POST') {
@@ -33,33 +9,17 @@ export const handler: Handler = async (event) => {
 		};
 	}
 
-	const authHeader = event.headers.authorization || event.headers.Authorization;
-	if (!authHeader || !authHeader.startsWith('Bearer ')) {
+	const { password, productId, stock } = JSON.parse(event.body || '{}');
+
+	// 🔐 Validar contraseña
+	if (password !== process.env.ADMIN_PASSWORD) {
 		return {
 			statusCode: 401,
-			body: JSON.stringify({ error: 'No autorizado: falta token Bearer' }),
-		};
-	}
-	const token = authHeader.split(' ')[1];
-
-	const user = await validateToken(token);
-	if (!user) {
-		return {
-			statusCode: 401,
-			body: JSON.stringify({ error: 'Token inválido o expirado' }),
+			body: JSON.stringify({ error: 'No autorizado: contraseña incorrecta' }),
 		};
 	}
 
-	const roles = user.app_metadata?.roles || [];
-	if (!roles.includes('admin')) {
-		return {
-			statusCode: 403,
-			body: JSON.stringify({ error: 'Acceso denegado: rol insuficiente' }),
-		};
-	}
-
-	const { productId, stock } = JSON.parse(event.body || '{}');
-
+	// Validación de parámetros
 	if (!productId || typeof stock !== 'boolean') {
 		return {
 			statusCode: 400,
@@ -77,10 +37,12 @@ export const handler: Handler = async (event) => {
 				body: JSON.stringify({ error: 'Token de GitHub no configurado' }),
 			};
 		}
+
 		const REPO = 'juanmunozmedina/maquiavelowines';
 		const FILE_PATH = `src/data/${productId}.json`;
 		const BRANCH = 'main';
 
+		// Obtener archivo actual
 		const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
 			headers: {
 				Authorization: `Bearer ${GITHUB_TOKEN}`,
@@ -99,11 +61,12 @@ export const handler: Handler = async (event) => {
 		const content = Buffer.from(file.content, 'base64').toString('utf-8');
 		const data = JSON.parse(content) as Product;
 
-		// ✅ Modificar el campo stock (booleano)
+		// ✅ Actualizar el campo stock
 		data.stock = stock;
 
 		const updatedContent = Buffer.from(JSON.stringify(data, null, 2)).toString('base64');
 
+		// Subir cambios a GitHub
 		const updateRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
 			method: 'PUT',
 			headers: {
