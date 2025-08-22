@@ -12,33 +12,30 @@
 		{
 			"id": "ancestral-alicante-bouschet-3",
 			"name": "Ancestral Alicante Bouschet Pack 3 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 3180
 		},
 		{
 			"id": "ancestral-alicante-bouschet-6",
 			"name": "Ancestral Alicante Bouschet Pack 6 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 7950
 		},
 		{
 			"id": "ancestral-alicante-bouschet-12",
 			"name": "Ancestral Alicante Bouschet Pack 12 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 17490
 		},
 		{
 			"id": "ancestral-alicante-bouschet-24",
 			"name": "Ancestral Alicante Bouschet Pack 24 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 36570
 		}
 	],
 	"images": [],
+	"stock": true,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

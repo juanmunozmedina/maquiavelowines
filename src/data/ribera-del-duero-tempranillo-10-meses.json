@@ -12,33 +12,30 @@
 		{
 			"id": "ribera-del-duero-tempranillo-10-meses-3",
 			"name": "Ribera del Duero Tempranillo 10 meses Pack 3 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 3780
 		},
 		{
 			"id": "ribera-del-duero-tempranillo-10-meses-6",
 			"name": "Ribera del Duero Tempranillo 10 meses Pack 6 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 9450
 		},
 		{
 			"id": "ribera-del-duero-tempranillo-10-meses-12",
 			"name": "Ribera del Duero Tempranillo 10 meses Pack 12 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 20790
 		},
 		{
 			"id": "ribera-del-duero-tempranillo-10-meses-24",
 			"name": "Ribera del Duero Tempranillo 10 meses Pack 24 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 43470
 		}
 	],
 	"images": [],
+	"stock": true,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

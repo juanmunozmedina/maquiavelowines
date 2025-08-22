@@ -12,33 +12,30 @@
 		{
 			"id": "ancestral-cabernet-3",
 			"name": "Ancestral Cabernet Pack 3 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 3800
 		},
 		{
 			"id": "ancestral-cabernet-6",
 			"name": "Ancestral Cabernet Pack 6 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 9500
 		},
 		{
 			"id": "ancestral-cabernet-12",
 			"name": "Ancestral Cabernet Pack 12 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 20900
 		},
 		{
 			"id": "ancestral-cabernet-24",
 			"name": "Ancestral Cabernet Pack 24 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 43700
 		}
 	],
 	"images": [],
+	"stock": true,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

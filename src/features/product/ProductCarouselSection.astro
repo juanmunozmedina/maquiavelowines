@@ -1,6 +1,5 @@
 ---
 import { type Product, getProducts } from 'storefront:client';
-import { getProductStock } from '~/lib/products.ts';
 import ProductCard from './ProductCard.astro';
 import ProductCarousel, { MEASURED_ITEM_ID, GAP } from './ProductCarousel.tsx';
 
@@ -12,9 +11,7 @@ type Props = {
 const { heading, filterProducts = (products) => products } = Astro.props;
 
 const productsResponse = await getProducts({ query: { sort: 'random' } });
-const products = filterProducts(productsResponse.data?.items ?? []).filter((product) =>
-	getProductStock(product),
-);
+const products = filterProducts(productsResponse.data?.items ?? []);
 ---
 
 <ProductCarousel {heading} client:idle>

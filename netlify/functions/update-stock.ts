@@ -9,10 +9,8 @@ type NetlifyIdentityUser = {
 	[key: string]: unknown;
 };
 
-// Función para validar el JWT (pasado en Authorization Bearer)
 async function validateToken(token: string): Promise<NetlifyIdentityUser | null> {
 	try {
-		// Petición a la API de Netlify para validar token
 		const res = await fetch('https://api.netlify.com/.netlify/identity/user', {
 			headers: {
 				Authorization: `Bearer ${token}`,
@@ -20,7 +18,6 @@ async function validateToken(token: string): Promise<NetlifyIdentityUser | null>
 		});
 
 		if (!res.ok) return null;
-
 		const user = await res.json();
 		return user as NetlifyIdentityUser;
 	} catch {
@@ -53,7 +50,6 @@ export const handler: Handler = async (event) => {
 		};
 	}
 
-	// (Opcional) validar rol de usuario, por ejemplo solo admin puede actualizar
 	const roles = user.app_metadata?.roles || [];
 	if (!roles.includes('admin')) {
 		return {
@@ -62,12 +58,14 @@ export const handler: Handler = async (event) => {
 		};
 	}
 
-	const { productId, variantId, newStock } = JSON.parse(event.body || '{}');
+	const { productId, stock } = JSON.parse(event.body || '{}');
 
-	if (!productId || !variantId || typeof newStock !== 'number') {
+	if (!productId || typeof stock !== 'boolean') {
 		return {
 			statusCode: 400,
-			body: JSON.stringify({ error: 'Faltan parámetros o son inválidos' }),
+			body: JSON.stringify({
+				error: 'Parámetros inválidos: se requiere productId y stock booleano',
+			}),
 		};
 	}
 
@@ -83,7 +81,6 @@ export const handler: Handler = async (event) => {
 		const FILE_PATH = `src/data/${productId}.json`;
 		const BRANCH = 'main';
 
-		// Obtener archivo actual
 		const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
 			headers: {
 				Authorization: `Bearer ${GITHUB_TOKEN}`,
@@ -102,19 +99,11 @@ export const handler: Handler = async (event) => {
 		const content = Buffer.from(file.content, 'base64').toString('utf-8');
 		const data = JSON.parse(content) as Product;
 
-		const variant = data.variants.find((v) => v.id === variantId);
-		if (!variant) {
-			return {
-				statusCode: 404,
-				body: JSON.stringify({ error: 'Variante no encontrada' }),
-			};
-		}
-
-		variant.stock = newStock;
+		// ✅ Modificar el campo stock (booleano)
+		data.stock = stock;
 
 		const updatedContent = Buffer.from(JSON.stringify(data, null, 2)).toString('base64');
 
-		// Actualizar en GitHub
 		const updateRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
 			method: 'PUT',
 			headers: {
@@ -122,7 +111,7 @@ export const handler: Handler = async (event) => {
 				Accept: 'application/vnd.github.v3+json',
 			},
 			body: JSON.stringify({
-				message: `Actualizar stock para variante ${variantId}`,
+				message: `Actualizar stock (disponibilidad) de producto ${productId}`,
 				content: updatedContent,
 				sha: file.sha,
 				branch: BRANCH,

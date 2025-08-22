@@ -7,7 +7,6 @@ import { applyDefaultCacheHeaders } from '~/config.ts';
 import ProductCard from '~/features/product/ProductCard.astro';
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 import SideColumnLayout from '~/layouts/SideColumnLayout.astro';
-import { getProductStock } from '~/lib/products.ts';
 import { unwrap } from '~/lib/util.ts';
 
 import 'astro-breadcrumbs/breadcrumbs.css';
@@ -37,9 +36,7 @@ if (!productsResponse.data) {
 }
 
 const collection = collectionResponse.data;
-const products = productsResponse.data.items.filter((product) => {
-	return getProductStock(product);
-});
+const products = productsResponse.data.items;
 ---
 
 <PrimaryLayout title={`Bodegas Maquiavelo | ${collection.name}`}>

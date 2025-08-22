@@ -44,6 +44,19 @@ const { class: className, elementId, imageLoading, ...product } = Astro.props;
 			<p class="text-lg/tight text-theme-base-600 dark:text-theme-base-100">
 				<ProductPrice price={product.price} discount={product.discount} />
 			</p>
+			<blockquote>
+				{
+					product.stock ? (
+						<span class="inline-block rounded-lg bg-green-800 px-3 py-1 text-xs font-semibold text-theme-base-100">
+							Disponible
+						</span>
+					) : (
+						<span class="inline-block rounded-lg bg-red-800 px-3 py-1 text-xs font-semibold text-theme-base-100">
+							Agotado
+						</span>
+					)
+				}
+			</blockquote>
 		</div>
 	</article>
 	<div

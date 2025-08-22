@@ -12,33 +12,30 @@
 		{
 			"id": "ancestral-petit-verdot-3",
 			"name": "Ancestral Petit Verdot Pack 3 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 4800
 		},
 		{
 			"id": "ancestral-petit-verdot-6",
 			"name": "Ancestral Petit Verdot Pack 6 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 12000
 		},
 		{
 			"id": "ancestral-petit-verdot-12",
 			"name": "Ancestral Petit Verdot Pack 12 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 26400
 		},
 		{
 			"id": "ancestral-petit-verdot-24",
 			"name": "Ancestral Petit Verdot Pack 24 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 55200
 		}
 	],
 	"images": [],
+	"stock": true,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

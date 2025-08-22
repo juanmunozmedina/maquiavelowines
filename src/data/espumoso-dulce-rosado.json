@@ -11,33 +11,30 @@
 		{
 			"id": "espumoso-dulce-rosado-3",
 			"name": "Espumoso Dulce Rosado Pack 3 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 2380
 		},
 		{
 			"id": "espumoso-dulce-rosado-6",
 			"name": "Espumoso Dulce Rosado Pack 6 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 5950
 		},
 		{
 			"id": "espumoso-dulce-rosado-12",
 			"name": "Espumoso Dulce Rosado Pack 12 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 13090
 		},
 		{
 			"id": "espumoso-dulce-rosado-24",
 			"name": "Espumoso Dulce Rosado Pack 24 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 27370
 		}
 	],
 	"images": [],
+	"stock": false,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

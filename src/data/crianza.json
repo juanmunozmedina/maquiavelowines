@@ -11,33 +11,30 @@
 		{
 			"id": "crianza-3",
 			"name": "Crianza Pack 3 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 2360
 		},
 		{
 			"id": "crianza-6",
 			"name": "Crianza Pack 6 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 5900
 		},
 		{
 			"id": "crianza-12",
 			"name": "Crianza Pack 12 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 12980
 		},
 		{
 			"id": "crianza-24",
 			"name": "Crianza Pack 24 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 27140
 		}
 	],
 	"images": [],
+	"stock": true,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

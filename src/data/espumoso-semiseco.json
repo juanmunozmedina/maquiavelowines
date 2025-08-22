@@ -11,33 +11,30 @@
 		{
 			"id": "espumoso-semiseco-3",
 			"name": "Espumoso Semiseco Pack 3 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 3140
 		},
 		{
 			"id": "espumoso-semiseco-6",
 			"name": "Espumoso Semiseco Pack 6 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 7850
 		},
 		{
 			"id": "espumoso-semiseco-12",
 			"name": "Espumoso Semiseco Pack 12 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 17270
 		},
 		{
 			"id": "espumoso-semiseco-24",
 			"name": "Espumoso Semiseco Pack 24 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 37680
 		}
 	],
 	"images": [],
+	"stock": false,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

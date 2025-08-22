@@ -12,33 +12,30 @@
 		{
 			"id": "brut-excellence-espumoso-3",
 			"name": "Brut Excellence Espumoso Pack 3 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 3180
 		},
 		{
 			"id": "brut-excellence-espumoso-6",
 			"name": "Brut Excellence Espumoso Pack 6 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 7950
 		},
 		{
 			"id": "brut-excellence-espumoso-12",
 			"name": "Brut Excellence Espumoso Pack 12 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 17490
 		},
 		{
 			"id": "brut-excellence-espumoso-24",
 			"name": "Brut Excellence Espumoso Pack 24 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 38160
 		}
 	],
 	"images": [],
+	"stock": true,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

@@ -1,4 +1,3 @@
-import { type Product } from 'storefront:client';
 import { z } from 'zod';
 
 export const stripeProductMetadataSchema = z
@@ -10,7 +9,3 @@ export const stripeProductMetadataSchema = z
 		variantId: z.string(),
 	})
 	.strict();
-
-export function getProductStock(product: Product) {
-	return product.variants.reduce((total, variant) => total + variant.stock, 1);
-}

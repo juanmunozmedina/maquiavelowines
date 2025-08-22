@@ -12,33 +12,30 @@
 		{
 			"id": "adn-verdejo-3",
 			"name": "ADN Verdejo Pack 3 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 2140
 		},
 		{
 			"id": "adn-verdejo-6",
 			"name": "ADN Verdejo Pack 6 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 5350
 		},
 		{
 			"id": "adn-verdejo-12",
 			"name": "ADN Verdejo Pack 12 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 11770
 		},
 		{
 			"id": "adn-verdejo-24",
 			"name": "ADN Verdejo Pack 24 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 24610
 		}
 	],
 	"images": [],
+	"stock": true,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

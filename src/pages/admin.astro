@@ -2,7 +2,7 @@
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 ---
 
-<PrimaryLayout title="Admin">
+<PrimaryLayout title="Admin Maquiavelo Wines">
 	<head>
 		<meta charset="UTF-8" />
 		<title>Admin Maquiavelo Wines</title>
@@ -31,7 +31,7 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 				class="hidden rounded bg-white p-6 shadow dark:bg-slate-700"
 				aria-live="polite"
 			>
-				<h2 class="mb-4 text-xl font-semibold">Actualizar stock de variantes</h2>
+				<h2 class="mb-4 text-xl font-semibold">Actualizar stock de productos</h2>
 
 				<div class="mb-4">
 					<label for="product-select" class="mb-1 block font-medium">Producto:</label>
@@ -42,22 +42,11 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 				</div>
 
 				<div class="mb-4">
-					<label for="variant-select" class="mb-1 block font-medium">Variante:</label>
-					<select
-						id="variant-select"
-						class="w-full rounded border p-2 dark:text-slate-700"
-						aria-label="Selecciona una variante"></select>
-				</div>
-
-				<div class="mb-4">
-					<label for="stock-input" class="mb-1 block font-medium">Nuevo stock:</label>
-					<input
-						id="stock-input"
-						type="number"
-						min="0"
-						class="w-full rounded border p-2 dark:text-slate-700"
-						aria-label="Nuevo stock"
-					/>
+					<label for="stock-input" class="mb-1 block font-medium">¿Hay stock disponible?</label>
+					<select id="stock-input" class="w-full rounded border p-2 dark:text-slate-700">
+						<option value="true">Sí</option>
+						<option value="false">No</option>
+					</select>
 				</div>
 
 				<button
@@ -77,7 +66,6 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 			const userInfo = document.getElementById('user-info');
 			const adminPanel = document.getElementById('admin-panel');
 			const productSelect = document.getElementById('product-select');
-			const variantSelect = document.getElementById('variant-select');
 			const stockInput = document.getElementById('stock-input');
 			const updateBtn = document.getElementById('update-stock-btn');
 			const statusMsg = document.getElementById('status-msg');
@@ -110,39 +98,21 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						data.forEach((prod) => {
 							const opt = document.createElement('option');
 							opt.value = prod.id;
-							opt.textContent = prod.name;
+							opt.textContent = `${prod.name} (${prod.stock ? 'Disponible' : 'Agotado'})`;
 							productSelect.appendChild(opt);
 						});
-						updateVariants();
 					})
 					.catch(() => {
 						statusMsg.textContent = 'Error al cargar productos.';
 					});
 			}
 
-			function updateVariants() {
-				const prodId = productSelect.value;
-				const product = products.find((p) => p.id === prodId);
-				variantSelect.innerHTML = '';
-				if (product) {
-					product.variants.forEach((v) => {
-						const opt = document.createElement('option');
-						opt.value = v.id;
-						opt.textContent = `${v.name} (stock: ${v.stock})`;
-						variantSelect.appendChild(opt);
-					});
-				}
-			}
-
-			productSelect.onchange = updateVariants;
-
 			updateBtn.onclick = async () => {
 				const productId = productSelect.value;
-				const variantId = variantSelect.value;
-				const newStock = parseInt(stockInput.value, 10);
+				const stockValue = stockInput.value === 'true';
 
-				if (!productId || !variantId || isNaN(newStock)) {
-					statusMsg.textContent = 'Completa todos los campos correctamente.';
+				if (!productId) {
+					statusMsg.textContent = 'Selecciona un producto.';
 					return;
 				}
 
@@ -163,7 +133,7 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 							'Content-Type': 'application/json',
 							Authorization: `Bearer ${token}`,
 						},
-						body: JSON.stringify({ productId, variantId, newStock }),
+						body: JSON.stringify({ productId, stock: stockValue }),
 					});
 
 					const resp = await res.json();
@@ -172,9 +142,8 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						statusMsg.textContent = 'Stock actualizado correctamente.';
 						const product = products.find((p) => p.id === productId);
 						if (product) {
-							const variant = product.variants.find((v) => v.id === variantId);
-							if (variant) variant.stock = newStock;
-							updateVariants();
+							product.stock = stockValue;
+							loadProducts(); // Recarga para actualizar el texto del select
 						}
 					} else {
 						statusMsg.textContent = 'Error al actualizar stock: ' + (resp.error || '');

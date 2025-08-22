@@ -11,33 +11,30 @@
 		{
 			"id": "ancestral-monastrell-crianza-3",
 			"name": "Ancestral Monastrell Crianza Pack 3 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 2580
 		},
 		{
 			"id": "ancestral-monastrell-crianza-6",
 			"name": "Ancestral Monastrell Crianza Pack 6 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 6450
 		},
 		{
 			"id": "ancestral-monastrell-crianza-12",
 			"name": "Ancestral Monastrell Crianza Pack 12 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 14190
 		},
 		{
 			"id": "ancestral-monastrell-crianza-24",
 			"name": "Ancestral Monastrell Crianza Pack 24 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 29670
 		}
 	],
 	"images": [],
+	"stock": true,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

@@ -19,11 +19,7 @@ export const cart = {
 	addItems: defineAction({
 		input: lineItemDataSchema.omit({ id: true }),
 		handler: async (input, ctx) => {
-			// we should add an endpoint to get product variants by ID,
-			// but for now, we'll just fetch all the products and filter
-			const products = await getProducts({
-				query: {},
-			});
+			const products = await getProducts({ query: {} });
 
 			const product = products.data?.items.find((product) =>
 				product.variants.some((variant) => variant.id === input.productVariantId),
@@ -36,14 +32,15 @@ export const cart = {
 				});
 			}
 
-			const lineItem = expandLineItem({ ...input, id: crypto.randomUUID() }, product);
-
-			if (lineItem.quantity > lineItem.productVariant.stock) {
+			// ✅ Verificar si el producto está disponible
+			if (!product.stock) {
 				throw new ActionError({
 					code: 'BAD_REQUEST',
-					message: 'No hay suficiente stock',
+					message: 'El producto está agotado',
 				});
 			}
+
+			const lineItem = expandLineItem({ ...input, id: crypto.randomUUID() }, product);
 
 			const cart = await getCart(ctx);
 			setCart(ctx, addItemToCart(cart, lineItem));

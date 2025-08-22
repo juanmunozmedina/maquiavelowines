@@ -11,33 +11,30 @@
 		{
 			"id": "espumoso-brut-3",
 			"name": "Espumoso Brut Pack 3 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 3140
 		},
 		{
 			"id": "espumoso-brut-6",
 			"name": "Espumoso Brut Pack 6 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 7850
 		},
 		{
 			"id": "espumoso-brut-12",
 			"name": "Espumoso Brut Pack 12 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 17270
 		},
 		{
 			"id": "espumoso-brut-24",
 			"name": "Espumoso Brut Pack 24 botellas",
-			"stock": 0,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 36110
 		}
 	],
 	"images": [],
+	"stock": false,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

@@ -15,6 +15,7 @@ export type Product = {
 	/** The price of the product in cents. */
 	price: number;
 	/** The discount amount in cents. Should be subtracted from the price to get the discounted price. */
+	stock: boolean;
 	discount: number;
 	imageUrl: string;
 	images: Array<{
@@ -31,7 +32,6 @@ export type Product = {
 		options: {
 			[key: string]: string;
 		};
-		stock: number;
 		/** The price of the variant in cents. */
 		priceVariant: number;
 	}>;
@@ -72,7 +72,6 @@ export type LineItem = Merge<
 			id: string;
 			name: string;
 			product: Product;
-			stock: number;
 			options: {
 				[key: string]: string;
 			};

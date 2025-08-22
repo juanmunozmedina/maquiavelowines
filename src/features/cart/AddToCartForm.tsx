@@ -8,8 +8,6 @@ import { NumberInput } from '~/components/ui/NumberInput.tsx';
 import { queryClient } from '~/lib/query.ts';
 import { CartStore } from './store.ts';
 
-const MAX_QUANTITY = 20;
-
 export function AddToCartForm(props: { product: Product }) {
 	const [selectedOptions, setSelectedOptions] = createSignal<Record<string, string>>({});
 	const [quantity, setQuantity] = createSignal(1);
@@ -68,9 +66,6 @@ export function AddToCartForm(props: { product: Product }) {
 		}
 		return result;
 	};
-
-	const getVariantStock = (variant: Product['variants'][number] | undefined) =>
-		Math.min(variant?.stock ?? 0, MAX_QUANTITY);
 
 	return (
 		<form
@@ -143,19 +138,11 @@ export function AddToCartForm(props: { product: Product }) {
 					<Match when={Object.keys(selectedOptions()).length < productOptionValues().size}>
 						<p class="text-red-800 dark:text-blue-300">¡Elige un pack!</p>
 					</Match>
+					<Match when={!props.product.stock}>
+						<p class="text-red-800 dark:text-blue-300">Producto agotado.</p>
+					</Match>
 					<Match when={selectedVariant() == null}>
 						<p class="text-red-800 dark:text-blue-300">Este pack no está disponible.</p>
-					</Match>
-					<Match when={selectedVariant()?.stock === 0}>
-						<p class="text-red-800 dark:text-blue-300">Este pack está agotado.</p>
-					</Match>
-					<Match when={selectedVariant()?.stock === -1}>
-						<p class="text-red-800 dark:text-blue-300">Próximamente.</p>
-					</Match>
-					<Match when={quantity() > getVariantStock(selectedVariant())}>
-						<p class="text-red-800 dark:text-blue-300">
-							Sólo {getVariantStock(selectedVariant())} queda en stock.
-						</p>
 					</Match>
 				</Switch>
 			</div>

@@ -11,33 +11,30 @@
 		{
 			"id": "vermut-citrus-3",
 			"name": "Vermut Citrus Pack 3 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 3" },
 			"priceVariant": 2380
 		},
 		{
 			"id": "vermut-citrus-6",
 			"name": "Vermut Citrus Pack 6 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 6" },
 			"priceVariant": 5950
 		},
 		{
 			"id": "vermut-citrus-12",
 			"name": "Vermut Citrus Pack 12 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 12" },
 			"priceVariant": 13090
 		},
 		{
 			"id": "vermut-citrus-24",
 			"name": "Vermut Citrus Pack 24 botellas",
-			"stock": 1000,
 			"options": { "Tamaño": "Pack 24" },
 			"priceVariant": 27370
 		}
 	],
 	"images": [],
+	"stock": true,
 	"discount": 0,
 	"createdAt": "2025-08-20T00:00:00.000Z",
 	"updatedAt": "2025-08-20T00:00:00.000Z",

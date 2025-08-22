@@ -13,10 +13,6 @@ import type { stripeProductMetadataSchema } from '~/lib/products.ts';
 export const POST: APIRoute = async (context) => {
 	const cart = await loadCartFromCookies(context.cookies);
 
-	// TODO: we probably want to check here the stock of items/variants
-	// because they could be in the checkout screen _while_ the last thing was being ordered,
-	// then get an error after submitting payment
-
 	const stripe = new Stripe(STRIPE_SECRET_KEY);
 
 	//const countrySpecs = await stripe.countrySpecs.retrieve('ES');
