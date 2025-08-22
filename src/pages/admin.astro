@@ -54,7 +54,7 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 		</div>
 
 		<script type="module" is:inline>
-			const ADMIN_PASSWORD = import.meta.env.VITE_PUBLIC_ADMIN_PASSWORD;
+			const ADMIN_PASSWORD = import.meta.env.PUBLIC_ADMIN_PASSWORD;
 
 			const loginBtn = document.getElementById('login-btn');
 			const logoutBtn = document.getElementById('logout-btn');
