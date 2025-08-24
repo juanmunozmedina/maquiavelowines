@@ -37,32 +37,58 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 			<!-- Admin Panel -->
 			<div id="admin-panel" class="hidden rounded bg-white p-6 shadow dark:bg-slate-700">
 				<h2 class="mb-4 text-xl font-semibold">Actualizar stock de productos</h2>
-
-				<div class="mb-4">
-					<label for="product-select" class="mb-1 block font-medium">Producto:</label>
-					<select id="product-select" class="w-full rounded border p-2 dark:text-slate-700"
-					></select>
-				</div>
-
-				<div class="mb-4">
-					<label for="stock-input" class="mb-1 block font-medium">¿Hay stock disponible?</label>
-					<select id="stock-input" class="w-full rounded border p-2 dark:text-slate-700">
-						<option value="true">Sí</option>
-						<option value="false">No</option>
-					</select>
-				</div>
-
-				<button
-					id="update-stock-btn"
-					class="rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+				<!-- Spinner -->
+				<div
+					id="spinner"
+					class="mb-4 hidden items-center justify-center text-center text-sm text-gray-500"
 				>
-					Actualizar Stock
-				</button>
-				<p id="status-msg" class="mt-4 text-sm text-gray-700 dark:text-gray-100"></p>
+					<svg
+						class="mr-2 h-5 w-5 animate-spin text-gray-500"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+					>
+						<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"
+						></circle>
+						<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+						></path>
+					</svg>
+					Cargando productos...
+				</div>
+
+				<div class="selectors">
+					<div class="mb-4">
+						<label for="product-select" class="mb-1 block font-medium">Producto:</label>
+						<select
+							id="product-select"
+							class="w-full overflow-y-auto rounded border p-2 dark:text-slate-700"></select>
+					</div>
+
+					<div class="mb-4">
+						<label for="stock-input" class="mb-1 block font-medium">¿Hay stock disponible?</label>
+						<select id="stock-input" class="w-full rounded border p-2 dark:text-slate-700">
+							<option value="true">Sí</option>
+							<option value="false">No</option>
+						</select>
+					</div>
+
+					<button
+						id="update-stock-btn"
+						class="rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+					>
+						Actualizar Stock
+					</button>
+				</div>
+
+				<div
+					id="status-msg"
+					class="mt-4 flex items-center gap-2 text-sm transition-all duration-300"
+				>
+				</div>
 			</div>
 		</div>
 
-		<script is:inline>
+		<script type="module" is:inline>
 			document.addEventListener('DOMContentLoaded', () => {
 				const loginBtn = document.getElementById('login-btn');
 				const logoutBtn = document.getElementById('logout-btn');
@@ -75,7 +101,8 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 				const passwordInput = document.getElementById('password-input');
 				const loginMsg = document.getElementById('login-msg');
 
-				let token = localStorage.getItem('admin-token') || null; // Leer token guardado
+				let token = localStorage.getItem('admin-token') || null;
+				let products = [];
 
 				function updateUI(isLoggedIn) {
 					if (isLoggedIn) {
@@ -98,11 +125,16 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						statusMsg.textContent = '';
 						loginMsg.textContent = '';
 						token = null;
-						localStorage.removeItem('admin-token'); // Limpiar token al logout
+						localStorage.removeItem('admin-token');
 					}
 				}
 
 				function loadProducts() {
+					const spinner = document.getElementById('spinner');
+					const selectors = document.querySelector('.selectors');
+					spinner.classList.remove('hidden'); // Mostrar spinner
+					selectors.classList.add('hidden'); // Ocultar el form
+
 					fetch('/.netlify/functions/get-products', {
 						method: 'GET',
 						headers: {
@@ -110,6 +142,10 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						},
 					})
 						.then((res) => {
+							if (res.status === 401) {
+								updateUI(false);
+								throw new Error('Sesión expirada, por favor inicia sesión de nuevo.');
+							}
 							if (!res.ok) throw new Error(`Error al cargar productos: ${res.status}`);
 							return res.json();
 						})
@@ -126,6 +162,10 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						})
 						.catch((err) => {
 							statusMsg.textContent = err.message;
+						})
+						.finally(() => {
+							spinner.classList.add('hidden'); // Ocultar spinner al terminar
+							selectors.classList.remove('hidden'); // Mostrar el form
 						});
 				}
 
@@ -134,11 +174,14 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 					const stockValue = stockInput.value === 'true';
 
 					if (!productId) {
-						statusMsg.textContent = 'Selecciona un producto.';
+						statusMsg.innerHTML = '❌ <span>Selecciona un producto.</span>';
+						statusMsg.classList.remove('text-green-600');
+						statusMsg.classList.add('text-red-600');
 						return;
 					}
 
-					statusMsg.textContent = 'Actualizando stock...';
+					statusMsg.innerHTML = '⏳ <span>Actualizando stock...</span>';
+					statusMsg.classList.remove('text-green-600', 'text-red-600');
 
 					fetch('/.netlify/functions/update-stock', {
 						method: 'POST',
@@ -151,18 +194,31 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						.then((res) => res.json())
 						.then((resp) => {
 							if (resp.success) {
-								statusMsg.textContent = 'Stock actualizado correctamente.';
-								const product = products.find((p) => p.id === productId);
+								statusMsg.innerHTML = '✅ <span>Stock actualizado correctamente.</span>';
+								statusMsg.classList.remove('text-red-600');
+								statusMsg.classList.add('text-green-600');
+
+								const product = products?.find((p) => p.id === productId);
 								if (product) {
 									product.stock = stockValue;
 									loadProducts();
 								}
+
+								setTimeout(() => {
+									statusMsg.innerHTML = '';
+									statusMsg.classList.remove('text-green-600');
+								}, 3000);
 							} else {
-								statusMsg.textContent = 'Error al actualizar stock: ' + (resp.error || '');
+								statusMsg.innerHTML =
+									'❌ <span>Error al actualizar stock: ' + (resp.error || '') + '</span>';
+								statusMsg.classList.remove('text-green-600');
+								statusMsg.classList.add('text-red-600');
 							}
 						})
 						.catch(() => {
-							statusMsg.textContent = 'Error al actualizar stock.';
+							statusMsg.innerHTML = '❌ <span>Error al actualizar stock.</span>';
+							statusMsg.classList.remove('text-green-600');
+							statusMsg.classList.add('text-red-600');
 						});
 				};
 
@@ -184,7 +240,7 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						.then(({ status, data }) => {
 							if (status === 200 && data.token) {
 								token = data.token;
-								localStorage.setItem('admin-token', token); // Guardar token
+								localStorage.setItem('admin-token', token);
 								updateUI(true);
 							} else {
 								loginMsg.textContent = 'Contraseña incorrecta';
@@ -205,7 +261,6 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 					updateUI(false);
 				};
 
-				// Inicializar UI según si hay token guardado
 				updateUI(!!token);
 			});
 		</script>
