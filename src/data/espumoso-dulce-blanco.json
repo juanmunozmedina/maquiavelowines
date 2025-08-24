@@ -1,42 +1,52 @@
 {
-	"id": "espumoso-dulce-blanco",
-	"name": "Espumoso Dulce Blanco",
-	"slug": "espumoso-dulce-blanco",
-	"tagline": "Maquiavelo edición especial de vino espumoso dulce blanco.",
-	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Macabeo</p> <p><b>Graduación</b>: 8% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> </div> <div> <p><b>Nota de cata</b></p> <p>Bebida aromatizada a base de vino.</p> <p>Fresco, afrutado con un bajo contenido en alcohol, ideal para todo tipo de comidas y eventos.</p> <p><b>Recomendaciones</b></p> <p>Degustar entre 8 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
-	"price": 1190,
-	"imageUrl": "/assets/sweetgreen.png",
-	"collectionIds": ["centhaurus"],
-	"variants": [
-		{
-			"id": "espumoso-dulce-blanco-3",
-			"name": "Espumoso Dulce Blanco Pack 3 botellas",
-			"options": { "Tamaño": "Pack 3" },
-			"priceVariant": 2380
-		},
-		{
-			"id": "espumoso-dulce-blanco-6",
-			"name": "Espumoso Dulce Blanco Pack 6 botellas",
-			"options": { "Tamaño": "Pack 6" },
-			"priceVariant": 5950
-		},
-		{
-			"id": "espumoso-dulce-blanco-12",
-			"name": "Espumoso Dulce Blanco Pack 12 botellas",
-			"options": { "Tamaño": "Pack 12" },
-			"priceVariant": 13090
-		},
-		{
-			"id": "espumoso-dulce-blanco-24",
-			"name": "Espumoso Dulce Blanco Pack 24 botellas",
-			"options": { "Tamaño": "Pack 24" },
-			"priceVariant": 27370
-		}
-	],
-	"images": [],
-	"stock": false,
-	"discount": 0,
-	"createdAt": "2025-08-20T00:00:00.000Z",
-	"updatedAt": "2025-08-20T00:00:00.000Z",
-	"deletedAt": null
+  "id": "espumoso-dulce-blanco",
+  "name": "Espumoso Dulce Blanco",
+  "slug": "espumoso-dulce-blanco",
+  "tagline": "Maquiavelo edición especial de vino espumoso dulce blanco.",
+  "description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Macabeo</p> <p><b>Graduación</b>: 8% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> </div> <div> <p><b>Nota de cata</b></p> <p>Bebida aromatizada a base de vino.</p> <p>Fresco, afrutado con un bajo contenido en alcohol, ideal para todo tipo de comidas y eventos.</p> <p><b>Recomendaciones</b></p> <p>Degustar entre 8 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
+  "price": 1190,
+  "imageUrl": "/assets/sweetgreen.png",
+  "collectionIds": [
+    "centhaurus"
+  ],
+  "variants": [
+    {
+      "id": "espumoso-dulce-blanco-3",
+      "name": "Espumoso Dulce Blanco Pack 3 botellas",
+      "options": {
+        "Tamaño": "Pack 3"
+      },
+      "priceVariant": 2380
+    },
+    {
+      "id": "espumoso-dulce-blanco-6",
+      "name": "Espumoso Dulce Blanco Pack 6 botellas",
+      "options": {
+        "Tamaño": "Pack 6"
+      },
+      "priceVariant": 5950
+    },
+    {
+      "id": "espumoso-dulce-blanco-12",
+      "name": "Espumoso Dulce Blanco Pack 12 botellas",
+      "options": {
+        "Tamaño": "Pack 12"
+      },
+      "priceVariant": 13090
+    },
+    {
+      "id": "espumoso-dulce-blanco-24",
+      "name": "Espumoso Dulce Blanco Pack 24 botellas",
+      "options": {
+        "Tamaño": "Pack 24"
+      },
+      "priceVariant": 27370
+    }
+  ],
+  "images": [],
+  "stock": true,
+  "discount": 0,
+  "createdAt": "2025-08-20T00:00:00.000Z",
+  "updatedAt": "2025-08-20T00:00:00.000Z",
+  "deletedAt": null
 }
