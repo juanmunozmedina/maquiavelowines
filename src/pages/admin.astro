@@ -135,7 +135,7 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 					spinner.classList.remove('hidden'); // Mostrar spinner
 					selectors.classList.add('hidden'); // Ocultar el form
 
-					fetch('/.netlify/functions/get-products', {
+					fetch(`/.netlify/functions/get-products?_=${Date.now()}`, {
 						method: 'GET',
 						headers: {
 							'x-admin-token': token,
