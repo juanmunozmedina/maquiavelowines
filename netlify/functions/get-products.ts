@@ -94,6 +94,12 @@ export const handler: Handler = async (event) => {
 
 		return {
 			statusCode: 200,
+			headers: {
+				'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+				Pragma: 'no-cache',
+				Expires: '0',
+				'Surrogate-Control': 'no-store',
+			},
 			body: JSON.stringify(products),
 		};
 	} catch (err) {

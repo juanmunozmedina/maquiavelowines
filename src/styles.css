@@ -139,14 +139,3 @@
 .dark .by-astro svg path {
 	fill: #f9f3f4;
 }
-
-/* Quitar flecha en select deshabilitado */
-select[disabled] {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none;
-	background-image: none;
-	background-color: #ccc; /* O el color que prefieras */
-	cursor: default;
-	opacity: 0.75;
-}
