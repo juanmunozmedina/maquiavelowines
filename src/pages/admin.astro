@@ -66,13 +66,15 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 					</div>
 
 					<div class="mb-4">
-						<label for="stock-input" class="mb-1 block font-medium">Stock:</label>
+						<label for="stock-input" class="mb-1 block font-medium"
+							>Cambiar estado de stock a:</label
+						>
 						<select
 							id="stock-input"
 							class="w-full rounded border p-2 text-center dark:text-slate-700"
 						>
-							<option value="true">Modificar estado a producto disponible</option>
-							<option value="false">Modificar estado a producto agotado</option>
+							<option value="true">Disponible</option>
+							<option value="false">Agotado</option>
 						</select>
 					</div>
 
@@ -80,7 +82,7 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						id="update-stock-btn"
 						class="rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
 					>
-						Actualizar Stock
+						Actualizar stock
 					</button>
 				</div>
 
@@ -190,9 +192,7 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						stockSelect.innerHTML = '';
 						const option = document.createElement('option');
 						option.value = String(!selectedProduct.stock);
-						option.textContent = selectedProduct.stock
-							? 'Modificar estado a producto agotado'
-							: 'Modificar estado a producto disponible';
+						option.textContent = selectedProduct.stock ? 'Agotado' : 'Disponible';
 						stockSelect.appendChild(option);
 
 						// Deshabilitar select para que no pueda editarse y ocultar flecha
