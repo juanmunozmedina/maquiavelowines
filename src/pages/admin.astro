@@ -61,14 +61,18 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						<label for="product-select" class="mb-1 block font-medium">Producto:</label>
 						<select
 							id="product-select"
-							class="w-full overflow-y-auto rounded border p-2 dark:text-slate-700"></select>
+							class="w-full overflow-y-auto rounded border p-2 text-center dark:text-slate-700"
+						></select>
 					</div>
 
 					<div class="mb-4">
-						<label for="stock-input" class="mb-1 block font-medium">¿Hay stock disponible?</label>
-						<select id="stock-input" class="w-full rounded border p-2 dark:text-slate-700">
-							<option value="true">Sí</option>
-							<option value="false">No</option>
+						<label for="stock-input" class="mb-1 block font-medium">Stock:</label>
+						<select
+							id="stock-input"
+							class="w-full rounded border p-2 text-center dark:text-slate-700"
+						>
+							<option value="true">Modificar estado a producto disponible</option>
+							<option value="false">Modificar estado a producto agotado</option>
 						</select>
 					</div>
 
@@ -160,6 +164,10 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 								productSelect.appendChild(opt);
 							});
 							statusMsg.textContent = '';
+
+							// 🔥 Forzar trigger del 'change' para actualizar stock-input con el primer producto
+							const event = new Event('change');
+							productSelect.dispatchEvent(event);
 						})
 						.catch((err) => {
 							statusMsg.textContent = err.message;
@@ -168,6 +176,29 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 							spinner.classList.add('hidden'); // Ocultar spinner al terminar
 							selectors.classList.remove('hidden'); // Mostrar el form
 						});
+
+					productSelect.addEventListener('change', () => {
+						const selectedId = productSelect.value;
+						const selectedProduct = products.find((p) => p.id === selectedId);
+						const stockSelect = stockInput;
+
+						if (!selectedProduct) {
+							stockSelect.classList.add('hidden');
+							return;
+						}
+
+						stockSelect.innerHTML = '';
+						const option = document.createElement('option');
+						option.value = String(!selectedProduct.stock);
+						option.textContent = selectedProduct.stock
+							? 'Modificar estado a producto agotado'
+							: 'Modificar estado a producto disponible';
+						stockSelect.appendChild(option);
+
+						// Deshabilitar select para que no pueda editarse y ocultar flecha
+						stockSelect.disabled = true;
+						stockSelect.classList.remove('hidden');
+					});
 				}
 
 				updateBtn.onclick = () => {
@@ -208,7 +239,7 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 								setTimeout(() => {
 									statusMsg.innerHTML = '';
 									statusMsg.classList.remove('text-green-600');
-								}, 3000);
+								}, 6000);
 							} else {
 								statusMsg.innerHTML =
 									'❌ <span>Error al actualizar stock: ' + (resp.error || '') + '</span>';

@@ -62,8 +62,8 @@
 	.content-grid,
 	.content-grid > .breakout {
 		& {
-			--content-width: theme('screens.2xl');
-			--side-padding: theme('space.4');
+			--content-width: 1536px; /* Valor por defecto 2xl en Tailwind */
+			--side-padding: 1rem; /* space.4 en Tailwind = 16px */
 			display: grid;
 			grid-auto-flow: row;
 			grid-template-columns:
@@ -138,4 +138,15 @@
 
 .dark .by-astro svg path {
 	fill: #f9f3f4;
+}
+
+/* Quitar flecha en select deshabilitado */
+select[disabled] {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-image: none;
+	background-color: #ccc; /* O el color que prefieras */
+	cursor: default;
+	opacity: 0.75;
 }
