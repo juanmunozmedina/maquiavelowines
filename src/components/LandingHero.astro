@@ -17,6 +17,7 @@ import { button } from '~/styles.ts';
 		<source srcset={xl.src} media="(max-width: 1280px)" />
 		<source srcset={twoXl.src} media="(min-width: 1281px)" />
 		<img
+			fetchpriority="high"
 			src={twoXl.src}
 			alt="Bodegas Maquiavelo"
 			class="breakout absolute inset-0 size-full object-cover object-right-bottom"

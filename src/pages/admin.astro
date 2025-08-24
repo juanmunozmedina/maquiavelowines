@@ -24,6 +24,16 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 				<p id="login-msg" class="mt-2 text-sm text-red-600"></p>
 			</div>
 
+			<!-- Logout Button -->
+			<button
+				id="logout-btn"
+				class="mb-6 hidden w-full rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+			>
+				Cerrar sesión
+			</button>
+
+			<p id="user-info" class="mb-6 font-medium"></p>
+
 			<!-- Admin Panel -->
 			<div id="admin-panel" class="hidden rounded bg-white p-6 shadow dark:bg-slate-700">
 				<h2 class="mb-4 text-xl font-semibold">Actualizar stock de productos</h2>
@@ -48,130 +58,155 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 				>
 					Actualizar Stock
 				</button>
-
 				<p id="status-msg" class="mt-4 text-sm text-gray-700 dark:text-gray-100"></p>
 			</div>
 		</div>
 
-		<script type="module" is:inline>
-			const ADMIN_PASSWORD = import.meta.env.ADMIN_PASSWORD;
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				const loginBtn = document.getElementById('login-btn');
+				const logoutBtn = document.getElementById('logout-btn');
+				const userInfo = document.getElementById('user-info');
+				const adminPanel = document.getElementById('admin-panel');
+				const productSelect = document.getElementById('product-select');
+				const stockInput = document.getElementById('stock-input');
+				const updateBtn = document.getElementById('update-stock-btn');
+				const statusMsg = document.getElementById('status-msg');
+				const passwordInput = document.getElementById('password-input');
+				const loginMsg = document.getElementById('login-msg');
 
-			const loginBtn = document.getElementById('login-btn');
-			const logoutBtn = document.getElementById('logout-btn');
-			const userInfo = document.getElementById('user-info');
-			const adminPanel = document.getElementById('admin-panel');
-			const productSelect = document.getElementById('product-select');
-			const stockInput = document.getElementById('stock-input');
-			const updateBtn = document.getElementById('update-stock-btn');
-			const statusMsg = document.getElementById('status-msg');
+				let token = localStorage.getItem('admin-token') || null; // Leer token guardado
 
-			let products = [];
-
-			function updateUI(user) {
-				if (!loginBtn || !logoutBtn || !userInfo || !adminPanel) return;
-
-				if (user) {
-					loginBtn.classList.add('hidden');
-					logoutBtn.classList.remove('hidden');
-					userInfo.textContent = `Hola, ${user}`;
-					adminPanel.classList.remove('hidden');
-					loadProducts();
-				} else {
-					loginBtn.classList.remove('hidden');
-					logoutBtn.classList.add('hidden');
-					userInfo.textContent = '';
-					adminPanel.classList.add('hidden');
-				}
-			}
-
-			function loadProducts() {
-				fetch('/.netlify/functions/get-products', {
-					method: 'GET',
-					headers: {
-						'x-admin-password': ADMIN_PASSWORD,
-					},
-				})
-					.then((res) => {
-						if (!res.ok) {
-							throw new Error(`Error al cargar productos: ${res.status}`);
-						}
-						return res.json();
-					})
-					.then((data) => {
-						products = data;
+				function updateUI(isLoggedIn) {
+					if (isLoggedIn) {
+						loginBtn.classList.add('hidden');
+						passwordInput.classList.add('hidden');
+						logoutBtn.classList.remove('hidden');
+						userInfo.textContent = 'Administrador conectado';
+						adminPanel.classList.remove('hidden');
+						loginMsg.textContent = '';
+						loadProducts();
+					} else {
+						loginBtn.classList.remove('hidden');
+						passwordInput.classList.remove('hidden');
+						logoutBtn.classList.add('hidden');
+						userInfo.textContent = '';
+						adminPanel.classList.add('hidden');
+						products = [];
 						productSelect.innerHTML = '';
-						data.forEach((prod) => {
-							const opt = document.createElement('option');
-							opt.value = prod.id;
-							opt.textContent = `${prod.name} (${prod.stock ? 'Disponible' : 'Agotado'})`;
-							productSelect.appendChild(opt);
-						});
+						passwordInput.value = '';
 						statusMsg.textContent = '';
-					})
-					.catch((err) => {
-						statusMsg.textContent = err.message;
-					});
-			}
-
-			updateBtn.onclick = async () => {
-				// Aquí también deberías enviar el password en la petición update-stock
-				const productId = productSelect.value;
-				const stockValue = stockInput.value === 'true';
-
-				if (!productId) {
-					statusMsg.textContent = 'Selecciona un producto.';
-					return;
+						loginMsg.textContent = '';
+						token = null;
+						localStorage.removeItem('admin-token'); // Limpiar token al logout
+					}
 				}
 
-				statusMsg.textContent = 'Actualizando stock...';
+				function loadProducts() {
+					fetch('/.netlify/functions/get-products', {
+						method: 'GET',
+						headers: {
+							'x-admin-token': token,
+						},
+					})
+						.then((res) => {
+							if (!res.ok) throw new Error(`Error al cargar productos: ${res.status}`);
+							return res.json();
+						})
+						.then((data) => {
+							products = data;
+							productSelect.innerHTML = '';
+							data.forEach((prod) => {
+								const opt = document.createElement('option');
+								opt.value = prod.id;
+								opt.textContent = `${prod.name} (${prod.stock ? 'Disponible' : 'Agotado'})`;
+								productSelect.appendChild(opt);
+							});
+							statusMsg.textContent = '';
+						})
+						.catch((err) => {
+							statusMsg.textContent = err.message;
+						});
+				}
 
-				try {
-					const res = await fetch('/.netlify/functions/update-stock', {
+				updateBtn.onclick = () => {
+					const productId = productSelect.value;
+					const stockValue = stockInput.value === 'true';
+
+					if (!productId) {
+						statusMsg.textContent = 'Selecciona un producto.';
+						return;
+					}
+
+					statusMsg.textContent = 'Actualizando stock...';
+
+					fetch('/.netlify/functions/update-stock', {
 						method: 'POST',
 						headers: {
 							'Content-Type': 'application/json',
-							'x-admin-password': ADMIN_PASSWORD,
+							'x-admin-token': token,
 						},
 						body: JSON.stringify({ productId, stock: stockValue }),
-					});
-
-					const resp = await res.json();
-
-					if (resp.success) {
-						statusMsg.textContent = 'Stock actualizado correctamente.';
-						const product = products.find((p) => p.id === productId);
-						if (product) {
-							product.stock = stockValue;
-							loadProducts(); // Recarga para actualizar el texto del select
-						}
-					} else {
-						statusMsg.textContent = 'Error al actualizar stock: ' + (resp.error || '');
-					}
-				} catch {
-					statusMsg.textContent = 'Error al actualizar stock.';
-				}
-			};
-
-			document.addEventListener('DOMContentLoaded', () => {
-				// Como ya no usas netlifyIdentity para auth, simula el login con prompt:
-				const user = prompt('Introduce la contraseña de administrador');
-				if (user === ADMIN_PASSWORD) {
-					updateUI(user);
-				} else {
-					updateUI(null);
-				}
+					})
+						.then((res) => res.json())
+						.then((resp) => {
+							if (resp.success) {
+								statusMsg.textContent = 'Stock actualizado correctamente.';
+								const product = products.find((p) => p.id === productId);
+								if (product) {
+									product.stock = stockValue;
+									loadProducts();
+								}
+							} else {
+								statusMsg.textContent = 'Error al actualizar stock: ' + (resp.error || '');
+							}
+						})
+						.catch(() => {
+							statusMsg.textContent = 'Error al actualizar stock.';
+						});
+				};
 
 				loginBtn.onclick = () => {
-					const pw = prompt('Introduce la contraseña de administrador');
-					if (pw === ADMIN_PASSWORD) {
-						updateUI(pw);
-					} else {
-						alert('Contraseña incorrecta');
+					const pw = passwordInput.value.trim();
+					if (!pw) {
+						loginMsg.textContent = 'Por favor ingresa una contraseña';
+						return;
 					}
+					loginMsg.textContent = '';
+					fetch('/.netlify/functions/login-admin', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({ password: pw }),
+					})
+						.then((res) => res.json().then((data) => ({ status: res.status, data })))
+						.then(({ status, data }) => {
+							if (status === 200 && data.token) {
+								token = data.token;
+								localStorage.setItem('admin-token', token); // Guardar token
+								updateUI(true);
+							} else {
+								loginMsg.textContent = 'Contraseña incorrecta';
+								token = null;
+								localStorage.removeItem('admin-token');
+								updateUI(false);
+							}
+						})
+						.catch(() => {
+							loginMsg.textContent = 'Error en la conexión';
+							token = null;
+							localStorage.removeItem('admin-token');
+							updateUI(false);
+						});
 				};
+
 				logoutBtn.onclick = () => {
-					updateUI(null);
+					updateUI(false);
 				};
+
+				// Inicializar UI según si hay token guardado
+				updateUI(!!token);
 			});
 		</script>
 	</body>

@@ -11,9 +11,9 @@ export const handler: Handler = async (event) => {
 	const headers = Object.fromEntries(
 		Object.entries(event.headers).map(([k, v]) => [k.toLowerCase(), v]),
 	);
-	const password = headers['x-admin-password'];
+	const token = headers['x-admin-token'];
 
-	if (password !== process.env.ADMIN_PASSWORD) {
+	if (token !== process.env.ADMIN_PASSWORD) {
 		return {
 			statusCode: 401,
 			body: JSON.stringify({ error: 'No autorizado: contraseña incorrecta' }),

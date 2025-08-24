@@ -9,20 +9,22 @@ export const handler: Handler = async (event) => {
 		};
 	}
 
-	let body: { password?: string; productId?: string; stock?: boolean } = {};
+	// Validar token desde header x-admin-token
+	const token = event.headers['x-admin-token'];
+	if (typeof token !== 'string' || token !== process.env.ADMIN_PASSWORD) {
+		return {
+			statusCode: 401,
+			body: JSON.stringify({ error: 'No autorizado: token inválido' }),
+		};
+	}
+
+	let body: { productId?: string; stock?: boolean } = {};
 	try {
 		body = JSON.parse(event.body || '{}');
 	} catch {
 		return {
 			statusCode: 400,
 			body: JSON.stringify({ error: 'Body JSON inválido' }),
-		};
-	}
-
-	if (typeof body.password !== 'string' || body.password !== process.env.ADMIN_PASSWORD) {
-		return {
-			statusCode: 401,
-			body: JSON.stringify({ error: 'No autorizado: contraseña incorrecta' }),
 		};
 	}
 
@@ -73,7 +75,7 @@ export const handler: Handler = async (event) => {
 		const updatedContent = Buffer.from(JSON.stringify(data, null, 2)).toString('base64');
 
 		const updateRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
-			method: 'POST',
+			method: 'PUT',
 			headers: {
 				Authorization: `Bearer ${GITHUB_TOKEN}`,
 				Accept: 'application/vnd.github.v3+json',

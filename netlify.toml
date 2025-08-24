@@ -9,7 +9,14 @@
   to = "/admin/index.html"
   status = 200
   force = true
-  role = "admin"
 
 [functions]
+  directory = "netlify/functions"
   included_files = ["src/data/*.json"]
+
+[dev]
+  command = "pnpm dev"
+  targetPort = 4321
+  port = 8888
+  framework = "#custom"
+
