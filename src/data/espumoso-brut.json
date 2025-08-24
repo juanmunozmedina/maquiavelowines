@@ -1,42 +1,52 @@
 {
-	"id": "espumoso-brut",
-	"name": "Espumoso Brut",
-	"slug": "espumoso-brut",
-	"tagline": "Maquiavelo edición especial de vino espumoso brut.",
-	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Macabeo</p> <p><b>Graduación</b>: 11% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> </div> <div> <p><b>Nota de cata</b></p> <p>Vino intenso donde predominan los aromas varietales con un fondo de cítricos y frutas tropicales.</p> <p>Un vino de gran frescura que se muestra agradable y expresivo en boca.</p> <p><b>Recomendaciones</b></p> <p>Degustar entre 8 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
-	"price": 1570,
-	"imageUrl": "/assets/brut.png",
-	"collectionIds": ["centhaurus"],
-	"variants": [
-		{
-			"id": "espumoso-brut-3",
-			"name": "Espumoso Brut Pack 3 botellas",
-			"options": { "Tamaño": "Pack 3" },
-			"priceVariant": 3140
-		},
-		{
-			"id": "espumoso-brut-6",
-			"name": "Espumoso Brut Pack 6 botellas",
-			"options": { "Tamaño": "Pack 6" },
-			"priceVariant": 7850
-		},
-		{
-			"id": "espumoso-brut-12",
-			"name": "Espumoso Brut Pack 12 botellas",
-			"options": { "Tamaño": "Pack 12" },
-			"priceVariant": 17270
-		},
-		{
-			"id": "espumoso-brut-24",
-			"name": "Espumoso Brut Pack 24 botellas",
-			"options": { "Tamaño": "Pack 24" },
-			"priceVariant": 36110
-		}
-	],
-	"images": [],
-	"stock": false,
-	"discount": 0,
-	"createdAt": "2025-08-20T00:00:00.000Z",
-	"updatedAt": "2025-08-20T00:00:00.000Z",
-	"deletedAt": null
+  "id": "espumoso-brut",
+  "name": "Espumoso Brut",
+  "slug": "espumoso-brut",
+  "tagline": "Maquiavelo edición especial de vino espumoso brut.",
+  "description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Macabeo</p> <p><b>Graduación</b>: 11% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> </div> <div> <p><b>Nota de cata</b></p> <p>Vino intenso donde predominan los aromas varietales con un fondo de cítricos y frutas tropicales.</p> <p>Un vino de gran frescura que se muestra agradable y expresivo en boca.</p> <p><b>Recomendaciones</b></p> <p>Degustar entre 8 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
+  "price": 1570,
+  "imageUrl": "/assets/brut.png",
+  "collectionIds": [
+    "centhaurus"
+  ],
+  "variants": [
+    {
+      "id": "espumoso-brut-3",
+      "name": "Espumoso Brut Pack 3 botellas",
+      "options": {
+        "Tamaño": "Pack 3"
+      },
+      "priceVariant": 3140
+    },
+    {
+      "id": "espumoso-brut-6",
+      "name": "Espumoso Brut Pack 6 botellas",
+      "options": {
+        "Tamaño": "Pack 6"
+      },
+      "priceVariant": 7850
+    },
+    {
+      "id": "espumoso-brut-12",
+      "name": "Espumoso Brut Pack 12 botellas",
+      "options": {
+        "Tamaño": "Pack 12"
+      },
+      "priceVariant": 17270
+    },
+    {
+      "id": "espumoso-brut-24",
+      "name": "Espumoso Brut Pack 24 botellas",
+      "options": {
+        "Tamaño": "Pack 24"
+      },
+      "priceVariant": 36110
+    }
+  ],
+  "images": [],
+  "stock": true,
+  "discount": 0,
+  "createdAt": "2025-08-20T00:00:00.000Z",
+  "updatedAt": "2025-08-20T00:00:00.000Z",
+  "deletedAt": null
 }
