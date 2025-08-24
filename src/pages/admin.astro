@@ -139,6 +139,7 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 						method: 'GET',
 						headers: {
 							'x-admin-token': token,
+							'Cache-Control': 'no-cache',
 						},
 					})
 						.then((res) => {
