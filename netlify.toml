@@ -20,8 +20,35 @@
   port = 8888
   framework = "#custom"
 
+# ✅ Desactivar caché para archivos JSON estáticos
 [[headers]]
   for = "public/data/*.json"
   [headers.values]
     Cache-Control = "no-store"
 
+# ✅ Desactivar caché para la función get-products
+[[headers]]
+  for = "/.netlify/functions/get-products"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+    Surrogate-Control = "no-store"
+
+# ✅ Desactivar caché para la función update-stock
+[[headers]]
+  for = "/.netlify/functions/update-stock"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+    Surrogate-Control = "no-store"
+
+# ✅ Desactivar caché para la función login-admin
+[[headers]]
+  for = "/.netlify/functions/login-admin"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+    Surrogate-Control = "no-store"

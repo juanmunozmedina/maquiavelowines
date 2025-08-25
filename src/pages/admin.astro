@@ -190,6 +190,7 @@ import 'astro-breadcrumbs/breadcrumbs.css';
 							headers: {
 								'x-admin-token': token,
 							},
+							cache: 'no-store',
 						})
 							.then((res) => {
 								if (res.status === 401) {

@@ -1,19 +1,27 @@
 import type { Handler } from '@netlify/functions';
 import type { Product } from '../../src/lib/client.types';
 
+const NO_CACHE_HEADERS = {
+	'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+	Pragma: 'no-cache',
+	Expires: '0',
+	'Surrogate-Control': 'no-store',
+};
+
 export const handler: Handler = async (event) => {
 	if (event.httpMethod !== 'POST') {
 		return {
 			statusCode: 405,
+			headers: NO_CACHE_HEADERS,
 			body: JSON.stringify({ error: 'Solo se permite método POST' }),
 		};
 	}
 
-	// Validar token desde header x-admin-token
 	const token = event.headers['x-admin-token'];
 	if (typeof token !== 'string' || token !== process.env.ADMIN_PASSWORD) {
 		return {
 			statusCode: 401,
+			headers: NO_CACHE_HEADERS,
 			body: JSON.stringify({ error: 'No autorizado: token inválido' }),
 		};
 	}
@@ -24,6 +32,7 @@ export const handler: Handler = async (event) => {
 	} catch {
 		return {
 			statusCode: 400,
+			headers: NO_CACHE_HEADERS,
 			body: JSON.stringify({ error: 'Body JSON inválido' }),
 		};
 	}
@@ -33,6 +42,7 @@ export const handler: Handler = async (event) => {
 	if (!productId || typeof stock !== 'boolean') {
 		return {
 			statusCode: 400,
+			headers: NO_CACHE_HEADERS,
 			body: JSON.stringify({
 				error: 'Parámetros inválidos: se requiere productId y stock booleano',
 			}),
@@ -44,6 +54,7 @@ export const handler: Handler = async (event) => {
 		if (!GITHUB_TOKEN) {
 			return {
 				statusCode: 500,
+				headers: NO_CACHE_HEADERS,
 				body: JSON.stringify({ error: 'Token de GitHub no configurado' }),
 			};
 		}
@@ -62,6 +73,7 @@ export const handler: Handler = async (event) => {
 		if (!res.ok) {
 			return {
 				statusCode: res.status,
+				headers: NO_CACHE_HEADERS,
 				body: JSON.stringify({ error: 'Error al obtener el archivo del producto desde GitHub' }),
 			};
 		}
@@ -92,6 +104,7 @@ export const handler: Handler = async (event) => {
 			const errorBody = await updateRes.json();
 			return {
 				statusCode: updateRes.status,
+				headers: NO_CACHE_HEADERS,
 				body: JSON.stringify({
 					error: 'Error al actualizar el archivo en GitHub',
 					detalles: errorBody,
@@ -101,12 +114,14 @@ export const handler: Handler = async (event) => {
 
 		return {
 			statusCode: 200,
+			headers: NO_CACHE_HEADERS,
 			body: JSON.stringify({ success: true }),
 		};
 	} catch (err) {
 		console.error('Error actualizando stock:', err);
 		return {
 			statusCode: 500,
+			headers: NO_CACHE_HEADERS,
 			body: JSON.stringify({ error: 'Error interno del servidor' }),
 		};
 	}
