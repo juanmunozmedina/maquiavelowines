@@ -81,7 +81,7 @@ export const handler: Handler = async (event) => {
 		const products: Product[] = [];
 
 		for (const file of files) {
-			if (file.type === 'file' && file.name.endsWith('.json')) {
+			if (file.type === 'file' && file.name.endsWith('.json') && file.name !== 'index.json') {
 				const fileRes = await fetch(file.download_url);
 				if (fileRes.ok) {
 					const product: Product = await fileRes.json();
