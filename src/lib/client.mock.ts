@@ -31,11 +31,9 @@ import type {
 
 export * from './client.types.ts';
 
-export const getProducts = async <ThrowOnError extends boolean = false>(
+export const getProducts = <ThrowOnError extends boolean = false>(
 	options?: Options<GetProductsData, ThrowOnError>,
-): Promise<RequestResult<GetProductsResponse, GetProductsError, ThrowOnError>> => {
-	await loadProducts();
-
+): RequestResult<GetProductsResponse, GetProductsError, ThrowOnError> => {
 	let items =
 		options?.query?.sort === 'random' ? shuffle(Object.values(products)) : Object.values(products);
 
@@ -59,24 +57,19 @@ export const getProducts = async <ThrowOnError extends boolean = false>(
 		}
 	}
 
-	return asResult<GetProductsResponse, GetProductsError, ThrowOnError>({
-		items,
-		next: null,
-	});
+	return asResult({ items, next: null });
 };
 
-export const getProductById = async <ThrowOnError extends boolean = false>(
+export const getProductById = <ThrowOnError extends boolean = false>(
 	options: Options<GetProductByIdData, ThrowOnError>,
-): Promise<RequestResult<GetProductByIdResponse, GetProductByIdError, ThrowOnError>> => {
-	await loadProducts();
-
+): RequestResult<GetProductByIdResponse, GetProductByIdError, ThrowOnError> => {
 	const product = products[options.path.id];
 	if (!product) {
 		const error = asError<GetProductByIdError>({ error: 'not-found' });
 		if (options.throwOnError) throw error;
 		return error as RequestResult<GetProductByIdResponse, GetProductByIdError, ThrowOnError>;
 	}
-	return asResult<Product, GetProductByIdError, ThrowOnError>(product);
+	return asResult(product);
 };
 
 export const getCollections = <ThrowOnError extends boolean = false>(
@@ -85,16 +78,14 @@ export const getCollections = <ThrowOnError extends boolean = false>(
 	return asResult({ items: Object.values(collections), next: null });
 };
 
-export const getCollectionById = async <ThrowOnError extends boolean = false>(
+export const getCollectionById = <ThrowOnError extends boolean = false>(
 	options: Options<
 		GetCollectionByIdData & {
 			query?: { sort?: 'random' | 'name' | 'price' | 'updatedAt'; order?: 'asc' | 'desc' };
 		},
 		ThrowOnError
 	>,
-): Promise<RequestResult<GetCollectionByIdResponse, GetCollectionByIdError, ThrowOnError>> => {
-	await loadProducts();
-
+): RequestResult<GetCollectionByIdResponse, GetCollectionByIdError, ThrowOnError> => {
 	const collection = collections[options.path.id];
 	if (!collection) {
 		const error = asError<GetCollectionByIdError>({ error: 'not-found' });
@@ -111,6 +102,7 @@ export const getCollectionById = async <ThrowOnError extends boolean = false>(
 
 	if (sort) {
 		if (sort === 'random') {
+			// Shuffle products but keep a stable shuffle per session if quieres
 			productsInCollection = shuffle(productsInCollection);
 		} else if (sort === 'price') {
 			productsInCollection = productsInCollection.sort((a, b) =>
@@ -129,7 +121,7 @@ export const getCollectionById = async <ThrowOnError extends boolean = false>(
 		}
 	}
 
-	return asResult<GetCollectionByIdResponse, GetCollectionByIdError, ThrowOnError>({
+	return asResult({
 		...collection,
 		products: productsInCollection,
 	});
@@ -225,61 +217,43 @@ function shuffle<T>(array: T[]): T[] {
 		.map(({ value }) => value);
 }
 
+// Dynamically load all products from the folder public/data
+const productModules = import.meta.glob('public/data/*.json', { eager: true });
+
 const products: Record<string, Product> = {};
-let productsLoaded = false;
 
-async function loadProducts() {
-	if (productsLoaded) return;
+for (const path in productModules) {
+	const match = path.match(/\/([\w-]+)\.json$/);
+	if (!match) continue;
 
-	try {
-		const res = await fetch('/data/index.json');
-		if (!res.ok) throw new Error('No se pudo cargar index.json');
-		const slugs = (await res.json()) as string[];
+	const slug = match[1];
+	const product = productModules[path] as Product;
 
-		await Promise.all(
-			slugs.map(async (slug) => {
-				try {
-					const productRes = await fetch(`/data/${slug}.json`);
-					if (!productRes.ok) throw new Error(`No se pudo cargar ${slug}.json`);
-					const product = (await productRes.json()) as Product;
-
-					if (product.id === slug) {
-						products[slug] = product;
-					} else {
-						console.warn(`⚠️ ID de producto no coincide con slug: ${slug}`);
-					}
-				} catch (err) {
-					console.error(`Error cargando ${slug}.json:`, err);
-				}
-			}),
+	if (product && product.id === slug) {
+		products[slug] = product;
+	} else {
+		console.warn(
+			`⚠️ Producto con slug "${slug}" no coincide con su ID interno o está mal formado.`,
 		);
-
-		productsLoaded = true;
-	} catch (err) {
-		console.error('Error cargando productos:', err);
 	}
 }
 
-function asResult<T, E = unknown, ThrowOnError extends boolean = false>(
-	data: T,
-): RequestResult<T, E, ThrowOnError> {
+function asResult<T>(data: T) {
 	return Promise.resolve({
 		data,
 		error: undefined,
 		request: new Request('https://example.com'),
 		response: new Response(),
-	}) as RequestResult<T, E, ThrowOnError>;
+	});
 }
 
-function asError<T, E = unknown, ThrowOnError extends boolean = false>(
-	error: E,
-): RequestResult<T, E, ThrowOnError> {
-	return {
+function asError<T>(error: T) {
+	return Promise.resolve({
 		data: undefined,
 		error,
 		request: new Request('https://example.com'),
 		response: new Response(),
-	} as unknown as RequestResult<T, E, ThrowOnError>;
+	});
 }
 
 function getAddress(address: Required<CreateOrderData>['body']['shippingAddress']) {

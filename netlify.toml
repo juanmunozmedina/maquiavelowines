@@ -12,7 +12,7 @@
 
 [functions]
   directory = "netlify/functions"
-  included_files = ["/data/*.json"]
+  included_files = ["public/data/*.json"]
 
 [dev]
   command = "pnpm dev"
@@ -21,7 +21,7 @@
   framework = "#custom"
 
 [[headers]]
-  for = "/data/*.json"
+  for = "public/data/*.json"
   [headers.values]
     Cache-Control = "no-store"
 
