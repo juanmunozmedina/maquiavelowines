@@ -49,7 +49,7 @@ export const handler: Handler = async (event) => {
 		}
 
 		const REPO = 'juanmunozmedina/maquiavelowines';
-		const FILE_PATH = `src/data/${productId}.json`;
+		const FILE_PATH = `/data/${productId}.json`;
 		const BRANCH = 'main';
 
 		const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {

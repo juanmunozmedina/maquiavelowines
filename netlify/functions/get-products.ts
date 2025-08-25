@@ -56,7 +56,7 @@ export const handler: Handler = async (event) => {
 
 		const REPO = 'juanmunozmedina/maquiavelowines';
 		const BRANCH = 'main';
-		const PRODUCTS_DIR = 'src/data';
+		const PRODUCTS_DIR = '/data';
 
 		// 1. Listar archivos en la carpeta de productos
 		const listRes = await fetch(
@@ -94,12 +94,6 @@ export const handler: Handler = async (event) => {
 
 		return {
 			statusCode: 200,
-			headers: {
-				'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
-				Pragma: 'no-cache',
-				Expires: '0',
-				'Surrogate-Control': 'no-store',
-			},
 			body: JSON.stringify(products),
 		};
 	} catch (err) {
