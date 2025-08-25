@@ -1,42 +1,52 @@
 {
-	"id": "crianza",
-	"name": "Crianza",
-	"slug": "crianza",
-	"tagline": "Una experiencia enológica diferente.",
-	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell</p> <p><b>Graduación</b>: 14% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Maquiavelo Crianza es un tinto de la cosecha más reciente elaborado en su totalidad con selecta uva monastrell. Su sabor destaca por ser muy suave y afrutado en boca. Conservado 12 meses en barrica de roble francés. Ideal para acompañar con cualquier tipo de carnes, pastas, verduras, quesos o incluso para degustar solo plácidamente. Una apuesta segura, un crianza apto para todos los paladares.</p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
-	"price": 1180,
-	"imageUrl": "/assets/crianza.png",
-	"collectionIds": ["maquiavelo"],
-	"variants": [
-		{
-			"id": "crianza-3",
-			"name": "Crianza Pack 3 botellas",
-			"options": { "Tamaño": "Pack 3" },
-			"priceVariant": 2360
-		},
-		{
-			"id": "crianza-6",
-			"name": "Crianza Pack 6 botellas",
-			"options": { "Tamaño": "Pack 6" },
-			"priceVariant": 5900
-		},
-		{
-			"id": "crianza-12",
-			"name": "Crianza Pack 12 botellas",
-			"options": { "Tamaño": "Pack 12" },
-			"priceVariant": 12980
-		},
-		{
-			"id": "crianza-24",
-			"name": "Crianza Pack 24 botellas",
-			"options": { "Tamaño": "Pack 24" },
-			"priceVariant": 27140
-		}
-	],
-	"images": [],
-	"stock": true,
-	"discount": 0,
-	"createdAt": "2025-08-20T00:00:00.000Z",
-	"updatedAt": "2025-08-20T00:00:00.000Z",
-	"deletedAt": null
+  "id": "crianza",
+  "name": "Crianza",
+  "slug": "crianza",
+  "tagline": "Una experiencia enológica diferente.",
+  "description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Monastrell</p> <p><b>Graduación</b>: 14% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> <p><b>Denominación de origen</b>: Jumilla (Protegida)</p> </div> <div> <p><b>Descripción</b></p> <p>Maquiavelo Crianza es un tinto de la cosecha más reciente elaborado en su totalidad con selecta uva monastrell. Su sabor destaca por ser muy suave y afrutado en boca. Conservado 12 meses en barrica de roble francés. Ideal para acompañar con cualquier tipo de carnes, pastas, verduras, quesos o incluso para degustar solo plácidamente. Una apuesta segura, un crianza apto para todos los paladares.</p> <p><b>Recomendaciones</b></p> <p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
+  "price": 1180,
+  "imageUrl": "/assets/crianza.png",
+  "collectionIds": [
+    "maquiavelo"
+  ],
+  "variants": [
+    {
+      "id": "crianza-3",
+      "name": "Crianza Pack 3 botellas",
+      "options": {
+        "Tamaño": "Pack 3"
+      },
+      "priceVariant": 2360
+    },
+    {
+      "id": "crianza-6",
+      "name": "Crianza Pack 6 botellas",
+      "options": {
+        "Tamaño": "Pack 6"
+      },
+      "priceVariant": 5900
+    },
+    {
+      "id": "crianza-12",
+      "name": "Crianza Pack 12 botellas",
+      "options": {
+        "Tamaño": "Pack 12"
+      },
+      "priceVariant": 12980
+    },
+    {
+      "id": "crianza-24",
+      "name": "Crianza Pack 24 botellas",
+      "options": {
+        "Tamaño": "Pack 24"
+      },
+      "priceVariant": 27140
+    }
+  ],
+  "images": [],
+  "stock": false,
+  "discount": 0,
+  "createdAt": "2025-08-20T00:00:00.000Z",
+  "updatedAt": "2025-08-20T00:00:00.000Z",
+  "deletedAt": null
 }
