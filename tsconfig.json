@@ -1,6 +1,6 @@
 {
 	"extends": "astro/tsconfigs/strictest",
-	"include": ["src", "astro.config.ts", "openapi-ts.config.ts"],
+	"include": ["src", "astro.config.ts"],
 	"compilerOptions": {
 		"exactOptionalPropertyTypes": false,
 		"baseUrl": ".",

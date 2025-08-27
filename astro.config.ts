@@ -116,17 +116,6 @@ export default defineConfig({
 				access: 'public',
 				optional: true,
 			}),
-			// Used by the Astro team for our internal backend
-			SHOP_API_URL: envField.string({
-				context: 'server',
-				access: 'public',
-				optional: true,
-			}),
-			SHOP_API_KEY: envField.string({
-				context: 'server',
-				access: 'secret',
-				optional: true,
-			}),
 		},
 	},
 });

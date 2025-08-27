@@ -218,7 +218,7 @@ function shuffle<T>(array: T[]): T[] {
 }
 
 // Dynamically load all products from the folder public/data
-const productModules = import.meta.glob('public/data/*.json', { eager: true });
+const productModules = import.meta.glob('public/data/!(*index).json', { eager: true });
 
 const products: Record<string, Product> = {};
 

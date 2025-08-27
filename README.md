@@ -89,15 +89,6 @@ Para usar la API simulada, actualice la entrada [`tsconfig.json`](https://github
 - `LOOPS_FULFILLMENT_TRANSACTIONAL_ID`: el ID de un [correo electrónico de transacción de Loops](https://loops.so/docs/transactional/guide) que se enviará a _usted_ (el vendedor) para el cumplimiento del pedido. Consulte `src/lib/emails.ts` para obtener datos de plantillas de correo electrónico relacionados.
 - `LOOPS_FULFILLMENT_EMAIL`: la dirección de correo electrónico del vendedor para recibir un recibo de cumplimiento.
 
-### Google Maps
-
-[La plataforma Google Maps](https://developers.google.com/maps) se utiliza para insertar un mapa con la dirección de envío del cliente en la página de detalles del pedido.
-
-#### Variables de entorno
-
-- `GOOGLE_GEOLOCATION_SERVER_KEY`: una clave API de Google con permisos para utilizar la API de geolocalización. Esta clave solo se usa en el lado del servidor y se puede [crear con una restricción de aplicación de dirección IP](https://developers.google.com/maps/api-security-best-practices#restricting-api-keys).
-- `GOOGLE_MAPS_BROWSER_KEY`: una clave API de Google con permisos para utilizar la "API de JavaScript de Maps". Esta clave está **disponible públicamente en el cliente** y debe [crearse con una restricción de aplicación del sitio web](https://developers.google.com/maps/api-security-best-practices#restricting-api-keys) para permitir solo el acceso desde la URL de implementación de su proyecto.
-
 ## Comandos
 
 Este proyecto utiliza [pnpm](https://pnpm.io/) para gestionar las dependencias. Asegúrese de instalar esta herramienta y luego ejecute los comandos de inicio desde su terminal:
