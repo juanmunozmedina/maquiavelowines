@@ -5,7 +5,18 @@ import 'vanilla-cookieconsent/dist/cookieconsent.css';
 <script>
 	import { run } from 'vanilla-cookieconsent';
 	import { config } from './CookieConsentConfig';
-	setTimeout(() => {
-		run(config);
-	}, 1500);
+	let hasStarted = false;
+
+	function handleScroll() {
+		if (window.scrollY > 0 && !hasStarted) {
+			hasStarted = true;
+			setTimeout(() => {
+				run(config);
+			}, 1500);
+			// Opcional: remover el event listener para mejorar rendimiento
+			window.removeEventListener('scroll', handleScroll);
+		}
+	}
+
+	window.addEventListener('scroll', handleScroll);
 </script>

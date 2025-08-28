@@ -97,9 +97,21 @@ import ThemeIcon from '~/components/layout/ThemeIcon.astro';
 	if (!window.localStorage.getItem('popupShown')) {
 		const buttonElement = document.activeElement as HTMLElement; // Get the currently focused element
 		buttonElement.blur(); // Remove focus from the button
-		setTimeout(() => {
-			modal.show();
-		}, 1500);
+		let hasStarted = false;
+
+		function handleScroll() {
+			if (window.scrollY > 0 && !hasStarted) {
+				hasStarted = true;
+				setTimeout(() => {
+					modal.show();
+				}, 1500);
+				// Opcional: remover el event listener para mejorar rendimiento
+				window.removeEventListener('scroll', handleScroll);
+			}
+		}
+
+		window.addEventListener('scroll', handleScroll);
+
 		const element = document.getElementById('button-popup-modal');
 		element!.addEventListener('click', (): void => {
 			window.localStorage.setItem('popupShown', 'true');
