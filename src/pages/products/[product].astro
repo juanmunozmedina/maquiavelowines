@@ -15,6 +15,7 @@ import { ProductPrice } from '~/features/product/ProductPrice.tsx';
 import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 import { unwrap } from '~/lib/util.ts';
 import 'astro-breadcrumbs/breadcrumbs.css';
+import { type Product } from 'storefront:client';
 import { RiArrowsArrowRightSLine } from 'solid-icons/ri';
 
 applyDefaultCacheHeaders(Astro.response.headers);
@@ -245,7 +246,32 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 
 		<ProductCarouselSection
 			heading="También te puede gustar"
-			filterProducts={(products) => products.filter(({ id }) => id !== product.id)}
+			filterProducts={(products) => {
+				const currentCollections = Array.isArray(product.collectionIds)
+					? product.collectionIds
+					: product.collectionIds
+						? [product.collectionIds]
+						: [];
+
+				const isInSameCollection = (p: Product): boolean => {
+					if (!p.collectionIds) return false;
+
+					const otherCollections = Array.isArray(p.collectionIds)
+						? p.collectionIds
+						: [p.collectionIds];
+
+					return otherCollections.some((cid) => currentCollections.includes(cid));
+				};
+
+				const isNotCurrent = (p: Product): boolean => p.id !== product.id;
+
+				const related = products.filter((p: Product) => isNotCurrent(p) && isInSameCollection(p));
+				const unrelated = products.filter(
+					(p: Product) => isNotCurrent(p) && !isInSameCollection(p),
+				);
+
+				return [...related, ...unrelated];
+			}}
 		/>
 
 		<CollectionSection />
