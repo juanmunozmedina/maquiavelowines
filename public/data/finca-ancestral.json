@@ -1,0 +1,42 @@
+{
+	"id": "finca-ancestral",
+	"name": "Finca Ancestral",
+	"slug": "finca-ancestral",
+	"tagline": "Garnacha tintorera pie franco.",
+	"description": "<div><p><b>Botella</b>: 75 cl.</p><p><b>Tipo de uva</b>: Garnacha Tintorera.</p><p><b>Graduación</b>: 14,5% Alc. Vol.</p><p><b>Año</b>: Añada más reciente.</p></div><div><p><b>Viñedo</b></p><p>Cepas centenarias en pie franco (sin injertar). Suelo pedregoso y arenoso, de baja fertilidad, que aporta concentración y carácter. Rendimientos muy bajos (=2.000 kg/ha). Agricultura sostenible y vendimia manual en pequeñas cajas.</p><p><b>Elaboración</b></p><p>Fermentación en acero inoxidable con control de temperatura. Maceración larga para máxima extracción aromática y tánica. Crianza: 20 meses en barricas de roble francés de primer y segundo uso. Embotellado sin clarificar ni filtrar, preservando la autencicidad.</p><p><b>Cata</b></p><p>Color rojo violáceo muy intenso, capa muy alta. Aromas a fruta negra madura, (mora, arándano), notas de regaliz, especias dulces, cacao y recuerdos balsámicos. En boca es potente y carnosa, tanino redondo y elegante, excelente equilibrio entre fruta y madera, con persistencia mineral y recuerdos mediterráneos.</p><p><b>Maridaje</b></p><p>Carnes rojas y de caza menor, guisos tradicionales, ibéricos de bellota y quesos curados. El proyecto más personal del enólogo Yeclano Fernando Galvañ Quiles, con raíces de Monóvar y Jumilla y de tradición familiar desde 1870, su bisabuelo Primitivo elaboraba Fondillón para el Rey Alfonso XIII. Edición limitada a 1587 botellas.</p><p><b>Recomendaciones</b></p><p>Servir entre 16 y 18°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
+	"price": 2500,
+	"imageUrl": "/assets/finca_ancestral.png",
+	"collectionIds": ["ancestral"],
+	"variants": [
+		{
+			"id": "finca-ancestral-3",
+			"name": "Finca Ancestral Pack 3 botellas",
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 7500
+		},
+		{
+			"id": "finca-ancestral-6",
+			"name": "Finca Ancestral Pack 6 botellas",
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 15000
+		},
+		{
+			"id": "finca-ancestral-12",
+			"name": "Finca Ancestral Pack 12 botellas",
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 30000
+		},
+		{
+			"id": "finca-ancestral-24",
+			"name": "Finca Ancestral Pack 24 botellas",
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 60000
+		}
+	],
+	"images": [],
+	"stock": true,
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}
