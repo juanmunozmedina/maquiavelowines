@@ -12,25 +12,25 @@
 			"id": "finca-ancestral-3",
 			"name": "Finca Ancestral Pack 3 botellas",
 			"options": { "Tamaño": "Pack 3" },
-			"priceVariant": 7500
+			"priceVariant": 5000
 		},
 		{
 			"id": "finca-ancestral-6",
 			"name": "Finca Ancestral Pack 6 botellas",
 			"options": { "Tamaño": "Pack 6" },
-			"priceVariant": 15000
+			"priceVariant": 12500
 		},
 		{
 			"id": "finca-ancestral-12",
 			"name": "Finca Ancestral Pack 12 botellas",
 			"options": { "Tamaño": "Pack 12" },
-			"priceVariant": 30000
+			"priceVariant": 27500
 		},
 		{
 			"id": "finca-ancestral-24",
 			"name": "Finca Ancestral Pack 24 botellas",
 			"options": { "Tamaño": "Pack 24" },
-			"priceVariant": 60000
+			"priceVariant": 57500
 		}
 	],
 	"images": [],
