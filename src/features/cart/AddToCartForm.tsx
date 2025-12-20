@@ -12,7 +12,7 @@ import 'photoswipe/style.css';
 
 export function AddToCartForm(props: { product: Product }) {
 	const [selectedOptions, setSelectedOptions] = createSignal<Record<string, string>>({});
-	const [quantity, setQuantity] = createSignal(1);
+	const quantity = () => 1;
 	const [unpickedVariantVisible, setUnpickedVariantVisible] = createSignal(false);
 
 	// Initialize lightbox for medals
@@ -187,7 +187,7 @@ export function AddToCartForm(props: { product: Product }) {
 				<label for="quantity" class="mb-2 block text-slate-700 dark:text-theme-base-100">
 					Cantidad
 				</label>
-				<NumberInput id="quantity" min={1} value={quantity()} setValue={setQuantity} />
+				<NumberInput id="quantity" value={quantity()} />
 			</div>
 			<div class="sticky bottom-0 mb-8 grid h-12 items-center gap-2 bg-white dark:bg-maquiavelo-dark">
 				<Switch

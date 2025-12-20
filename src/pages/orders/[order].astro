@@ -68,7 +68,7 @@ if (!order.shippingAddress) {
 							<div class="flex flex-1 flex-col gap-1">
 								<h3>{productVariant.product.name}</h3>
 								<div class="flex flex-wrap gap-1">
-									<p class="hidden text-slate-700 dark:text-theme-base-300">Cantidad: {quantity}</p>
+									<p class="text-slate-700 dark:text-theme-base-300">Cantidad: {quantity}</p>
 									{Object.entries(productVariant.options).map(([option, value]) => (
 										<p class="text-slate-700 before:text-slate-500 before:content-['•'] dark:text-theme-base-300 dark:before:text-theme-base-200">
 											{option}: {value}
