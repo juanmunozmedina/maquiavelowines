@@ -121,7 +121,7 @@ export function AddToCartForm(props: { product: Product }) {
 				</For>
 			</Show>
 
-			<div class="mb-2">
+			<div class="mb-2 hidden">
 				<label for="quantity" class="mb-2 block text-slate-700 dark:text-theme-base-100">
 					Cantidad
 				</label>

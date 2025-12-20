@@ -21,7 +21,7 @@ export function NumberInput(
 	};
 
 	return (
-		<div class="flex h-11 w-fit items-stretch divide-x divide-slate-300 border border-slate-300 bg-slate-100 text-slate-600 dark:border-slate-600 dark:bg-slate-700 dark:text-theme-base-100">
+		<div class="invisible flex h-11 w-fit items-stretch divide-x divide-slate-300 border border-slate-300 bg-slate-100 text-slate-600 dark:border-slate-600 dark:bg-slate-700 dark:text-theme-base-100">
 			<NumberInputButton
 				icon={<RiSystemSubtractFill />}
 				onClick={() => update(props.value - 1)}
@@ -34,7 +34,7 @@ export function NumberInput(
 				min={min()}
 				max={max()}
 				type="number"
-				class="w-12 bg-transparent bg-white p-2 text-center [appearance:textfield] dark:bg-slate-700 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+				class="w-12 bg-white p-2 text-center [appearance:textfield] dark:bg-slate-700 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
 				value={props.value}
 				onInput={(e) => update(e.currentTarget.valueAsNumber)}
 			/>
