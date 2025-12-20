@@ -1,17 +1,36 @@
 import { actions } from 'astro:actions';
 import type { LineItemInput, Product } from 'storefront:client';
 import { createMutation } from '@tanstack/solid-query';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import { RiSystemCheckLine } from 'solid-icons/ri';
-import { For, Match, Show, Switch, createEffect, createSignal } from 'solid-js';
+import { For, Match, Show, Switch, createEffect, createSignal, onCleanup } from 'solid-js';
 import { Button } from '~/components/ui/Button.tsx';
 import { NumberInput } from '~/components/ui/NumberInput.tsx';
 import { queryClient } from '~/lib/query.ts';
 import { CartStore } from './store.ts';
+import 'photoswipe/style.css';
 
 export function AddToCartForm(props: { product: Product }) {
 	const [selectedOptions, setSelectedOptions] = createSignal<Record<string, string>>({});
 	const [quantity, setQuantity] = createSignal(1);
 	const [unpickedVariantVisible, setUnpickedVariantVisible] = createSignal(false);
+
+	// Initialize lightbox for medals
+	let lightbox: PhotoSwipeLightbox;
+	createEffect(() => {
+		if (props.product.medal && props.product.medal.length > 0) {
+			lightbox = new PhotoSwipeLightbox({
+				gallery: '#medals',
+				children: 'a',
+				initialZoomLevel: 0.6,
+				secondaryZoomLevel: 0.6,
+				maxZoomLevel: 0.6,
+				pswpModule: () => import('photoswipe'),
+			});
+			lightbox.init();
+		}
+	});
+	onCleanup(() => lightbox?.destroy());
 
 	createEffect(() => {
 		// sometimes, the browser will pre-check an option if it was previously selected before a refresh,
@@ -80,6 +99,49 @@ export function AddToCartForm(props: { product: Product }) {
 				}
 			}}
 		>
+			<Show when={props.product.medal && props.product.medal.length > 0}>
+				<fieldset id="medals">
+					<legend class="mb-2 text-slate-700 dark:text-theme-base-100">Medallas</legend>
+					<ul class="inline-flex gap-2">
+						<For each={props.product.medal}>
+							{(url, i) =>
+								url ? (
+									<li>
+										<a
+											href={url}
+											target="_blank"
+											rel="noopener noreferrer"
+											ref={(el) => {
+												const img = el.querySelector('img');
+												if (img) {
+													el.dataset.pswpWidth = img.naturalWidth.toString();
+													el.dataset.pswpHeight = img.naturalHeight.toString();
+												}
+											}}
+										>
+											<img
+												alt={`Medalla ${i() + 1}`}
+												width="64"
+												height="64"
+												src={url}
+												onLoad={(e) => {
+													const img = e.currentTarget;
+													const parent = img.parentElement;
+													if (parent) {
+														parent.dataset.pswpWidth = img.naturalWidth.toString();
+														parent.dataset.pswpHeight = img.naturalHeight.toString();
+													}
+												}}
+											/>
+										</a>
+									</li>
+								) : null
+							}
+						</For>
+					</ul>
+				</fieldset>
+			</Show>
+
 			<Show when={props.product.variants.length > 1}>
 				<For each={[...productOptionValues().entries()]}>
 					{([option, values]) => (

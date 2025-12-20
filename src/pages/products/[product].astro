@@ -149,32 +149,6 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 						/>
 						<span> / botella</span>
 					</p>
-					{
-						product.medal && product.medal.length > 0 && (
-							<fieldset id="medals">
-								<label class="mb-2 mt-4 block text-slate-700 dark:text-theme-base-100">
-									Medallas
-								</label>
-								<ul class="inline-flex gap-2">
-									{product.medal.map((url, i) =>
-										url ? (
-											<li>
-												<a
-													href={url}
-													data-pswp-width="500"
-													data-pswp-height="500"
-													target="_blank"
-													rel="noopener noreferrer"
-												>
-													<img alt={`Medalla ${i + 1}`} width="64" height="64" src={url} />
-												</a>
-											</li>
-										) : null,
-									)}
-								</ul>
-							</fieldset>
-						)
-					}
 				</header>
 
 				<AddToCartForm client:idle product={product} />
@@ -277,27 +251,3 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 		<CollectionSection />
 	</main>
 </PrimaryLayout>
-
-<script>
-	import PhotoSwipeLightbox from 'photoswipe/lightbox';
-	import 'photoswipe/style.css';
-
-	let lightbox: PhotoSwipeLightbox;
-
-	document.addEventListener('astro:page-load', () => {
-		lightbox = new PhotoSwipeLightbox({
-			gallery: '#medals',
-			children: 'a',
-			initialZoomLevel: 0.6,
-			secondaryZoomLevel: 0.6,
-			maxZoomLevel: 0.6,
-			pswpModule: () => import('photoswipe'),
-		});
-
-		lightbox.init();
-	});
-
-	document.addEventListener('astro:before-swap', () => {
-		lightbox.destroy();
-	});
-</script>
