@@ -198,19 +198,19 @@ export function AddToCartForm(props: { product: Product }) {
 					}
 				>
 					<Match when={Object.keys(selectedOptions()).length < productOptionValues().size}>
-						<p class="text-red-800 dark:text-blue-300">¡Elige un pack!</p>
+						<p class="text-red-800">¡Elige un pack!</p>
 					</Match>
 					<Match when={!props.product.stock}>
-						<p class="text-red-800 dark:text-blue-300">Producto agotado.</p>
+						<p class="text-red-800">Producto agotado.</p>
 					</Match>
 					<Match when={selectedVariant() == null}>
-						<p class="text-red-800 dark:text-blue-300">Este pack no está disponible.</p>
+						<p class="text-red-800">Este pack no está disponible.</p>
 					</Match>
 				</Switch>
 			</div>
 
 			<Show when={mutation.isError}>
-				<aside class="text-red-500">Lo siento, algo salió mal. Por favor inténtalo de nuevo.</aside>
+				<aside class="text-red-800">Lo siento, algo salió mal. Por favor inténtalo de nuevo.</aside>
 			</Show>
 		</form>
 	);
