@@ -35,7 +35,7 @@ export function NumberInput(
 				max={max()}
 				type="number"
 				readOnly
-				class="w-12 bg-white p-2 text-center [appearance:textfield] dark:bg-slate-700 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+				class="w-12 bg-white p-2 text-center [appearance:textfield] dark:bg-slate-700 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none outline-none"
 				value={props.value}
 				onInput={(e) => update(e.currentTarget.valueAsNumber)}
 			/>
