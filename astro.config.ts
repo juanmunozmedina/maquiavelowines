@@ -26,6 +26,7 @@ export default defineConfig({
 				'https://maquiavelowines.com/products/ancestral-alicante-bouschet',
 				'https://maquiavelowines.com/products/ancestral-petit-verdot',
 				'https://maquiavelowines.com/products/ancestral-cabernet',
+				'https://maquiavelowines.com/products/finca-ancestral',
 				'https://maquiavelowines.com/products/espumoso-brut',
 				'https://maquiavelowines.com/products/espumoso-dulce-blanco',
 				'https://maquiavelowines.com/products/espumoso-dulce-rosado',
