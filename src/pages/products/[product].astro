@@ -110,13 +110,11 @@ if (!firstImage) throw new Error(`No se encontraron imágenes para el producto $
 					) : (
 						<Card class="aspect-square justify-center">
 							<img
-								transition:name={`${product.slug} image`}
-								transition:animate="initial"
 								src={firstImage.src}
 								srcset={firstImage.srcSet.attribute}
 								sizes={firstImage.attributes.sizes}
 								alt={product.name}
-								class="object-contain transition-all"
+								class="object-contain"
 							/>
 						</Card>
 					)
