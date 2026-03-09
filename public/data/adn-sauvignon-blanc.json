@@ -5,7 +5,7 @@
 	"tagline": "Identidad propia del vino blanco.",
 	"description": "<div><p><b>Botella</b>: 75 cl.</p><p><b>Tipo de uva</b>: Sauvignon Blanc</p><p><b>Graduación</b>: 12% Alc. Vol.</p><p><b>Año</b>: Añada más reciente.</p><p><b>Denominación de origen</b>: Jumilla (Protegida)</p></div><div><p><b>Descripción</b></p><p>Maquiavelo ADN Sauvignon Blanc es un vino blanco joven de la cosecha más reciente elaborado en su totalidad con selecta uva sauvignon blanc. Su sabor destaca por ser suave en paladar y con un toque semi seco en boca. Ideal para acompañar con cualquier tipo de pescados, mariscos, verduras, pastas con salsas suaves o incluso para degustar solo plácidamente. Un vino joven para los paladares que no te dejará indiferente.</p><p><b>Recomendaciones</b></p><p>Servir entre 7 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
 	"price": 1070,
-	"imageUrl": "/assets/blanco.png",
+	"imageUrl": "/assets/blanco.webp",
 	"collectionIds": ["maquiavelo"],
 	"variants": [
 		{

@@ -1,0 +1,42 @@
+{
+	"id": "finca-ancestral-unique",
+	"name": "Finca Ancestral Unique",
+	"slug": "finca-ancestral-unique",
+	"tagline": "Unique, vino de autor edición limitada 500 botellas.",
+	"description": "<div><p><b>Botella</b>: 75 cl.</p><p><b>Tipo de uva</b>: 100% Garnacha Tintorera (Alicante Bouschet).</p><p><b>Año</b>: 2023.</p></div><div><p><b>Análisis sensorial</b></p><p>Fase visual: Color rojo picota muy profundo, prácticamente opaco, característico de la Garnacha Tintorera.<br>Ribetes violáceos y púrpura que reflejan su juventud (añada 2023).<br>Capa muy alta, con lágrima abundante, densa y ligeramente tintada que desciende lentamente por la copa.<br><br>Fase olfativa: Nariz intensa y expresiva.<br>Destacan aromas de fruta negra madura como mora, arándano y ciruela negra, acompañados de recuerdos de fruta roja confitada.<br>Matices de monte mediterráneo, tierra húmeda y ligeras notas minerales que evocan su origen de parcela.<br>En segundo plano pueden percibirse toques especiados y regaliz negro, aportando complejidad.</p><p><b>Nota del enólogo</b></p><p>Producción muy limitada de solo 500 botellas, elaborada para expresar el carácter más auténtico de la Garnacha Tintorera y su terroir.<br>Se recomienda decantar durante 20–30 minutos antes del servicio para que el vino se abra y muestre toda su complejidad.</p></div>",
+	"price": 4500,
+	"imageUrl": "/assets/finca_ancestral_unique.webp",
+	"collectionIds": ["ancestral"],
+	"variants": [
+		{
+			"id": "finca-ancestral-unique-3",
+			"name": "Finca Ancestral Unique Pack 3 botellas",
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 9000
+		},
+		{
+			"id": "finca-ancestral-unique-6",
+			"name": "Finca Ancestral Unique Pack 6 botellas",
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 22500
+		},
+		{
+			"id": "finca-ancestral-unique-12",
+			"name": "Finca Ancestral Unique Pack 12 botellas",
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 49500
+		},
+		{
+			"id": "finca-ancestral-unique-24",
+			"name": "Finca Ancestral Unique Pack 24 botellas",
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 103500
+		}
+	],
+	"images": [],
+	"stock": true,
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

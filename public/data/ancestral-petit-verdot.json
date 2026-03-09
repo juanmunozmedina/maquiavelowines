@@ -6,7 +6,7 @@
 	"medal": ["/assets/oro-2025.webp"],
 	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Petit Verdot</p> <p><b>Graduación</b>: 14% Alc. Vol.</p> <p><b>Denominación de origen</b>: Varietal CLM Yecla & Fuente Álamo</p> </div> <div> <p><b>Elaboración</b>: Se sitúa en la gama más alta de los vinos Ancestral.</br>Seleccionado por Fernando Galvañ, winemaker.</br>Este vino ha sido elaborado a través de una cuidadosa selección de uvas Petit Verdot, procedente de nuestras mejores viñas, y recolectado manualmente en su momento óptimo de maduración.</br>Elaborado con una prolongada maceración, manteniendo la temperatura de fermentación entre 23ºC y 25ºC.</br>Madurado en barricas nuevas de roble americano durante 18-20 meses.</p> <p><b>Maridaje</b>: Acompañar con embutidos y quesos curados, carne roja y blanca, guisos, asados y estofados.</p> <p><b>Servicio:</b> Entre 16º-18ºC.</p> <p><b>Nota de cata</b>: Color guinda picota muy intenso, intensas sensaciones de aromas a fruta negra madura (mermelada) finos tostados de madera bien integrada y balsámicos.</br>En boca es potente con una acidez correcta, goloso y bien estructurado.</p> </div>",
 	"price": 2400,
-	"imageUrl": "/assets/ancestral_verdot.png",
+	"imageUrl": "/assets/ancestral_verdot.webp",
 	"collectionIds": ["ancestral"],
 	"variants": [
 		{

@@ -6,7 +6,7 @@
 	"description": "",
 	"medal": ["/assets/gran-oro-2025.webp"],
 	"price": 1890,
-	"imageUrl": "/assets/ribera_tempranillo.png",
+	"imageUrl": "/assets/ribera_tempranillo.webp",
 	"collectionIds": ["maquiavelo"],
 	"variants": [
 		{

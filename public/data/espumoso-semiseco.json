@@ -5,7 +5,7 @@
 	"tagline": "Maquiavelo edición especial de vino espumoso semiseco.",
 	"description": "<div> <p><b>Botella</b>: 75 cl.</p> <p><b>Tipo de uva</b>: Macabeo</p> <p><b>Graduación</b>: 11% Alc. Vol.</p> <p><b>Año</b>: Añada más reciente.</p> </div> <div> <p><b>Nota de cata</b></p> <p>Vino intenso donde predominan los aromas varietales con un fondo de cítricos y frutas tropicales.</p> <p>Un vino de gran frescura que se muestra agradable y expresivo en boca.</p> <p><b>Recomendaciones</b></p> <p>Degustar entre 8 y 10°C. Conservar en posición horizontal. Una vez abierto, consumir preferentemente en un máximo de 2/3 días y tapar con el propio corcho.</p></div>",
 	"price": 1570,
-	"imageUrl": "/assets/semidry.png",
+	"imageUrl": "/assets/semidry.webp",
 	"collectionIds": ["centhaurus"],
 	"variants": [
 		{

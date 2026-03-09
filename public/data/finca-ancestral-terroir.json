@@ -1,0 +1,42 @@
+{
+	"id": "finca-ancestral-terroir",
+	"name": "Finca Ancestral Terroir",
+	"slug": "finca-ancestral-terroir",
+	"tagline": "Terroir, edición limitada 1500 botellas.",
+	"description": "<div><p><b>Botella</b>: 75 cl.</p><p><b>Tipo de uva</b>: Monastrell.</p><p><b>Año</b>: Añada más reciente.</p></div><div><p><b>Viticultura y elaboración</b></p><p>Origen: Selección de viñedos centenarios de secano, situados en parcelas de alta altitud con suelos calizos y pedregosos (Terroir).<br>Vendimia: Manual en cajas pequeñas para preservar la integridad de la uva.<br>Elaboración: Fermentación controlada con levaduras autóctonas. El proceso es artesanal, incluyendo el etiquetado y lacrado manual de cada botella.<br>Producción: Estrictamente limitada a 1,500 botellas, lo que garantiza una atención meticulosa en cada unidad.</p><p><b>Nota de cata</b></p><p>Vista: Color rojo picota intenso, de capa alta, con ribetes granates que denotan su paso por madera. Limpio y brillante.<br>Nariz: Complejidad aromática elevada. Destacan las frutas negras maduras (moras, ciruelas) entrelazadas con notas de cacao, tabaco, especias dulces y un fondo mineral propio del terroir.<br>Boca: Es un vino estructurado y potente pero con taninos pulidos. Su paso es sedoso, con una acidez equilibrada que le otorga frescura a pesar de su robustez. Final largo y persistente con recuerdos a tostados.</p><p><b>Maridaje y servicio</b></p><p>Maridaje: Carnes rojas a la brasa, caza mayor, guisos estructurados, quesos curados y embutidos ibéricos.<br>Temperatura de servicio: Se recomienda servir entre 16°C y 18°C.<br>Recomendación: Decantar al menos 30-45 minutos antes de su consumo para permitir que el vino se abra y exprese toda su complejidad.<br>Nota sobre el diseño: Esta botella destaca por su lacrado superior blanco, un signo de distinción artesanal que protege el corcho y asegura una evolución óptima en botella.</p></div>",
+	"price": 3400,
+	"imageUrl": "/assets/finca_ancestral_terroir.webp",
+	"collectionIds": ["ancestral"],
+	"variants": [
+		{
+			"id": "finca-ancestral-terroir-3",
+			"name": "Finca Ancestral Terroir Pack 3 botellas",
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 6800
+		},
+		{
+			"id": "finca-ancestral-terroir-6",
+			"name": "Finca Ancestral Terroir Pack 6 botellas",
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 17000
+		},
+		{
+			"id": "finca-ancestral-terroir-12",
+			"name": "Finca Ancestral Terroir Pack 12 botellas",
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 37400
+		},
+		{
+			"id": "finca-ancestral-terroir-24",
+			"name": "Finca Ancestral Terroir Pack 24 botellas",
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 78200
+		}
+	],
+	"images": [],
+	"stock": true,
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}

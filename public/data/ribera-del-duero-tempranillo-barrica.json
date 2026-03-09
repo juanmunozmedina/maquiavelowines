@@ -5,7 +5,7 @@
 	"tagline": "Maquiavelo Ribera del Duero Tempranillo Barrica, vino de autor.",
 	"medal": ["/assets/plata-2025.webp"],
 	"price": 1490,
-	"imageUrl": "/assets/ribera_tempranillo_barrica.png",
+	"imageUrl": "/assets/ribera_tempranillo_barrica.webp",
 	"collectionIds": ["maquiavelo"],
 	"variants": [
 		{

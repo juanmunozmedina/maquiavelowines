@@ -1,0 +1,42 @@
+{
+	"id": "finca-ancestral-monastrell",
+	"name": "Finca Ancestral Monastrell",
+	"slug": "finca-ancestral-monastrell",
+	"tagline": "100% Monastrell.",
+	"description": "<div><p><b>Botella</b>: 75 cl.</p><p><b>Tipo de uva</b>: Monastrell.</p><p><b>Año</b>: Añada más reciente.</p></div><div><p><b>Análisis visual</b></p><p>Color: Rojo picota intenso con ribetes granates y destellos violáceos, síntoma de su buena estructura.<br>​Aspecto: Capa media-alta, limpio y brillante. Presenta una lágrima densa y persistente.</p><p><b>Análisis olfativo</b></p><p>Intensidad: Alta y compleja.<br>Notas: Predomina la fruta negra madura (moras, ciruelas) típica de la Monastrell de altitud.<br>Fondo: El paso de 8 meses por barrica aporta notas especiadas (pimienta negra), un toque sutil de vainilla, cacao y un fondo mineral muy noble.</p><p><b>Análisis gustativo</b></p><p>Entrada: Potente pero equilibrada. Es un vino con 'alma mediterránea': cálido y profundo.<br>Estructura: Taninos maduros y bien pulidos por la madera. Cuerpo rotundo pero con una acidez integrada que le aporta frescura.<br>Final: Largo y persistente, donde vuelven a aparecer los recuerdos de fruta en licor y tostados.</p><p><b>Maridaje sugerido</b></p><p>​Ideal para acompañar carnes rojas a la brasa, guisos de caza menor, quesos curados o arroces potentes de la zona del Levante.</p><p><b>Servicio</b></p><p>Se recomienda servir entre 16°C y 18°C.<br>'Monastrell de altitud, noble, profundo y con alma mediterránea.'</p></div>",
+	"price": 1500,
+	"imageUrl": "/assets/finca_ancestral_monastrell.webp",
+	"collectionIds": ["ancestral"],
+	"variants": [
+		{
+			"id": "finca-ancestral-monastrell-3",
+			"name": "Finca Ancestral Monastrell Pack 3 botellas",
+			"options": { "Tamaño": "Pack 3" },
+			"priceVariant": 3000
+		},
+		{
+			"id": "finca-ancestral-monastrell-6",
+			"name": "Finca Ancestral Monastrell Pack 6 botellas",
+			"options": { "Tamaño": "Pack 6" },
+			"priceVariant": 7500
+		},
+		{
+			"id": "finca-ancestral-monastrell-12",
+			"name": "Finca Ancestral Monastrell Pack 12 botellas",
+			"options": { "Tamaño": "Pack 12" },
+			"priceVariant": 16500
+		},
+		{
+			"id": "finca-ancestral-monastrell-24",
+			"name": "Finca Ancestral Monastrell Pack 24 botellas",
+			"options": { "Tamaño": "Pack 24" },
+			"priceVariant": 34500
+		}
+	],
+	"images": [],
+	"stock": true,
+	"discount": 0,
+	"createdAt": "2025-08-20T00:00:00.000Z",
+	"updatedAt": "2025-08-20T00:00:00.000Z",
+	"deletedAt": null
+}
