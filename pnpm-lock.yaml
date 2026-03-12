@@ -1334,7 +1334,7 @@ packages:
   '@kobalte/tailwindcss@0.9.0':
     resolution: {integrity: sha512-WbueJTVRiO4yrmfHIBwp07y3M5iibJ/gauEAQ7mOyg1tZulvpO7SM/UdgzX95a9a0KDt1mQFxwO7RmpOUXWOWA==}
     peerDependencies:
-      tailwindcss: ^3.3.3
+      tailwindcss: ^4.2.1
 
   '@kobalte/utils@0.9.1':
     resolution: {integrity: sha512-eeU60A3kprIiBDAfv9gUJX1tXGLuZiKMajUfSQURAF2pk4ZoMYiqIzmrMBvzcxP39xnYttgTyQEVLwiTZnrV4w==}
