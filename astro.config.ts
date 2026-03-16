@@ -62,7 +62,7 @@ export default defineConfig({
 		},
 		resolve: {
 			// ensure these packages are transformed by Vite instead of being externalized
-			noExternal: ['solid-icons', 'solid-js']
+			noExternal: ['solid-icons']
 		},
 	},
 	image: {
