@@ -60,6 +60,10 @@ export default defineConfig({
 				return filePath.endsWith('css');
 			},
 		},
+		resolve: {
+			// ensure these packages are transformed by Vite instead of being externalized
+			noExternal: ['solid-icons', 'solid-js']
+		},
 	},
 	image: {
 		// Update to your own image domains
