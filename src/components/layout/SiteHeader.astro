@@ -23,7 +23,7 @@ const { class: className, ...props } = Astro.props;
 		</a>
 	</div>
 	<div class="flex flex-1 justify-end gap-2">
-		<CartDrawer transition:persist="cart" client:idle />
+		<CartDrawer client:only="solid" transition:persist="cart" client:idle />
 	</div>
 </nav>
 
