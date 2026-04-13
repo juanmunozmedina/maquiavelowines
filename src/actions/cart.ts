@@ -1,6 +1,7 @@
 import { type ActionAPIContext, ActionError, defineAction } from 'astro:actions';
-import { z } from 'astro:schema';
 import { getProducts } from 'storefront:client';
+import type { Product } from 'storefront:client';
+import { z } from 'astro/zod';
 import { loadCartFromCookies, saveCartToCookies } from '~/features/cart/cart.server.ts';
 import {
 	type Cart,
@@ -19,7 +20,9 @@ export const cart = {
 	addItems: defineAction({
 		input: lineItemDataSchema.omit({ id: true }),
 		handler: async (input, ctx) => {
-			const products = await getProducts({ query: {} });
+			const products = await getProducts({ query: {} }) as {
+				data?: { items: Product[] };
+			};
 
 			const product = products.data?.items.find((product) =>
 				product.variants.some((variant) => variant.id === input.productVariantId),

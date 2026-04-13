@@ -1,6 +1,6 @@
 import { actions } from 'astro:actions';
 import type { LineItemInput, Product } from 'storefront:client';
-import { createMutation } from '@tanstack/solid-query';
+import { QueryClientProvider, createMutation } from '@tanstack/solid-query';
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import { RiSystemCheckLine } from 'solid-icons/ri';
 import { For, Match, Show, Switch, createEffect, createSignal, onCleanup } from 'solid-js';
@@ -10,12 +10,11 @@ import { queryClient } from '~/lib/query.ts';
 import { CartStore } from './store.ts';
 import 'photoswipe/style.css';
 
-export function AddToCartForm(props: { product: Product }) {
+function AddToCartFormInner(props: { product: Product }) {
 	const [selectedOptions, setSelectedOptions] = createSignal<Record<string, string>>({});
 	const quantity = () => 1;
 	const [unpickedVariantVisible, setUnpickedVariantVisible] = createSignal(false);
 
-	// Initialize lightbox for medals
 	let lightbox: PhotoSwipeLightbox;
 	createEffect(() => {
 		if (props.product.medal && props.product.medal.length > 0) {
@@ -33,17 +32,11 @@ export function AddToCartForm(props: { product: Product }) {
 	onCleanup(() => lightbox?.destroy());
 
 	createEffect(() => {
-		// sometimes, the browser will pre-check an option if it was previously selected before a refresh,
-		// so we'll look for checked inputs and select the corresponding variant
 		for (const input of document.querySelectorAll('[data-product-option]')) {
 			if (!(input instanceof HTMLInputElement)) continue;
 			if (!input.checked) continue;
-
 			const { productOption, productOptionValue } = input.dataset;
-			if (!productOption || !productOptionValue) {
-				continue;
-			}
-
+			if (!productOption || !productOptionValue) continue;
 			setSelectedOptions((options) => ({
 				...options,
 				[productOption]: productOptionValue,
@@ -53,26 +46,19 @@ export function AddToCartForm(props: { product: Product }) {
 
 	const selectedVariant = () =>
 		props.product.variants.find((variant) =>
-			// this could just be isEqual but y'all decided lodash is evil and I'm lazy
 			Object.entries(selectedOptions()).every(([key, value]) => variant.options[key] === value),
 		);
 
-	const mutation = createMutation(
-		() => ({
-			mutationKey: ['cart', 'items', 'add', props.product.id],
-			mutationFn: async (input: LineItemInput) => {
-				return await actions.cart.addItems.orThrow(input);
-			},
-			// we explicitly don't want an optimistic update here,
-			// because we want to make sure the mutation succeeded
-			// before showing the cart drawer or doing anything else
-			onSuccess: async () => {
-				await queryClient.invalidateQueries();
-				CartStore.openDrawer();
-			},
-		}),
-		() => queryClient,
-	);
+	const mutation = createMutation(() => ({
+		mutationKey: ['cart', 'items', 'add', props.product.id],
+		mutationFn: async (input: LineItemInput) => {
+			return await actions.cart.addItems.orThrow(input);
+		},
+		onSuccess: async () => {
+			await queryClient.invalidateQueries();
+			CartStore.openDrawer();
+		},
+	}));
 
 	const productOptionValues = () => {
 		const result = new Map<string, Set<string>>();
@@ -111,7 +97,7 @@ export function AddToCartForm(props: { product: Product }) {
 											href={url}
 											target="_blank"
 											rel="noopener noreferrer"
-											ref={(el) => {
+											ref={(el: HTMLAnchorElement) => {
 												const img = el.querySelector('img');
 												if (img) {
 													el.dataset.pswpWidth = img.naturalWidth.toString();
@@ -157,7 +143,7 @@ export function AddToCartForm(props: { product: Product }) {
 							<div class="flex flex-wrap gap-2">
 								<For each={[...values]}>
 									{(value) => (
-										<label class="flex h-11 min-w-11 cursor-pointer items-center justify-center gap-1.5 border border-slate-300 bg-slate-100 px-3 text-center text-sm text-slate-600 transition hover:border-slate-500 has-[:checked]:border-slate-900 has-[:checked]:text-slate-900 dark:border-slate-600 dark:bg-slate-700 dark:text-theme-base-100 dark:hover:border-slate-600 dark:has-[:checked]:border-slate-300 dark:has-[:checked]:text-slate-300">
+										<label class="flex h-11 min-w-11 cursor-pointer items-center justify-center gap-1.5 border border-slate-300 bg-slate-100 px-3 text-center text-sm text-slate-600 transition hover:border-slate-500 has-checked:border-slate-900 has-checked:text-slate-900 dark:border-slate-600 dark:bg-slate-700 dark:text-theme-base-100 dark:hover:border-slate-600 dark:has-checked:border-slate-300 dark:has-checked:text-slate-300">
 											<input
 												type="radio"
 												value={value}
@@ -187,8 +173,9 @@ export function AddToCartForm(props: { product: Product }) {
 				<label for="quantity" class="mb-2 block text-slate-700 dark:text-theme-base-100">
 					Cantidad
 				</label>
-				<NumberInput id="quantity" value={quantity()} />
+				<NumberInput id="quantity" value={quantity()} setValue={() => {}} />
 			</div>
+
 			<div class="sticky bottom-0 mb-8 grid h-12 items-center gap-2 bg-white dark:bg-maquiavelo-dark">
 				<Switch
 					fallback={
@@ -210,8 +197,18 @@ export function AddToCartForm(props: { product: Product }) {
 			</div>
 
 			<Show when={mutation.isError}>
-				<aside class="text-red-800 dark:text-blue-300">Lo siento, algo salió mal. Por favor inténtalo de nuevo.</aside>
+				<aside class="text-red-800 dark:text-blue-300 mb-4">
+					Lo siento, algo salió mal. Por favor inténtalo de nuevo.
+				</aside>
 			</Show>
 		</form>
+	);
+}
+
+export function AddToCartForm(props: { product: Product }) {
+	return (
+		<QueryClientProvider client={queryClient}>
+			<AddToCartFormInner product={props.product} />
+		</QueryClientProvider>
 	);
 }
