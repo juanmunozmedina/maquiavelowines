@@ -7,9 +7,6 @@ import { defineConfig, envField } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	devToolbar: {
-		enabled: false,
-	},
 	integrations: [
 		icon(),
 		solidJs(),
@@ -53,7 +50,7 @@ export default defineConfig({
 	output: 'server',
 	adapter: netlify({
 		imageCDN: true,
-		includeFiles: ['./public/data/**/*.json'],
+		includeFiles: ['./my-data.json'],
 		excludeFiles: ['./node_modules/package/**/*', './src/**/*.test.js'],
 	}),
 	vite: {
