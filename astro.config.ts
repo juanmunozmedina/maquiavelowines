@@ -56,6 +56,7 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 		build: {
+			target: 'esnext',
 			assetsInlineLimit(filePath) {
 				return filePath.endsWith('css');
 			},
