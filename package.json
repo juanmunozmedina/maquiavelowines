@@ -6,7 +6,6 @@
 	"engines": {
 		"node": "22.12.0"
 	},
-	"packageManager": "pnpm@10.15.0",
 	"scripts": {
 		"dev:ci": "doppler run pnpm openapi-ts && doppler run astro dev",
 		"dev": "astro dev",
