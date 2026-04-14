@@ -210,7 +210,7 @@ export function AddToCartForm(props: { product: Product }) {
 			</div>
 
 			<Show when={mutation.isError}>
-				<aside class="text-red-800 dark:text-blue-300">Lo siento, algo salió mal. Por favor inténtalo de nuevo.</aside>
+				<aside class="text-red-800 dark:text-blue-300 mb-4">Lo siento, algo salió mal. Por favor inténtalo de nuevo.</aside>
 			</Show>
 		</form>
 	);
