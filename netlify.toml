@@ -52,3 +52,6 @@
     Pragma = "no-cache"
     Expires = "0"
     Surrogate-Control = "no-store"
+
+[build.environment]
+  NODE_VERSION = "20.11.0"

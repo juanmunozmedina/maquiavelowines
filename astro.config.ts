@@ -59,7 +59,6 @@ export default defineConfig({
 			assetsInlineLimit(filePath) {
 				return filePath.endsWith('css');
 			},
-			target: 'es2022',
 		},
 	},
 	image: {
