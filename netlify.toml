@@ -54,6 +54,6 @@
     Surrogate-Control = "no-store"
 
 [build.environment]
-  NODE_VERSION = "22.11.0"
+  NODE_VERSION = "22.12.0"
   ENABLE_ROOT_PATH_BUILDS = "1"
   COREPACK_ENABLE_STRICT = "0"
