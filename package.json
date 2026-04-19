@@ -40,7 +40,7 @@
 		"vitest": "^4.1.4"
 	},
 	"dependencies": {
-		"@astrojs/netlify": "^7.0.6",
+		"@astrojs/netlify": "^7.0.7",
 		"@astrojs/partytown": "^2.1.7",
 		"@astrojs/sitemap": "^3.7.2",
 		"@astrojs/solid-js": "^6.0.1",
@@ -57,7 +57,7 @@
 		"@tanstack/solid-query": "^5.99.0",
 		"@tanstack/solid-query-devtools": "^5.99.0",
 		"@total-typescript/ts-reset": "^0.6.1",
-		"astro": "^6.1.6",
+		"astro": "^6.1.8",
 		"astro-breadcrumbs": "^3.4.0",
 		"astro-icon": "^1.1.5",
 		"flowbite": "^4.0.1",
