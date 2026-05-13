@@ -17,7 +17,7 @@ export const GET: APIRoute = async (context) => {
 	}
 
 	const session = await stripe.checkout.sessions.retrieve(sessionId, {
-		expand: ['line_items', 'line_items.data.price.product'],
+		expand: ['line_items', 'line_items.data.price.product', 'collected_information'],
 	});
 
 	if (session.status !== 'complete') {
@@ -81,7 +81,8 @@ async function createOrderFromStripe(
 	}
 	const customer = customerResponse.data;
 
-	const { shipping_details, customer_details } = session;
+	const shipping_details = session.collected_information?.shipping_details;
+	const { customer_details } = session;
 	const customerAddressDetails = {
 		phone: session.customer_details?.phone ?? undefined,
 		company: session.customer_details?.name ?? undefined,

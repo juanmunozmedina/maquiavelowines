@@ -200,14 +200,6 @@ const collections: Record<string, Collection> = {
 		imageUrl: '/assets/ancestral.png',
 		...collectionDefaults,
 	},
-	centhaurus: {
-		id: 'centhaurus',
-		name: 'Centhaurus',
-		description: 'La mejor selección de espumosos.',
-		slug: 'centhaurus',
-		imageUrl: '/assets/centhaurus.png',
-		...collectionDefaults,
-	},
 };
 
 function shuffle<T>(array: T[]): T[] {

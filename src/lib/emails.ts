@@ -23,7 +23,7 @@ export async function sendCheckoutSuccessEmail(
 		console.error('Faltan credenciales de Loops. Saltarse el envío de correo electrónico.');
 		return;
 	}
-	const { address } = session.shipping_details ?? {};
+	const { address } = session.collected_information?.shipping_details ?? {};
 
 	const itemList = lineItems
 		.map((item) => {
