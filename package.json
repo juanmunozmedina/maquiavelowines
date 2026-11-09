@@ -60,6 +60,7 @@
 		"astro": "^6.4.4",
 		"astro-breadcrumbs": "^3.4.0",
 		"astro-icon": "^1.1.5",
+		"astro-maintenance": "^2.0.0",
 		"flowbite": "^4.0.1",
 		"photoswipe": "^5.4.4",
 		"solid-icons": "^1.2.0",

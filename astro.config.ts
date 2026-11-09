@@ -4,10 +4,18 @@ import solidJs from '@astrojs/solid-js';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 import { defineConfig, envField } from 'astro/config';
+import maintenance from "astro-maintenance";
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
+		maintenance({
+			enabled: true, // Maintenance mode enabled
+			template: "simple", // Options: 'simple', 'countdown', 'construction' or imported template content
+			title: "Sitio en mantenimiento",
+			description: "Disculpe las molestias, pero estamos realizando algunas tareas de mantenimiento en este momento. Si lo necesita, siempre puede contactarnos; de lo contrario, volveremos a estar listos para que degustes nuestros vinos en breve. Atentamente, el equipo de Bodegas Maquiavelo.",
+			override: "preview", // Access site with ?preview
+		}),
 		icon(),
 		solidJs(),
 		sitemap({
