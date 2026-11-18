@@ -10,7 +10,7 @@ import maintenance from "astro-maintenance";
 export default defineConfig({
 	integrations: [
 		maintenance({
-			enabled: false, // Maintenance mode enabled
+			enabled: true, // Maintenance mode enabled
 			template: "simple", // Options: 'simple', 'countdown', 'construction' or imported template content
 			title: "Sitio en mantenimiento",
 			description: "Disculpe las molestias, pero estamos realizando algunas tareas de mantenimiento en este momento. Si lo necesita, siempre puede contactarnos; de lo contrario, volveremos a estar listos para que degustes nuestros vinos en breve. Atentamente, el equipo de Bodegas Maquiavelo.",
