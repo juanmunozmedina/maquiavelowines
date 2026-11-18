@@ -11,18 +11,7 @@ type Props = {
 const { heading, filterProducts = (products) => products } = Astro.props;
 
 const productsResponse = await getProducts({ query: { sort: 'random' } });
-const data = productsResponse.data;
-const items: Product[] = Array.isArray(data) ? data : ((data as any)?.items ?? []);
-const products = filterProducts(items);
-
-const debug = {
-	typeofData: typeof data,
-	isArray: Array.isArray(data),
-	keys: data && typeof data === 'object' ? Object.keys(data) : null,
-	rawCount: items.length,
-	filteredCount: products.length,
-	status: (productsResponse as any).response?.status,
-};
+const products = filterProducts(productsResponse.data?.items ?? []);
 ---
 
 <ProductCarousel {heading} client:idle>
@@ -36,5 +25,3 @@ const debug = {
 		}
 	</ul>
 </ProductCarousel>
-
-<div data-debug={JSON.stringify(debug)}>Hola</div>

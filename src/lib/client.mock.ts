@@ -210,7 +210,10 @@ function shuffle<T>(array: T[]): T[] {
 }
 
 // Dynamically load all products from the folder public/data
-const productModules = import.meta.glob('public/data/!(*index).json', { eager: true });
+const productModules = import.meta.glob<Product>('/public/data/*.json', {
+	eager: true,
+	import: 'default',
+});
 
 const products: Record<string, Product> = {};
 
@@ -219,7 +222,9 @@ for (const path in productModules) {
 	if (!match) continue;
 
 	const slug = match[1];
-	const product = productModules[path] as Product;
+	if (slug.endsWith('index')) continue;
+
+	const product = productModules[path];
 
 	if (product && product.id === slug) {
 		products[slug] = product;
