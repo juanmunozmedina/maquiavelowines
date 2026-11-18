@@ -56,6 +56,7 @@ export default defineConfig({
 		excludeFiles: ['./node_modules/package/**/*', './src/**/*.test.js'],
 	}),
 	vite: {
+		cacheDir: 'C:/dev-cache/maquiavelowines/.vite',
 		plugins: [tailwindcss()],
 		build: {
 			target: 'esnext',
