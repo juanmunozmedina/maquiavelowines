@@ -30,7 +30,7 @@ export default function ProductCarouselSection(
 	};
 
 	return (
-		<PageSection aria-labelledby={HEADING_ID}>
+		<PageSection id="products" aria-labelledby={HEADING_ID}>
 			<div class="flex items-center justify-between gap-2">
 				<PageHeading id={HEADING_ID}>{props.heading}</PageHeading>
 				<div class="flex gap-2">

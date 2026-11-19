@@ -8,7 +8,7 @@ import { button } from '~/styles.ts';
 ---
 
 <header
-	class="breakout focus-ring-light dark:text-base-theme-100 relative h-[384px] max-h-dvh content-end justify-items-start gap-y-4 bg-black py-8 text-white md:h-[512px] md:gap-y-8 md:bg-bottom"
+	class="breakout focus-ring-light dark:text-base-theme-100 relative h-[384px] max-h-dvh content-center-safe justify-items-center gap-y-4 bg-black py-8 text-white md:h-[512px] md:gap-y-8 md:bg-bottom"
 >
 	<picture>
 		<source srcset={sm.src} media="(max-width: 640px)" />
@@ -26,12 +26,12 @@ import { button } from '~/styles.ts';
 	<div
 		class="content relative text-3xl font-extrabold drop-shadow-md md:text-5xl md:leading-[50px]"
 	>
-		<h1 class="max-w-sm">Que hable el vino</h1>
+		<h1>Que hable el vino</h1>
 	</div>
 	<div class="relative">
-		<button
-			class={button({ theme: 'light', className: 'font-bold md:h-12 md:text-lg' })}
-			onclick="scrollIntoView('#products')">Compra ahora</button
+		<a
+			class="bg-theme-base-100 hover:bg-theme-base-200 text-theme-base-900 dark:bg-theme-base-900 dark:hover:bg-theme-base-600 dark:text-white h-9 px-4 text-sm uppercase transition flex items-center justify-center gap-1.5 font-bold md:h-12 md:text-lg"
+			href="#products">Compra ahora</a
 		>
 	</div>
 </header>
